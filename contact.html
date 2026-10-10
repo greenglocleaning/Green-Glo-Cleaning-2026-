@@ -3,31 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Contact Us | Green GLO Cleaning Co | Eco Cleaning London</title>
-    <meta name="description" content="Get in touch with Green GLO Cleaning Co. Call 07767972498, email greenglocleaningco@gmail.com, or book online. BICSc accredited eco cleaning across Greater London.">
+    <title>Contact Us | Green GLO Cleaning Co London | Book & Pay Online</title>
+    <meta name="description" content="Get in touch with Green GLO Cleaning Co. Call 07767972498, email us, or book online with secure Stripe payment. BICSc accredited eco cleaning across Greater London.">
     <meta name="theme-color" content="#385538">
     <link rel="canonical" href="https://greenglocleaning.co.uk/contact.html">
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="lp (1).jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="lp (1).jpeg">
+    <link rel="icon" type="image/png" sizes="16x16" href="lp (1).jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" href="lp (1).jpeg">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Contact Us | Green GLO Cleaning Co | Eco Cleaning London">
-    <meta property="og:description" content="Call 07767972498 or book online. BICSc accredited eco cleaning from £18/hr across Greater London.">
+    <meta property="og:title" content="Contact Us | Green GLO Cleaning Co London">
+    <meta property="og:description" content="Call, email, or book online. Secure Stripe payments, instant confirmation, BICSc accredited eco cleaning.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:url" content="https://greenglocleaning.co.uk/contact.html">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Preconnect for performance -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://www.pexels.com">
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- FontAwesome (loaded async, non-blocking) -->
+    <!-- FontAwesome (async) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
@@ -50,41 +55,36 @@
                     fontFamily: {
                         serif: ['"Plus Jakarta Sans"', 'sans-serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'floatOrb 7s ease-in-out infinite',
-                        'shimmer': 'shimmer 2s linear infinite',
-                        'gradient-shift': 'gradientShift 8s ease infinite'
-                    },
-                    keyframes: {
-                        shimmer: { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } },
-                        gradientShift: { '0%,100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } }
                     }
                 }
             }
         }
     </script>
 
-    <!-- JSON-LD Structured Data for SEO -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "CleaningService",
+      "@type": "LocalBusiness",
       "name": "Green GLO Cleaning Co",
       "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
       "telephone": "+447767972498",
       "email": "greenglocleaningco@gmail.com",
       "areaServed": { "@type": "City", "name": "London" },
       "priceRange": "££",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "25" },
-      "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+447767972498",
-        "contactType": "customer service",
-        "availableLanguage": "English",
-        "areaServed": "GB"
-      }
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ]
     }
     </script>
 
@@ -113,28 +113,23 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
-        .glass-card-dark {
-            background: rgba(14, 23, 14, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .soft-cloud-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(244,249,244,0.82));
+            border: 1px solid rgba(255,255,255,0.75);
+            box-shadow: 0 24px 80px rgba(26, 52, 38, 0.12), 0 8px 28px rgba(50, 81, 59, 0.08);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
-        .glass-card-green {
-            background: rgba(244, 247, 244, 0.85);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(227, 235, 227, 0.9);
+        .soft-input {
+            background: rgba(246, 250, 246, 0.9);
+            border: 1px solid rgba(180, 203, 180, 0.8);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.72);
+            transition: all 0.24s ease;
         }
-        .glass-input {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(199, 215, 199, 0.5);
-            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glass-input:focus {
-            background: rgba(255, 255, 255, 0.98);
-            border-color: #5c855c;
-            box-shadow: 0 0 0 4px rgba(92, 133, 92, 0.15);
+        .soft-input:focus {
+            background: rgba(255,255,255,0.98);
+            border-color: rgba(79, 118, 79, 0.8);
+            box-shadow: 0 0 0 4px rgba(92, 133, 92, 0.12), inset 0 1px 0 rgba(255,255,255,0.8);
             outline: none;
         }
 
@@ -167,38 +162,13 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
-
-        /* Animated gradient border */
-        .gradient-border { position: relative; border-radius: 1.75rem; padding: 2px; }
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: inherit;
-            padding: 2px;
-            background: linear-gradient(120deg, #466b46, #7ba27b, #bbf7d0, #7ba27b, #466b46);
-            background-size: 300% 300%;
-            animation: gradientShift 8s ease infinite;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-        @keyframes gradientShift {
-            0%,100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        .hero-stat {
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        /* Soft cloud card */
-        .soft-cloud-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(244,249,244,0.82));
-            border: 1px solid rgba(255,255,255,0.75);
-            box-shadow: 0 24px 80px rgba(26, 52, 38, 0.12), 0 8px 28px rgba(50, 81, 59, 0.08);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-        }
-
-        /* Floating orbs */
         .floating-orb { animation: floatOrb 7s ease-in-out infinite; }
         .floating-orb.delay-1 { animation-delay: 1.2s; }
         .floating-orb.delay-2 { animation-delay: 2.4s; }
@@ -207,32 +177,120 @@
             50% { transform: translateY(-12px) translateX(6px); }
         }
 
-        /* Focus visible */
-        *:focus-visible { outline: 2px solid #385538; outline-offset: 2px; border-radius: 4px; }
-
-        /* Skip link */
         .sr-only-focusable:not(:focus):not(:focus-within) {
             position: absolute !important; width: 1px !important; height: 1px !important;
             padding: 0 !important; margin: -1px !important; overflow: hidden !important;
             clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important;
         }
 
-        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f4f7f4; }
         ::-webkit-scrollbar-thumb { background: #7ba27b; border-radius: 9999px; }
         ::-webkit-scrollbar-thumb:hover { background: #5c855c; }
 
-        /* Reduce motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+
+        /* Contact card */
+        .contact-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .contact-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Payment loading */
+        .payment-loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .pay-button-pulse {
+            animation: payPulse 2s ease-in-out infinite;
+        }
+        @keyframes payPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+            50% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+        }
+
+        /* Map wrapper */
+        .map-wrap {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(181, 206, 181, 0.5);
+            box-shadow: 0 20px 60px rgba(26, 52, 38, 0.1);
+            height: 340px;
+            background: linear-gradient(135deg, rgba(244,249,244,0.9), rgba(227,235,227,0.7));
+        }
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: saturate(0.85) brightness(1.02);
+        }
+
+        /* FAQ-style accordion */
+        .mini-faq-item {
+            transition: all 0.24s ease;
+            border: 1px solid rgba(181, 206, 181, 0.7);
+            background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(244,247,244,0.9));
+        }
+        .mini-faq-item:hover {
+            border-color: rgba(92, 133, 92, 0.6);
+        }
+        .mini-faq-item.open {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(244,249,244,0.92));
+            border-color: rgba(92, 133, 92, 0.7);
+        }
+        .mini-faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+            opacity: 0;
+        }
+        .mini-faq-item.open .mini-faq-answer {
+            max-height: 300px;
+            opacity: 1;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(181, 206, 181, 0.5);
+            margin-top: 1rem;
+        }
+        .mini-faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .mini-faq-item.open .mini-faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Success toast */
+        .success-toast {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 100;
+            max-width: 380px;
+            animation: slideInRight 0.35s ease;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
 <body class="font-sans text-gray-800 antialiased selection:bg-sage-600 selection:text-white">
 
-    <!-- Skip link for accessibility -->
-    <a href="#contact-main" class="sr-only-focusable focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-sage-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-xl">
+    <a href="#contact" class="sr-only-focusable focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-sage-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-xl">
         Skip to content
     </a>
 
@@ -245,9 +303,9 @@
                 </span>
                 <span class="hidden md:inline text-sage-700" aria-hidden="true">|</span>
                 <span class="flex items-center gap-1">
-                    <i class="fa-solid fa-star text-yellow-400" aria-hidden="true"></i>
-                    <strong class="text-white font-semibold">5.0 Google Rating</strong>
-                    <span>(25+ Verified Reviews)</span>
+                    <i class="fa-solid fa-clock text-mint-400" aria-hidden="true"></i>
+                    <strong class="text-white font-semibold">Open 7 Days</strong>
+                    <span>8am – 8pm</span>
                 </span>
             </div>
             <div class="flex items-center gap-4 font-medium text-xs">
@@ -268,7 +326,7 @@
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex items-center gap-3 group" aria-label="Green GLO Cleaning Co home">
                     <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sage-800 via-sage-700 to-sage-500 flex items-center justify-center text-white shadow-md shadow-sage-600/20 group-hover:scale-105 transition-transform duration-300 overflow-hidden flex-shrink-0">
-                        <img src="lp (1).jpeg" alt="Green GLO logo" class="w-full h-full object-cover rounded-2xl">
+                        <img src="./lp (1).jpeg" alt="Green GLO logo" class="w-full h-full object-cover rounded-2xl">
                     </div>
                     <div class="flex flex-col justify-center min-w-0">
                         <span class="text-xl sm:text-2xl font-serif font-bold tracking-tight text-sage-950 leading-tight">
@@ -296,9 +354,9 @@
                     <a href="tel:07767972498" class="p-2.5 px-4 rounded-xl text-sage-800 bg-sage-100/70 hover:bg-sage-200/70 transition-all font-semibold text-sm flex items-center gap-2">
                         <i class="fa-solid fa-phone text-sage-600" aria-hidden="true"></i> Call
                     </a>
-                    <a href="prices.html" class="bg-sage-700 hover:bg-sage-800 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-sage-700/20 hover:shadow-lg transition-all duration-200 flex items-center gap-2">
-                        <span>Book Online</span>
-                        <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                    <a href="prices.html#instant-quote" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-emerald-700/20 hover:shadow-lg transition-all duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-lock text-xs" aria-hidden="true"></i>
+                        <span>Book & Pay</span>
                     </a>
                 </div>
 
@@ -319,267 +377,564 @@
             <a href="gallery.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">Gallery & Results</a>
             <a href="faq.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">FAQ</a>
             <a href="contact.html" class="block px-3 py-2 rounded-lg font-bold text-sage-800 bg-sage-50">Contact Us</a>
+
             <div class="pt-4 border-t border-sage-100 flex flex-col gap-2">
                 <a href="tel:07767972498" class="w-full text-center py-3 bg-sage-100 text-sage-800 font-semibold rounded-xl">
                     <i class="fa-solid fa-phone text-sage-600 mr-2" aria-hidden="true"></i> Call 07767972498
                 </a>
-                <a href="prices.html" class="w-full text-center py-3 bg-sage-700 text-white font-semibold rounded-xl shadow-md">
-                    Instant Price Estimator
+                <a href="prices.html#instant-quote" class="w-full text-center py-3 bg-emerald-600 text-white font-semibold rounded-xl shadow-md">
+                    <i class="fa-solid fa-lock mr-2" aria-hidden="true"></i> Book & Pay
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="relative hero-video-bg pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden">
+    <!-- CONTACT HERO -->
+    <section id="contact" class="relative hero-video-bg pt-12 pb-16 lg:pt-16 lg:pb-20 overflow-hidden">
         <video autoplay muted loop playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
-            <source src="https://www.pexels.com/download/video/9462943/" type="video/mp4">
+            <source src="https://www.pexels.com/download/video/4109351/" type="video/mp4">
         </video>
         <div class="hero-video-overlay"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl mx-auto text-center">
+            <div class="max-w-2xl">
                 <div class="inline-flex items-center gap-2 hero-chip px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold text-white shadow-lg">
                     <span class="w-2 h-2 rounded-full bg-mint-400 animate-pulse" aria-hidden="true"></span>
-                    <span>Get in Touch</span>
+                    <span>We Reply Within 2 Working Hours</span>
                 </div>
+
                 <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.95] tracking-[-0.06em] text-white">
-                    Let's talk about your <span class="text-mint-200">clean</span>.
+                    Let's get your space <span class="text-mint-200">spotless.</span>
                 </h1>
-                <p class="mt-5 text-base sm:text-lg text-sage-100/90 max-w-2xl mx-auto leading-relaxed">
-                    Call, email, or book online. Our friendly London team responds within 2 working hours.
+
+                <p class="mt-5 text-base sm:text-lg text-sage-100/90 max-w-xl leading-relaxed">
+                    Call, email, WhatsApp, or book online in minutes. Whether it's a one-off deep clean or a weekly recurring plan, our BICSc-trained team is ready.
                 </p>
-                <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+
+                <div class="mt-8 flex flex-wrap items-center gap-3">
                     <a href="tel:07767972498" class="inline-flex items-center gap-2 rounded-full bg-white text-sage-900 px-6 py-3 text-sm font-bold shadow-xl hover:scale-[1.02] transition-transform">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i>
                         Call 07767972498
                     </a>
-                    <a href="#contact-form" class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
-                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        Send a Message
+                    <a href="#booking" class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+                        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                        Book a Clean
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- TRUST STRIP -->
-    <section class="bg-white border-y border-sage-100 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-award text-2xl text-sage-600" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">BICSc Certified</span>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-star text-2xl text-yellow-500" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">5.0 Google Rated</span>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-shield-halved text-2xl text-sage-600" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">£2M Insured</span>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-leaf text-2xl text-emerald-600" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">100% Eco Products</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT MAIN -->
-    <section id="contact-main" class="py-20 bg-gradient-to-b from-sage-50 via-white to-sage-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12">
-
-                <!-- LEFT: Contact Info -->
-                <div class="lg:col-span-5 space-y-8">
-                    <div>
-                        <span class="inline-flex items-center gap-2 bg-sage-900/5 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true"></span>
-                            Direct Reach
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">We're here to help.</h2>
-                        <p class="text-sage-700 mt-4 text-sm sm:text-base leading-relaxed">
-                            Whether you need a one-off clean, a regular slot, or a bespoke commercial plan, reach out and we'll respond fast.
-                        </p>
+                <div class="mt-8 grid grid-cols-3 gap-3 max-w-md">
+                    <div class="hero-stat rounded-2xl p-3 text-left">
+                        <div class="text-xl font-black text-white">2h</div>
+                        <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-sage-200">Avg. Reply</div>
                     </div>
+                    <div class="hero-stat rounded-2xl p-3 text-left">
+                        <div class="text-xl font-black text-white">7 Days</div>
+                        <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-sage-200">Open Weekly</div>
+                    </div>
+                    <div class="hero-stat rounded-2xl p-3 text-left">
+                        <div class="text-xl font-black text-white">Instant</div>
+                        <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-sage-200">Online Payment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <!-- Contact cards -->
-                    <div class="space-y-4">
-                        <!-- Phone -->
-                        <a href="tel:07767972498" class="soft-cloud-card rounded-2xl p-5 flex items-center gap-4 group hover:-translate-y-0.5 transition-transform">
-                            <div class="w-12 h-12 rounded-xl bg-sage-700 flex items-center justify-center text-white shadow-md flex-shrink-0" aria-hidden="true">
-                                <i class="fa-solid fa-phone text-lg"></i>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600">Call us directly</p>
-                                <p class="text-lg font-bold text-sage-950 group-hover:text-sage-700 transition-colors">07767972498</p>
-                                <p class="text-xs text-sage-500 mt-0.5">Mon–Sun, 7am – 9pm</p>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-sage-400 ml-auto flex-shrink-0" aria-hidden="true"></i>
-                        </a>
+    <!-- CONTACT OPTIONS GRID -->
+    <section class="py-16 bg-gradient-to-b from-sage-50 via-white to-sage-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 bg-sage-900/5 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true"></span>
+                    Get In Touch
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">Choose how you'd like to reach us.</h2>
+                <p class="text-sage-700 mt-4 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">Whichever channel suits you — we're quick to respond and always happy to help.</p>
+            </div>
 
-                        <!-- Email -->
-                        <a href="mailto:greenglocleaningco@gmail.com" class="soft-cloud-card rounded-2xl p-5 flex items-center gap-4 group hover:-translate-y-0.5 transition-transform">
-                            <div class="w-12 h-12 rounded-xl bg-sage-700 flex items-center justify-center text-white shadow-md flex-shrink-0" aria-hidden="true">
-                                <i class="fa-solid fa-envelope text-lg"></i>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600">Email us</p>
-                                <p class="text-sm font-bold text-sage-950 group-hover:text-sage-700 transition-colors break-all">greenglocleaningco@gmail.com</p>
-                                <p class="text-xs text-sage-500 mt-0.5">Replies within 2 working hours</p>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-sage-400 ml-auto flex-shrink-0" aria-hidden="true"></i>
-                        </a>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Phone -->
+                <a href="tel:07767972498" class="contact-card soft-cloud-card rounded-[1.6rem] p-6 border border-sage-200/60 block group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-700 group-hover:bg-sage-700 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-phone text-xl" aria-hidden="true"></i>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-sage-400 group-hover:text-sage-700 group-hover:translate-x-1 transition-all" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-sage-950 mb-1">Call Direct</h3>
+                    <p class="text-sm font-bold text-sage-900 mb-2">07767972498</p>
+                    <p class="text-xs text-sage-600 leading-relaxed">Fastest option for urgent bookings and same-day cleans.</p>
+                </a>
 
-                        <!-- WhatsApp -->
-                        <a href="https://wa.me/447767972498" target="_blank" rel="noopener" class="soft-cloud-card rounded-2xl p-5 flex items-center gap-4 group hover:-translate-y-0.5 transition-transform">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-md flex-shrink-0" aria-hidden="true">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600">WhatsApp</p>
-                                <p class="text-lg font-bold text-sage-950 group-hover:text-sage-700 transition-colors">Message us</p>
-                                <p class="text-xs text-sage-500 mt-0.5">Fastest for instant quotes</p>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-sage-400 ml-auto flex-shrink-0" aria-hidden="true"></i>
-                        </a>
+                <!-- Email -->
+                <a href="mailto:greenglocleaningco@gmail.com" class="contact-card soft-cloud-card rounded-[1.6rem] p-6 border border-sage-200/60 block group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-700 group-hover:bg-sage-700 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-envelope text-xl" aria-hidden="true"></i>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-sage-400 group-hover:text-sage-700 group-hover:translate-x-1 transition-all" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-sage-950 mb-1">Email Us</h3>
+                    <p class="text-xs font-semibold text-sage-900 mb-2 truncate">greenglocleaningco@gmail.com</p>
+                    <p class="text-xs text-sage-600 leading-relaxed">Best for quotes, invoices, and detailed enquiries.</p>
+                </a>
 
-                        <!-- Coverage -->
-                        <div class="soft-cloud-card rounded-2xl p-5 flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-sage-700 flex items-center justify-center text-white shadow-md flex-shrink-0" aria-hidden="true">
-                                <i class="fa-solid fa-map-pin text-lg"></i>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/447767972498" target="_blank" rel="noopener" class="contact-card soft-cloud-card rounded-[1.6rem] p-6 border border-emerald-200/60 block group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i class="fa-brands fa-whatsapp text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-emerald-400 group-hover:text-emerald-700 group-hover:translate-x-1 transition-all" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-sage-950 mb-1">WhatsApp</h3>
+                    <p class="text-sm font-bold text-emerald-700 mb-2">Chat Instantly</p>
+                    <p class="text-xs text-sage-600 leading-relaxed">Send photos of the space and get a fast estimate.</p>
+                </a>
+
+                <!-- Book & Pay -->
+                <a href="prices.html#instant-quote" class="contact-card soft-cloud-card rounded-[1.6rem] p-6 border-2 border-emerald-300/70 block group relative overflow-hidden">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-600 px-3 py-1 text-[9px] font-black uppercase tracking-wider text-white shadow-lg">Fastest</div>
+                    <div class="flex items-center justify-between mb-4 mt-2">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-lock text-xl" aria-hidden="true"></i>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-emerald-400 group-hover:text-emerald-700 group-hover:translate-x-1 transition-all" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-sage-950 mb-1">Book & Pay Online</h3>
+                    <p class="text-sm font-bold text-emerald-700 mb-2">Instant Confirmation</p>
+                    <p class="text-xs text-sage-600 leading-relaxed">Estimate, pay securely via Stripe, done in 60 seconds.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTACT + BOOKING FORM -->
+    <section id="booking" class="py-16 bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-start">
+
+                <!-- LEFT: Contact Info + Hours + Map -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Info card -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-6 sm:p-8 border border-sage-200/60">
+                        <h2 class="text-2xl font-serif font-bold text-sage-950 mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-sage-600" aria-hidden="true"></i>
+                            Our Details
+                        </h2>
+
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-sage-100 flex items-center justify-center text-sage-700 flex-shrink-0">
+                                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600 mb-0.5">Telephone</p>
+                                    <a href="tel:07767972498" class="text-base font-bold text-sage-950 hover:text-emerald-700 transition">07767972498</a>
+                                </div>
                             </div>
-                            <div class="min-w-0">
-                                <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600">Coverage</p>
-                                <p class="text-sm font-bold text-sage-950">Greater London & Surrounding</p>
-                                <p class="text-xs text-sage-500 mt-0.5">Kent & Essex included</p>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-sage-100 flex items-center justify-center text-sage-700 flex-shrink-0">
+                                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600 mb-0.5">Email</p>
+                                    <a href="mailto:greenglocleaningco@gmail.com" class="text-sm font-bold text-sage-950 hover:text-emerald-700 transition break-all">greenglocleaningco@gmail.com</a>
+                                </div>
                             </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-sage-100 flex items-center justify-center text-sage-700 flex-shrink-0">
+                                    <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600 mb-0.5">Coverage Area</p>
+                                    <p class="text-sm font-bold text-sage-950">Greater London & Surrounding</p>
+                                    <p class="text-xs text-sage-600 mt-1">Kent & Essex on request</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-sage-100 flex items-center justify-center text-sage-700 flex-shrink-0">
+                                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600 mb-0.5">Opening Hours</p>
+                                    <p class="text-sm font-bold text-sage-950">Monday – Sunday</p>
+                                    <p class="text-xs text-sage-600 mt-1">8:00 AM – 8:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t border-sage-200/60 flex flex-wrap gap-3">
+                            <span class="inline-flex items-center gap-1.5 rounded-full bg-sage-100 text-sage-800 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5">
+                                <i class="fa-solid fa-award text-yellow-500"></i> BICSc
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full bg-sage-100 text-sage-800 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5">
+                                <i class="fa-solid fa-shield text-sage-600"></i> £2M Insured
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full bg-sage-100 text-sage-800 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5">
+                                <i class="fa-solid fa-leaf text-emerald-600"></i> Eco Products
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5">
+                                <i class="fa-solid fa-lock"></i> Stripe Secured
+                            </span>
                         </div>
                     </div>
 
-                    <!-- Office hours -->
-                    <div class="glass-card-green rounded-2xl p-6 border border-sage-200/80">
-                        <h3 class="text-sm font-bold text-sage-900 uppercase tracking-[0.16em] mb-4 flex items-center gap-2">
-                            <i class="fa-regular fa-clock text-sage-600" aria-hidden="true"></i> Opening Hours
+                    <!-- Map -->
+                    <div class="map-wrap">
+                        <iframe 
+                            src="https://www.google.com/maps?q=London,UK&output=embed" 
+                            title="Green GLO service coverage across Greater London"
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- Mini FAQ -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-6 border border-sage-200/60">
+                        <h3 class="text-lg font-serif font-bold text-sage-950 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-sage-600" aria-hidden="true"></i>
+                            Quick Answers
                         </h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between text-sage-800">
-                                <span class="font-medium">Monday – Friday</span>
-                                <span class="font-bold">7:00 AM – 9:00 PM</span>
-                            </div>
-                            <div class="flex justify-between text-sage-800">
-                                <span class="font-medium">Saturday</span>
-                                <span class="font-bold">8:00 AM – 8:00 PM</span>
-                            </div>
-                            <div class="flex justify-between text-sage-800">
-                                <span class="font-medium">Sunday</span>
-                                <span class="font-bold">9:00 AM – 6:00 PM</span>
-                            </div>
-                            <div class="pt-2 mt-2 border-t border-sage-200/70 flex justify-between text-emerald-700">
-                                <span class="font-medium">Emergency cleans</span>
-                                <span class="font-bold">7 days</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Map placeholder -->
-                    <div class="soft-cloud-card rounded-2xl overflow-hidden">
-                        <div class="relative h-48 bg-gradient-to-br from-sage-200 via-sage-100 to-mint-100">
-                            <div class="absolute inset-0 flex flex-col items-center justify-center text-sage-700">
-                                <i class="fa-solid fa-map-location-dot text-4xl mb-2" aria-hidden="true"></i>
-                                <p class="text-sm font-bold">Serving Greater London</p>
-                                <p class="text-xs text-sage-600">All London postcodes + Kent & Essex</p>
+                        <div class="space-y-3">
+                            <div class="mini-faq-item rounded-xl p-4">
+                                <button onclick="toggleMiniFaq(this)" class="w-full flex justify-between items-start gap-3 text-left" aria-expanded="false">
+                                    <span class="font-bold text-sage-950 text-sm leading-snug">Do you offer same-day cleans?</span>
+                                    <i class="mini-faq-icon fa-solid fa-plus text-sage-600 text-sm flex-shrink-0 mt-0.5"></i>
+                                </button>
+                                <div class="mini-faq-answer text-xs text-sage-700 leading-relaxed">
+                                    Yes — subject to availability. Call us directly on <strong>07767972498</strong> for the fastest response.
+                                </div>
+                            </div>
+
+                            <div class="mini-faq-item rounded-xl p-4">
+                                <button onclick="toggleMiniFaq(this)" class="w-full flex justify-between items-start gap-3 text-left" aria-expanded="false">
+                                    <span class="font-bold text-sage-950 text-sm leading-snug">How do I pay?</span>
+                                    <i class="mini-faq-icon fa-solid fa-plus text-sage-600 text-sm flex-shrink-0 mt-0.5"></i>
+                                </button>
+                                <div class="mini-faq-answer text-xs text-sage-700 leading-relaxed">
+                                    Online via <strong>Stripe</strong> (card, Apple Pay, Google Pay) — instant confirmation & email receipt. Bank transfer available for commercial contracts.
+                                </div>
+                            </div>
+
+                            <div class="mini-faq-item rounded-xl p-4">
+                                <button onclick="toggleMiniFaq(this)" class="w-full flex justify-between items-start gap-3 text-left" aria-expanded="false">
+                                    <span class="font-bold text-sage-950 text-sm leading-snug">What areas do you cover?</span>
+                                    <i class="mini-faq-icon fa-solid fa-plus text-sage-600 text-sm flex-shrink-0 mt-0.5"></i>
+                                </button>
+                                <div class="mini-faq-answer text-xs text-sage-700 leading-relaxed">
+                                    All Greater London postcodes plus surrounding areas in Kent and Essex. Enter your postcode when booking to confirm.
+                                </div>
                             </div>
                         </div>
+
+                        <a href="faq.html" class="mt-4 inline-flex items-center gap-2 text-xs font-bold text-sage-700 hover:text-emerald-700 transition">
+                            View all FAQs <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- RIGHT: Contact Form -->
+                <!-- RIGHT: Multi-step Booking Form -->
                 <div class="lg:col-span-7">
-                    <div id="contact-form" class="gradient-border scroll-mt-24">
-                        <div class="soft-cloud-card rounded-[1.6rem] p-6 sm:p-8">
-                            <div class="flex items-center justify-between mb-6 gap-3 pb-5 border-b border-sage-200/80">
-                                <div>
-                                    <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-sage-600">Send a message</p>
-                                    <h3 class="text-2xl font-serif font-bold text-sage-950">How can we help?</h3>
+                    <div class="soft-cloud-card rounded-[1.8rem] p-6 sm:p-8 border border-sage-200/60">
+                        <div class="flex items-center justify-between mb-5 gap-3 pb-4 border-b border-sage-200/80">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-sage-600">Smart Booking System</p>
+                                <h3 class="text-2xl font-serif font-bold text-sage-950">Book Your Clean</h3>
+                            </div>
+                            <div class="rounded-full bg-emerald-100 text-emerald-800 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                Online Payment Ready
+                            </div>
+                        </div>
+
+                        <!-- Step indicator -->
+                        <div class="mb-6 grid grid-cols-3 gap-2 bg-sage-100 rounded-2xl p-1.5">
+                            <div class="booking-step-indicator active text-center text-[10px] font-bold rounded-xl py-2 text-sage-700 bg-white shadow-sm" data-step-indicator="1">1. Service</div>
+                            <div class="booking-step-indicator text-center text-[10px] font-bold rounded-xl py-2 text-sage-600" data-step-indicator="2">2. Details</div>
+                            <div class="booking-step-indicator text-center text-[10px] font-bold rounded-xl py-2 text-sage-600" data-step-indicator="3">3. Schedule</div>
+                        </div>
+
+                        <form id="bookingForm" action="https://formspree.io/f/your-form-id" method="POST" class="space-y-5" novalidate>
+                            <input type="hidden" name="source" value="GreenGlo contact page booking form">
+                            <input type="hidden" name="selectedService" id="selectedServiceInput" value="Domestic Clean">
+                            <input type="hidden" name="bookingEstimate" id="bookingEstimateInput" value="£43">
+                            <input type="hidden" name="propertyType" id="propertyTypeInput" value="Residential">
+                            <input type="hidden" name="serviceType" id="serviceTypeInput" value="Regular Cleaning">
+                            <input type="hidden" name="accessMethod" id="accessMethodInput" value="Home occupied">
+                            <input type="hidden" name="parkingAvailability" id="parkingAvailabilityInput" value="Free on-site">
+                            <input type="hidden" name="productSource" id="productSourceInput" value="Provider supplies">
+                            <input type="hidden" name="equipmentSource" id="equipmentSourceInput" value="Provider supplies">
+
+                            <!-- STEP 1: Service -->
+                            <div class="booking-step" data-step="1">
+                                <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-3">Choose Your Service</label>
+                                <div class="grid sm:grid-cols-2 gap-3">
+                                    <button type="button" class="service-option selected p-4 rounded-2xl text-left" data-service="Domestic Clean" data-rate="18">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
+                                                <div>
+                                                    <div class="service-label text-sm font-bold">Domestic Clean</div>
+                                                    <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £18/hr</div>
+                                                </div>
+                                            </div>
+                                            <span class="service-bullet"></span>
+                                        </div>
+                                    </button>
+
+                                    <button type="button" class="service-option p-4 rounded-2xl text-left" data-service="End of Tenancy" data-rate="25">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-key" aria-hidden="true"></i></span>
+                                                <div>
+                                                    <div class="service-label text-sm font-bold">End of Tenancy</div>
+                                                    <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £25/hr</div>
+                                                </div>
+                                            </div>
+                                            <span class="service-bullet"></span>
+                                        </div>
+                                    </button>
+
+                                    <button type="button" class="service-option p-4 rounded-2xl text-left" data-service="Deep Clean" data-rate="22">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-sparkles" aria-hidden="true"></i></span>
+                                                <div>
+                                                    <div class="service-label text-sm font-bold">Deep Clean</div>
+                                                    <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £22/hr</div>
+                                                </div>
+                                            </div>
+                                            <span class="service-bullet"></span>
+                                        </div>
+                                    </button>
+
+                                    <button type="button" class="service-option p-4 rounded-2xl text-left" data-service="Commercial Clean" data-rate="20">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
+                                                <div>
+                                                    <div class="service-label text-sm font-bold">Commercial Clean</div>
+                                                    <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £20/hr</div>
+                                                </div>
+                                            </div>
+                                            <span class="service-bullet"></span>
+                                        </div>
+                                    </button>
                                 </div>
-                                <div class="rounded-full bg-sage-100 text-sage-700 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] flex-shrink-0">Formspree Ready</div>
+
+                                <div class="mt-5">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Property Category</label>
+                                    <div class="flex flex-wrap gap-2">
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="radio" name="propertyCategory" value="Residential" class="hidden" checked onchange="document.getElementById('propertyTypeInput').value=this.value">
+                                            Residential
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="radio" name="propertyCategory" value="Commercial Office" class="hidden" onchange="document.getElementById('propertyTypeInput').value=this.value">
+                                            Commercial Office
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="radio" name="propertyCategory" value="Event Venue" class="hidden" onchange="document.getElementById('propertyTypeInput').value=this.value">
+                                            Event Venue
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Service Type</label>
+                                    <div class="flex flex-wrap gap-2">
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="radio" name="serviceType" value="Regular Cleaning" class="hidden" checked onchange="document.getElementById('serviceTypeInput').value=this.value">
+                                            Regular
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="radio" name="serviceType" value="End of Tenancy" class="hidden" onchange="document.getElementById('serviceTypeInput').value=this.value">
+                                            End of Tenancy
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="radio" name="serviceType" value="Deep Clean" class="hidden" onchange="document.getElementById('serviceTypeInput').value=this.value">
+                                            Deep Clean
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="radio" name="serviceType" value="Post-Event" class="hidden" onchange="document.getElementById('serviceTypeInput').value=this.value">
+                                            Post-Event
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
 
-                            <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="space-y-5" novalidate>
-                                <input type="hidden" name="source" value="GreenGlo contact page">
-
+                            <!-- STEP 2: Details -->
+                            <div class="booking-step hidden" data-step="2">
                                 <div class="grid sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label for="contactName" class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Full Name *</label>
-                                        <input type="text" id="contactName" name="full_name" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="Jane Doe">
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Full Name</label>
+                                        <input type="text" name="full_name" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="Jane Doe">
                                     </div>
                                     <div>
-                                        <label for="contactPhone" class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Phone *</label>
-                                        <input type="tel" id="contactPhone" name="phone" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="07123 456789">
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Phone</label>
+                                        <input type="tel" name="phone" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="07123 456789">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Email</label>
+                                        <input type="email" name="email" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="jane@example.com">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Postcode</label>
+                                        <input type="text" name="postcode" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="SW1A 1AA">
                                     </div>
                                 </div>
 
-                                <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="mt-4 grid sm:grid-cols-4 gap-4">
                                     <div>
-                                        <label for="contactEmail" class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Email *</label>
-                                        <input type="email" id="contactEmail" name="email" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="jane@example.com">
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Bedrooms</label>
+                                        <input type="number" min="1" max="12" name="bedrooms" value="2" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
                                     </div>
                                     <div>
-                                        <label for="contactPostcode" class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Postcode</label>
-                                        <input type="text" id="contactPostcode" name="postcode" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="SW1A 1AA">
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Bathrooms</label>
+                                        <input type="number" min="1" max="8" name="bathrooms" value="1" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Living Areas</label>
+                                        <input type="number" min="0" max="6" name="living_areas" value="1" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Kitchens</label>
+                                        <input type="number" min="0" max="4" name="kitchens" value="1" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
                                     </div>
                                 </div>
 
-                                <div>
-                                    <label for="contactSubject" class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">What is this regarding? *</label>
-                                    <select id="contactSubject" name="subject" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                        <option value="">Select an option…</option>
-                                        <option value="New booking enquiry">New booking enquiry</option>
-                                        <option value="Get a quote">Get a quote</option>
-                                        <option value="Existing booking">Existing booking</option>
-                                        <option value="Commercial / office cleaning">Commercial / office cleaning</option>
-                                        <option value="End of tenancy clean">End of tenancy clean</option>
-                                        <option value="GreenGlo Club membership">GreenGlo Club membership</option>
-                                        <option value="General question">General question</option>
-                                        <option value="Other">Other</option>
+                                <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Access Method</label>
+                                        <select name="accessMethod" onchange="document.getElementById('accessMethodInput').value=this.value" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
+                                            <option value="Home occupied">Home occupied (someone present)</option>
+                                            <option value="Lockbox / key safe">Lockbox / key safe</option>
+                                            <option value="Key pickup from agent">Key pickup from local agent</option>
+                                            <option value="Concierge / building access">Concierge / building access</option>
+                                            <option value="Other">Other (please specify in notes)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Parking Availability</label>
+                                        <select name="parkingAvailability" onchange="document.getElementById('parkingAvailabilityInput').value=this.value" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
+                                            <option value="Free on-site">Free on-site parking</option>
+                                            <option value="Pay & display">Pay & display / permit needed</option>
+                                            <option value="Street parking">Street parking (may be restricted)</option>
+                                            <option value="No parking">No parking available</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Popular Add-Ons (optional)</label>
+                                    <div class="flex flex-wrap gap-2">
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="checkbox" name="addons" value="Inside oven" class="hidden">
+                                            <i class="fa-regular fa-square-check" aria-hidden="true"></i> Inside oven
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="checkbox" name="addons" value="Interior windows" class="hidden">
+                                            <i class="fa-regular fa-square-check" aria-hidden="true"></i> Interior windows
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="checkbox" name="addons" value="Fridge clean" class="hidden">
+                                            <i class="fa-regular fa-square-check" aria-hidden="true"></i> Fridge clean
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="checkbox" name="addons" value="Carpet steam" class="hidden">
+                                            <i class="fa-regular fa-square-check" aria-hidden="true"></i> Carpet steam
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
+                                            <input type="checkbox" name="addons" value="Upholstery" class="hidden">
+                                            <i class="fa-regular fa-square-check" aria-hidden="true"></i> Upholstery
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3: Schedule -->
+                            <div class="booking-step hidden" data-step="3">
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Preferred Date</label>
+                                        <input type="date" name="preferred_date" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Frequency</label>
+                                        <select name="frequency" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
+                                            <option value="One-Time Clean">One-Time Clean</option>
+                                            <option value="Weekly">Weekly</option>
+                                            <option value="Fortnightly">Fortnightly</option>
+                                            <option value="Monthly">Monthly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Preferred Service Window</label>
+                                    <select name="service_window" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
+                                        <option value="Morning (8am-12pm)">Morning (8:00 AM – 12:00 PM)</option>
+                                        <option value="Afternoon (12pm-4pm)">Afternoon (12:00 PM – 4:00 PM)</option>
+                                        <option value="Evening">Evening</option>
+                                        <option value="Out-of-hours / Overnight">Out-of-hours / Overnight (commercial)</option>
                                     </select>
                                 </div>
 
-                                <div>
-                                    <label for="contactMessage" class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Your Message *</label>
-                                    <textarea id="contactMessage" name="message" rows="5" required class="soft-input w-full rounded-2xl px-4 py-3 text-sm text-sage-900" placeholder="Tell us about your property, preferred dates, or any specific requirements…"></textarea>
+                                <div class="mt-4">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Project Notes</label>
+                                    <textarea name="notes" rows="4" class="soft-input w-full rounded-2xl px-4 py-3 text-sm text-sage-900" placeholder="Tell us about pets, allergies, access info, fragile items, or property type..."></textarea>
                                 </div>
 
-                                <div class="space-y-3">
-                                    <label class="flex items-start gap-3 text-sm text-sage-800 cursor-pointer">
-                                        <input type="checkbox" name="consent" value="yes" required class="mt-1 rounded border-sage-300 text-sage-700 focus:ring-sage-500">
-                                        <span>I consent to Green GLO contacting me about my enquiry. We never share your data. *</span>
-                                    </label>
-                                    <label class="flex items-start gap-3 text-sm text-sage-800 cursor-pointer">
-                                        <input type="checkbox" name="newsletter" value="yes" class="mt-1 rounded border-sage-300 text-sage-700 focus:ring-sage-500">
-                                        <span>Send me occasional eco-cleaning tips and GreenGlo Club offers (optional).</span>
-                                    </label>
+                                <div class="mt-5 rounded-2xl bg-gradient-to-r from-sage-900 to-sage-800 p-4 text-white shadow-xl">
+                                    <div class="flex items-center justify-between gap-3">
+                                        <div>
+                                            <p class="text-[10px] uppercase tracking-[0.18em] text-sage-200">Estimated Total</p>
+                                            <p class="text-2xl font-extrabold text-yellow-300" id="bookingEstimatePreview">£43</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-[10px] uppercase tracking-[0.18em] text-sage-300">Service</p>
+                                            <p class="text-sm font-bold" id="bookingServicePreview">Domestic Clean</p>
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="payBookingEstimate()" class="pay-button-pulse mt-4 w-full rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm px-6 py-3 flex items-center justify-center gap-2 transition">
+                                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                                        <span>Pay Now & Confirm</span>
+                                    </button>
+                                    <p class="text-[10px] text-sage-300 text-center mt-3">Or send request below — we'll email a payment link</p>
                                 </div>
-
-                                <button type="submit" id="contactSubmitBtn" class="w-full rounded-xl bg-sage-700 px-6 py-4 text-sm font-bold text-white shadow-lg hover:bg-sage-800 transition-all flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                                    Send Message
-                                </button>
-
-                                <p class="text-center text-xs text-sage-500">
-                                    Prefer to talk? Call <a href="tel:07767972498" class="font-bold text-sage-700 hover:underline">07767972498</a>
-                                </p>
-                            </form>
-
-                            <div id="contactSuccessMsg" class="hidden mt-5 rounded-2xl bg-emerald-100 border border-emerald-200 text-emerald-900 px-4 py-3 text-sm font-bold" role="status" aria-live="polite">
-                                Thank you! Your message has been sent successfully. We will be in touch within 2 working hours.
                             </div>
-                            <div id="contactErrorMsg" class="hidden mt-5 rounded-2xl bg-red-100 border border-red-200 text-red-900 px-4 py-3 text-sm font-bold" role="alert">
-                                Sorry, something went wrong. Please try again or call us directly on 07767972498.
+
+                            <!-- Navigation -->
+                            <div class="flex items-center justify-between gap-3 pt-2">
+                                <button type="button" id="prevStepBtn" class="hidden rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm font-bold text-sage-700 hover:bg-sage-50 transition">Back</button>
+                                <div class="ml-auto flex gap-3">
+                                    <button type="button" id="nextStepBtn" class="rounded-xl bg-sage-700 px-5 py-3 text-sm font-bold text-white shadow-lg hover:bg-sage-800 transition">Next</button>
+                                    <button type="submit" id="submitBookingBtn" class="hidden rounded-xl bg-sage-800 px-5 py-3 text-sm font-bold text-white shadow-lg hover:bg-sage-900 transition flex items-center gap-2">
+                                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                                        <span>Send Request</span>
+                                    </button>
+                                </div>
                             </div>
+                        </form>
+
+                        <!-- Success toast -->
+                        <div id="bookingSuccessMsg" class="hidden mt-5 rounded-2xl bg-emerald-100 border border-emerald-200 text-emerald-900 px-4 py-3 text-sm font-bold" role="status" aria-live="polite">
+                            <i class="fa-solid fa-circle-check mr-1"></i> Thank you! Your request has been received. We'll be in touch within 2 working hours.
+                        </div>
+                    </div>
+
+                    <!-- Payment info strip -->
+                    <div class="mt-6 rounded-2xl bg-sage-50 border border-sage-200/70 p-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 flex-shrink-0">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div class="text-xs text-sage-700 leading-relaxed">
+                            <strong class="text-sage-950">Secure Stripe checkout.</strong> All payments are encrypted and PCI-DSS compliant. Your card details never touch our servers.
                         </div>
                     </div>
                 </div>
@@ -587,93 +942,119 @@
         </div>
     </section>
 
-    <!-- QUICK ACTIONS -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <span class="bg-sage-100 text-sage-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Quick Links</span>
-                <h2 class="text-3xl font-serif font-bold text-sage-950 mt-3">Looking for something specific?</h2>
+    <!-- WHY CHOOSE US STRIP -->
+    <section class="py-16 bg-gradient-to-br from-sage-950 via-sage-900 to-sage-800 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" aria-hidden="true">
+            <div class="floating-orb absolute -left-10 top-0 w-72 h-72 bg-mint-200/20 rounded-full blur-3xl"></div>
+            <div class="floating-orb delay-1 absolute right-10 bottom-0 w-96 h-96 bg-sage-400/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-mint-400 animate-pulse" aria-hidden="true"></span>
+                    Why Clients Choose GreenGlo
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-black text-white mt-5 tracking-[-0.04em]">Premium eco cleaning, no compromises.</h2>
             </div>
+
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="prices.html" class="group soft-cloud-card rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
-                    <div class="w-14 h-14 rounded-2xl bg-sage-700 text-white flex items-center justify-center text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">
-                        <i class="fa-solid fa-calculator"></i>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 text-center">
+                    <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-mint-300 mx-auto mb-4">
+                        <i class="fa-solid fa-award text-lg"></i>
                     </div>
-                    <h3 class="font-bold text-sage-950 mb-1">Instant Quote</h3>
-                    <p class="text-xs text-sage-600">Get an estimate in seconds</p>
-                </a>
-                <a href="services.html" class="group soft-cloud-card rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
-                    <div class="w-14 h-14 rounded-2xl bg-sage-700 text-white flex items-center justify-center text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">
-                        <i class="fa-solid fa-broom"></i>
+                    <h3 class="font-bold text-white mb-1.5">BICSc Certified</h3>
+                    <p class="text-xs text-sage-200 leading-relaxed">UK's highest industry training standard.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 text-center">
+                    <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-mint-300 mx-auto mb-4">
+                        <i class="fa-solid fa-leaf text-lg"></i>
                     </div>
-                    <h3 class="font-bold text-sage-950 mb-1">Our Services</h3>
-                    <p class="text-xs text-sage-600">Domestic, commercial & more</p>
-                </a>
-                <a href="club.html" class="group soft-cloud-card rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
-                    <div class="w-14 h-14 rounded-2xl bg-sage-700 text-white flex items-center justify-center text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">
-                        <i class="fa-solid fa-leaf"></i>
+                    <h3 class="font-bold text-white mb-1.5">100% Eco Products</h3>
+                    <p class="text-xs text-sage-200 leading-relaxed">Non-toxic, pet & child safe, planet friendly.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 text-center">
+                    <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-mint-300 mx-auto mb-4">
+                        <i class="fa-solid fa-shield-halved text-lg"></i>
                     </div>
-                    <h3 class="font-bold text-sage-950 mb-1">GreenGlo Club</h3>
-                    <p class="text-xs text-sage-600">Save 20% every clean</p>
-                </a>
-                <a href="faq.html" class="group soft-cloud-card rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
-                    <div class="w-14 h-14 rounded-2xl bg-sage-700 text-white flex items-center justify-center text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">
-                        <i class="fa-solid fa-circle-question"></i>
+                    <h3 class="font-bold text-white mb-1.5">£2M Insured</h3>
+                    <p class="text-xs text-sage-200 leading-relaxed">Full public liability protection.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 text-center">
+                    <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-mint-300 mx-auto mb-4">
+                        <i class="fa-solid fa-lock text-lg"></i>
                     </div>
-                    <h3 class="font-bold text-sage-950 mb-1">FAQ</h3>
-                    <p class="text-xs text-sage-600">Common questions answered</p>
-                </a>
+                    <h3 class="font-bold text-white mb-1.5">Stripe Secured</h3>
+                    <p class="text-xs text-sage-200 leading-relaxed">Bank-level encryption on every payment.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-sage-950 text-sage-400 py-12 text-xs border-t border-sage-800">
+    <footer class="bg-sage-950 text-sage-400 py-12 text-xs border-t border-sage-800 relative overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mint-400/60 to-transparent"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-3">
-                        <i class="fa-solid fa-leaf text-mint-400 text-lg" aria-hidden="true"></i>
-                        <span class="text-white font-serif font-bold text-base">Green GLO</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div class="lg:pr-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="lp (1).jpeg" alt="Green GLO Cleaning Co." class="h-12 w-12 object-cover rounded-full bg-white/5 ring-1 ring-white/10">
                     </div>
-                    <p class="text-sage-300 leading-relaxed">BICSc accredited residential and commercial cleaning services across London.</p>
-                    <p class="text-sage-400 font-semibold mt-2">Rates from £18/hour.</p>
+                    <p class="text-sage-300 leading-relaxed text-sm max-w-xs">BICSc accredited residential and commercial cleaning services across London.</p>
+                    <p class="mt-4 inline-flex items-center rounded-full border border-mint-400/20 bg-mint-400/5 px-3 py-1.5 text-xs font-semibold text-mint-200">
+                        Rates from £18/hour
+                    </p>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold text-sm mb-3">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="services.html" class="hover:text-white transition">Domestic House Cleaning</a></li>
-                        <li><a href="services.html" class="hover:text-white transition">Commercial & Office</a></li>
-                        <li><a href="services.html" class="hover:text-white transition">Deep Cleaning</a></li>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-[0.14em] mb-4">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-sage-300 hover:text-white transition">Domestic House Cleaning</a></li>
+                        <li><a href="services.html" class="text-sage-300 hover:text-white transition">Commercial &amp; Office</a></li>
+                        <li><a href="services.html" class="text-sage-300 hover:text-white transition">Deep Cleaning</a></li>
+                        <li><a href="checklist.html" class="text-sage-300 hover:text-white transition">End of Tenancy Cleans</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold text-sm mb-3">Navigation</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-                        <li><a href="prices.html" class="hover:text-white transition">Price Estimator</a></li>
-                        <li><a href="club.html" class="hover:text-white transition">GreenGlo Club (-20%)</a></li>
-                        <li><a href="gallery.html" class="hover:text-white transition">Gallery</a></li>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-[0.14em] mb-4">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-sage-300 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-sage-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="prices.html" class="text-sage-300 hover:text-white transition">Price Estimator</a></li>
+                        <li><a href="club.html" class="text-sage-300 hover:text-white transition">GreenGlo Club (-20%)</a></li>
+                        <li><a href="gallery.html" class="text-sage-300 hover:text-white transition">Gallery</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold text-sm mb-3">Accreditations</h4>
-                    <div class="space-y-2 text-sage-300">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-award text-yellow-400" aria-hidden="true"></i> BICSc Certified</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-star text-yellow-400" aria-hidden="true"></i> 5.0 Google Rating</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-shield text-mint-400" aria-hidden="true"></i> £2M Liability Insurance</div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-[0.14em] mb-4">Accreditations</h4>
+                    <div class="space-y-3 text-sage-300">
+                        <div class="flex items-center gap-3 rounded-xl border border-sage-800 bg-sage-900/60 px-3 py-2">
+                            <i class="fa-solid fa-award text-yellow-400" aria-hidden="true"></i>
+                            <span>BICSc Certified</span>
+                        </div>
+                        <div class="flex items-center gap-3 rounded-xl border border-sage-800 bg-sage-900/60 px-3 py-2">
+                            <i class="fa-solid fa-star text-yellow-400" aria-hidden="true"></i>
+                            <span>5.0 Google Rating</span>
+                        </div>
+                        <div class="flex items-center gap-3 rounded-xl border border-sage-800 bg-sage-900/60 px-3 py-2">
+                            <i class="fa-solid fa-shield text-mint-400" aria-hidden="true"></i>
+                            <span>£2M Liability Insurance</span>
+                        </div>
+                        <div class="flex items-center gap-3 rounded-xl border border-sage-800 bg-sage-900/60 px-3 py-2">
+                            <i class="fa-solid fa-lock text-mint-400" aria-hidden="true"></i>
+                            <span>Stripe Secured Payments</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="pt-8 border-t border-sage-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-sage-500">
                 <p>&copy; <span id="currentYear"></span> Green GLO Cleaning Co. All rights reserved.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-sage-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-sage-300">Terms of Service</a>
+                <div class="flex items-center gap-4 text-xs sm:text-sm">
+                    <a href="#" class="hover:text-sage-300 transition">Privacy Policy</a>
+                    <span class="text-sage-700">|</span>
+                    <a href="#" class="hover:text-sage-300 transition">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -690,7 +1071,14 @@
     </div>
 
     <script>
-        const CONTACT_ENDPOINT = 'https://formspree.io/f/your-form-id';
+        const FORM_ENDPOINT = 'https://formspree.io/f/your-form-id';
+
+        const bookingState = {
+            currentStep: 1,
+            selectedService: 'Domestic Clean',
+            selectedRate: 18,
+            maxStep: 3
+        };
 
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
@@ -703,7 +1091,6 @@
             mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
         });
 
-        // Keyboard escape to close mobile menu
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
@@ -712,51 +1099,164 @@
             }
         });
 
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const form = event.currentTarget;
-            const submitBtn = document.getElementById('contactSubmitBtn');
-            const successMsg = document.getElementById('contactSuccessMsg');
-            const errorMsg = document.getElementById('contactErrorMsg');
+        // Mini FAQ toggle
+        function toggleMiniFaq(btn) {
+            const item = btn.closest('.mini-faq-item');
+            const isOpen = item.classList.contains('open');
 
-            successMsg.classList.add('hidden');
-            errorMsg.classList.add('hidden');
-
-            // Basic validation
-            const requiredFields = form.querySelectorAll('[required]');
-            let hasError = false;
-            requiredFields.forEach(field => {
-                if (field.type === 'checkbox' && !field.checked) {
-                    hasError = true;
-                    field.style.outline = '2px solid #ef4444';
-                    field.style.outlineOffset = '2px';
-                } else if (field.type !== 'checkbox' && !field.value.trim()) {
-                    hasError = true;
-                    field.style.borderColor = '#ef4444';
-                } else {
-                    field.style.borderColor = '';
-                    field.style.outline = '';
+            document.querySelectorAll('.mini-faq-item.open').forEach(openItem => {
+                if (openItem !== item) {
+                    openItem.classList.remove('open');
+                    openItem.querySelector('button').setAttribute('aria-expanded', 'false');
                 }
             });
 
-            if (hasError) return;
+            item.classList.toggle('open', !isOpen);
+            btn.setAttribute('aria-expanded', String(!isOpen));
+        }
 
+        // ============================================
+        // STRIPE PAYMENT
+        // ============================================
+        async function payNow(amount, description, email) {
+            const btn = event?.target?.closest('button');
+            const originalHTML = btn?.innerHTML;
+            if (btn) {
+                btn.classList.add('payment-loading');
+                btn.innerHTML = '<span class="spinner"></span> Processing...';
+            }
+
+            try {
+                const res = await fetch("https://connect-unified-view.lovable.app/api/public/checkout", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ amount, description, email: email || '' })
+                });
+
+                const data = await res.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else if (data.error) {
+                    alert('Payment error: ' + data.error);
+                    if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
+                } else {
+                    alert('Unable to start checkout. Please try again or call us.');
+                    if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
+                }
+            } catch (error) {
+                console.error('Payment error:', error);
+                alert('There was a problem connecting to the payment system. Please try again or call 07767972498.');
+                if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
+            }
+        }
+
+        // ============================================
+        // BOOKING FORM LOGIC
+        // ============================================
+        function updateBookingEstimate() {
+            const selected = document.querySelector('.service-option.selected');
+            const bedrooms = Number(document.querySelector('input[name="bedrooms"]')?.value || 2);
+            const bathrooms = Number(document.querySelector('input[name="bathrooms"]')?.value || 1);
+            const rate = Number(selected?.dataset.rate || 18);
+            let hours = 1.5 + (bedrooms * 0.75) + (bathrooms * 0.5);
+            hours = Math.round(hours * 2) / 2;
+            const total = Math.round(hours * rate);
+            const finalTotal = `£${total}`;
+            document.getElementById('bookingEstimatePreview').textContent = finalTotal;
+            document.getElementById('bookingEstimateInput').value = finalTotal;
+            document.getElementById('bookingServicePreview').textContent = selected?.dataset.service || 'Domestic Clean';
+        }
+
+        document.querySelectorAll('.service-option').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+                button.classList.add('selected');
+                bookingState.selectedService = button.dataset.service;
+                bookingState.selectedRate = Number(button.dataset.rate || 18);
+                document.getElementById('selectedServiceInput').value = button.dataset.service;
+                updateBookingEstimate();
+            });
+        });
+
+        document.querySelector('input[name="bedrooms"]').addEventListener('input', updateBookingEstimate);
+        document.querySelector('input[name="bathrooms"]').addEventListener('input', updateBookingEstimate);
+        document.querySelector('input[name="living_areas"]').addEventListener('input', updateBookingEstimate);
+        document.querySelector('input[name="kitchens"]').addEventListener('input', updateBookingEstimate);
+
+        function showStep(step) {
+            bookingState.currentStep = step;
+            document.querySelectorAll('.booking-step').forEach(panel => {
+                panel.classList.toggle('hidden', Number(panel.dataset.step) !== step);
+            });
+            document.querySelectorAll('.booking-step-indicator').forEach(indicator => {
+                const active = Number(indicator.dataset.stepIndicator) === step;
+                indicator.classList.toggle('active', active);
+                indicator.classList.toggle('bg-white', active);
+                indicator.classList.toggle('shadow-sm', active);
+                indicator.classList.toggle('text-sage-700', active);
+                indicator.classList.toggle('text-sage-600', !active);
+            });
+            document.getElementById('prevStepBtn').classList.toggle('hidden', step === 1);
+            document.getElementById('nextStepBtn').classList.toggle('hidden', step === bookingState.maxStep);
+            document.getElementById('submitBookingBtn').classList.toggle('hidden', step !== bookingState.maxStep);
+        }
+
+        document.getElementById('nextStepBtn').addEventListener('click', () => {
+            const currentPanel = document.querySelector(`.booking-step[data-step="${bookingState.currentStep}"]`);
+            const requiredFields = currentPanel.querySelectorAll('[required]');
+            let hasError = false;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ef4444';
+                    hasError = true;
+                } else {
+                    field.style.borderColor = 'rgba(180, 203, 180, 0.8)';
+                }
+            });
+            if (hasError) return;
+            if (bookingState.currentStep < bookingState.maxStep) {
+                showStep(bookingState.currentStep + 1);
+                updateBookingEstimate();
+            }
+        });
+
+        document.getElementById('prevStepBtn').addEventListener('click', () => {
+            if (bookingState.currentStep > 1) showStep(bookingState.currentStep - 1);
+        });
+
+        // Pay the booking estimate directly
+        function payBookingEstimate() {
+            const totalText = document.getElementById('bookingEstimatePreview').textContent;
+            const amount = parseFloat(totalText.replace('£', ''));
+            const service = document.getElementById('bookingServicePreview').textContent;
+            const email = document.querySelector('input[name="email"]')?.value?.trim() || '';
+            const postcode = document.querySelector('input[name="postcode"]')?.value?.trim() || '';
+            const date = document.querySelector('input[name="preferred_date"]')?.value || 'Flexible';
+            const bedrooms = document.querySelector('input[name="bedrooms"]')?.value || '2';
+            const bathrooms = document.querySelector('input[name="bathrooms"]')?.value || '1';
+
+            const description = `${service} — ${bedrooms} bed, ${bathrooms} bath, ${postcode || 'London'}, Date: ${date}`;
+            payNow(amount, description, email);
+        }
+
+        // Submit booking form
+        document.getElementById('bookingForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const form = event.currentTarget;
             const formData = new FormData(form);
             const endpoint = form.getAttribute('action');
 
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Sending…';
-
-            // Demo mode
             if (endpoint.includes('your-form-id')) {
+                document.getElementById('bookingSuccessMsg').classList.remove('hidden');
+                form.reset();
                 setTimeout(() => {
-                    successMsg.classList.remove('hidden');
-                    form.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message';
-                    setTimeout(() => successMsg.classList.add('hidden'), 6000);
-                }, 900);
+                    document.getElementById('bookingSuccessMsg').classList.add('hidden');
+                    showStep(1);
+                    document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+                    document.querySelector('.service-option')?.classList.add('selected');
+                    document.getElementById('selectedServiceInput').value = 'Domestic Clean';
+                    updateBookingEstimate();
+                }, 4000);
                 return;
             }
 
@@ -767,19 +1267,20 @@
                     headers: { 'Accept': 'application/json' }
                 });
                 if (response.ok) {
-                    successMsg.classList.remove('hidden');
+                    document.getElementById('bookingSuccessMsg').classList.remove('hidden');
                     form.reset();
-                    setTimeout(() => successMsg.classList.add('hidden'), 6000);
+                    showStep(1);
                 } else {
-                    errorMsg.classList.remove('hidden');
+                    alert('There was a problem sending your request. Please try again or call us directly.');
                 }
             } catch (error) {
-                errorMsg.classList.remove('hidden');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message';
+                alert('There was a problem sending your request. Please try again or call us directly.');
             }
         });
+
+        // Init
+        updateBookingEstimate();
+        showStep(1);
     </script>
 </body>
 </html>
