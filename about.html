@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>About Us | Green GLO Cleaning Co | Eco Cleaning London</title>
-    <meta name="description" content="Learn about Green GLO Cleaning Co — BICSc accredited, eco-friendly cleaning specialists in London. Our story, values, team, and commitment to green cleaning.">
+    <title>About Green GLO Cleaning Co | Eco Cleaning London | BICSc Accredited</title>
+    <meta name="description" content="Discover the story behind Green GLO Cleaning Co – London's highest-rated eco cleaning specialists. BICSc accredited, 5-star rated, and committed to non-toxic, sustainable cleaning for homes & offices.">
     <meta name="theme-color" content="#385538">
     <link rel="canonical" href="https://greenglocleaning.co.uk/about.html">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="About Us | Green GLO Cleaning Co | Eco Cleaning London">
-    <meta property="og:description" content="BICSc accredited, eco-friendly cleaning specialists in London. Our story, values, and commitment to green cleaning.">
+    <meta property="og:title" content="About Green GLO Cleaning Co | Eco Cleaning London">
+    <meta property="og:description" content="BICSc accredited eco cleaning. Meet the team behind London's highest-rated green cleaning service.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:url" content="https://greenglocleaning.co.uk/about.html">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Preconnect -->
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://i.pinimg.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- FontAwesome (async) -->
+    <!-- FontAwesome (loaded async, non-blocking) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
@@ -51,9 +53,11 @@
                     },
                     animation: {
                         'float': 'floatOrb 7s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
                         'gradient-shift': 'gradientShift 8s ease infinite'
                     },
                     keyframes: {
+                        shimmer: { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } },
                         gradientShift: { '0%,100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } }
                     }
                 }
@@ -61,22 +65,23 @@
         }
     </script>
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data for About Page -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "name": "About Green GLO Cleaning Co",
-      "description": "BICSc accredited, eco-friendly cleaning specialists in London.",
-      "url": "https://greenglocleaning.co.uk/about.html",
+      "description": "Learn about Green GLO Cleaning Co, London's BICSc accredited eco cleaning specialists.",
       "mainEntity": {
         "@type": "CleaningService",
         "name": "Green GLO Cleaning Co",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
         "telephone": "+447767972498",
         "email": "greenglocleaningco@gmail.com",
         "areaServed": { "@type": "City", "name": "London" },
         "priceRange": "££",
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "25" }
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "25" },
+        "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" }
       }
     }
     </script>
@@ -99,12 +104,39 @@
         h1 { font-weight: 700; }
         h2, h3, h4 { font-weight: 600; }
 
+        /* Glass surfaces */
         .glass-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
+        .glass-card-dark {
+            background: rgba(14, 23, 14, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card-green {
+            background: rgba(244, 247, 244, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(227, 235, 227, 0.9);
+        }
+        .glass-input {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(199, 215, 199, 0.5);
+            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.98);
+            border-color: #5c855c;
+            box-shadow: 0 0 0 4px rgba(92, 133, 92, 0.15);
+            outline: none;
+        }
+
+        /* Soft cloud card */
         .soft-cloud-card {
             background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(244,249,244,0.82));
             border: 1px solid rgba(255,255,255,0.75);
@@ -112,6 +144,8 @@
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
         }
+
+        /* Soft input */
         .soft-input {
             background: rgba(246, 250, 246, 0.9);
             border: 1px solid rgba(180, 203, 180, 0.8);
@@ -125,6 +159,7 @@
             outline: none;
         }
 
+        /* Floating orbs */
         .floating-orb { animation: floatOrb 7s ease-in-out infinite; }
         .floating-orb.delay-1 { animation-delay: 1.2s; }
         .floating-orb.delay-2 { animation-delay: 2.4s; }
@@ -133,20 +168,28 @@
             50% { transform: translateY(-12px) translateX(6px); }
         }
 
+        /* Image shimmer placeholder */
         .img-wrap { background: linear-gradient(90deg, #e3ebe3 0%, #f4f7f4 50%, #e3ebe3 100%); background-size: 1000px 100%; animation: shimmer 2s linear infinite; }
         @keyframes shimmer { '0%' { background-position: -1000px 0; } '100%' { background-position: 1000px 0; } }
+        '50%' { background-position: 0% 50%; }
 
+        /* Focus visible */
+        *:focus-visible { outline: 2px solid #385538; outline-offset: 2px; border-radius: 4px; }
+
+        /* Skip link */
         .sr-only-focusable:not(:focus):not(:focus-within) {
             position: absolute !important; width: 1px !important; height: 1px !important;
             padding: 0 !important; margin: -1px !important; overflow: hidden !important;
             clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important;
         }
 
+        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f4f7f4; }
         ::-webkit-scrollbar-thumb { background: #7ba27b; border-radius: 9999px; }
         ::-webkit-scrollbar-thumb:hover { background: #5c855c; }
 
+        /* Reduce motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
@@ -154,11 +197,12 @@
 </head>
 <body class="font-sans text-gray-800 antialiased selection:bg-sage-600 selection:text-white">
 
-    <a href="#about" class="sr-only-focusable focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-sage-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-xl">
+    <!-- Skip link for accessibility -->
+    <a href="#about-content" class="sr-only-focusable focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-sage-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-xl">
         Skip to content
     </a>
 
-    <!-- Announcement Bar -->
+    <!-- Announcement Bar (same as index) -->
     <div class="bg-sage-950 text-sage-100 text-xs py-2.5 px-4 relative z-50">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
             <div class="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
@@ -184,19 +228,19 @@
         </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header (same navigation, active state on About) -->
     <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-sage-100/80 shadow-sm transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center gap-3.5 group" aria-label="Green GLO Cleaning Co home">
-                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-sage-800 via-sage-700 to-sage-500 flex items-center justify-center text-white shadow-md shadow-sage-600/20 group-hover:scale-105 transition-transform duration-300">
-                        <i class="fa-solid fa-leaf text-xl text-mint-200" aria-hidden="true"></i>
+                <a href="index.html" class="flex items-center gap-3 group" aria-label="Green GLO Cleaning Co home">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sage-800 via-sage-700 to-sage-500 flex items-center justify-center text-white shadow-md shadow-sage-600/20 group-hover:scale-105 transition-transform duration-300 overflow-hidden flex-shrink-0">
+                        <img src="./lp (1).jpeg" alt="Green GLO logo" class="w-full h-full object-cover rounded-2xl">
                     </div>
-                    <div>
-                        <span class="text-2xl font-serif font-bold tracking-tight text-sage-950 block leading-none">
+                    <div class="flex flex-col justify-center min-w-0">
+                        <span class="text-xl sm:text-2xl font-serif font-bold tracking-tight text-sage-950 leading-tight">
                             Green <span class="text-sage-600 italic">GLO</span>
                         </span>
-                        <span class="text-[10px] tracking-widest uppercase font-semibold text-sage-600 block mt-1">Cleaning Co • London</span>
+                        <span class="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-sage-600 leading-tight">Cleaning Co • London</span>
                     </div>
                 </a>
 
@@ -230,6 +274,7 @@
             </div>
         </div>
 
+        <!-- Mobile menu (same) -->
         <div id="mobileMenu" class="hidden lg:hidden bg-white/98 backdrop-blur-xl border-b border-sage-100 px-4 pt-3 pb-6 space-y-3 shadow-lg">
             <a href="index.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">Home</a>
             <a href="about.html" class="block px-3 py-2 rounded-lg font-bold text-sage-800 bg-sage-50">About</a>
@@ -253,209 +298,195 @@
         </div>
     </header>
 
-   
+    <!-- MAIN ABOUT CONTENT -->
+    <main id="about-content">
 
-    <!-- OUR STORY -->
-    <section id="our-story" class="py-20 bg-gradient-to-b from-sage-50 via-white to-sage-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="inline-flex items-center gap-2 bg-sage-900/5 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true"></span>
-                        Who We Are
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">A London cleaning company with roots in sustainability.</h2>
-                    <div class="mt-6 space-y-5 text-sage-700 text-sm sm:text-base leading-relaxed">
-                        <p>
-                            Founded in 2021, Green GLO started as a two-person team with a passion for green living and a frustration with harsh chemical cleaners. What began as a small domestic service in South West London quickly grew into one of the city's most trusted eco-cleaning brands.
+        <!-- HERO SECTION -->
+        <section class="relative bg-gradient-to-br from-sage-950 via-sage-900 to-sage-800 pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+                <div class="floating-orb absolute -left-10 top-10 w-72 h-72 bg-mint-200/10 rounded-full blur-3xl"></div>
+                <div class="floating-orb delay-1 absolute right-10 bottom-10 w-96 h-96 bg-sage-400/10 rounded-full blur-3xl"></div>
+                <div class="floating-orb delay-2 absolute left-1/2 top-1/2 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-flex items-center gap-2 hero-chip px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold text-white shadow-lg mb-4">
+                            <span class="w-2 h-2 rounded-full bg-mint-400 animate-pulse" aria-hidden="true"></span>
+                            <span>Our Story</span>
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.95] tracking-[-0.06em] text-white">
+                            Cleaning London, <span class="text-mint-200">one green home</span> at a time.
+                        </h1>
+                        <p class="mt-6 text-base sm:text-lg text-sage-100/90 max-w-lg leading-relaxed">
+                            Green GLO Cleaning Co was born from a simple belief: a spotless space shouldn't come at the cost of our health or the planet. We combine BICSc-accredited training with 100% eco-certified products to deliver a higher standard of clean.
                         </p>
-                        <p>
-                            Today, we're a fully BICSc-accredited team serving homes, offices, and rental properties across Greater London. Every cleaner is trained in our Green GLO method — a rigorous, eco-conscious approach that prioritises hygiene, safety, and respect for your space.
-                        </p>
-                        <p>
-                            We're proud to be a Living Wage employer, use 100% non-toxic, biodegradable products, and offset our carbon footprint through local tree-planting partnerships. Cleaning shouldn't cost the earth — and with Green GLO, it doesn't.
-                        </p>
-                    </div>
-                    <div class="mt-8 grid grid-cols-2 gap-4">
-                        <div class="bg-white/80 rounded-2xl p-4 border border-sage-100 shadow-sm">
-                            <p class="text-3xl font-black text-sage-800">500+</p>
-                            <p class="text-xs text-sage-600 font-semibold uppercase tracking-wider mt-1">Happy Clients</p>
-                        </div>
-                        <div class="bg-white/80 rounded-2xl p-4 border border-sage-100 shadow-sm">
-                            <p class="text-3xl font-black text-sage-800">4,000+</p>
-                            <p class="text-xs text-sage-600 font-semibold uppercase tracking-wider mt-1">Cleans Completed</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="img-wrap rounded-[2rem] overflow-hidden shadow-2xl border border-white/60">
-                        <img src="https://i.pinimg.com/736x/a7/32/cd/a732cde0929cd4c214626deae2242420.jpg" alt="Green GLO cleaning team at work" loading="lazy" decoding="async" class="w-full h-[480px] object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-xl border border-sage-100 max-w-xs">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-sage-700 flex items-center justify-center text-white">
-                                <i class="fa-solid fa-leaf text-xl" aria-hidden="true"></i>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <div class="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-3">
+                                <i class="fa-solid fa-leaf text-2xl text-mint-300" aria-hidden="true"></i>
+                                <div>
+                                    <p class="text-xs font-bold text-white">Non-Toxic</p>
+                                    <p class="text-[10px] text-sage-300">Planet-friendly</p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-xs font-bold text-sage-800 uppercase tracking-wider">Our Promise</p>
-                                <p class="text-sm text-sage-600">Eco-certified, BICSc trained, fully insured.</p>
+                            <div class="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-3">
+                                <i class="fa-solid fa-award text-2xl text-yellow-400" aria-hidden="true"></i>
+                                <div>
+                                    <p class="text-xs font-bold text-white">BICSc Accredited</p>
+                                    <p class="text-[10px] text-sage-300">Industry certified</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-3">
+                                <i class="fa-solid fa-star text-2xl text-yellow-400" aria-hidden="true"></i>
+                                <div>
+                                    <p class="text-xs font-bold text-white">5.0 Rated</p>
+                                    <p class="text-[10px] text-sage-300">25+ reviews</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="relative">
+                        <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 img-wrap">
+                            <img src="https://i.pinimg.com/1200x/87/4d/ed/874ded813cc27801f9529b1b49ff04d3.jpg" alt="Green GLO eco cleaning team in London" class="w-full h-auto object-cover" loading="eager" decoding="async" width="1000" height="800">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl px-5 py-4 hidden sm:block border border-sage-100">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-sage-100 flex items-center justify-center text-sage-700 text-xl">
+                                    <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-sage-900">100% Eco Products</p>
+                                    <p class="text-[10px] text-sage-500">Safe for kids & pets</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- VALUES -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="inline-flex items-center gap-2 bg-sage-900/5 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true"></span>
-                    What Drives Us
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">Our core values</h2>
-                <p class="text-sage-700 mt-4 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">Every decision we make is guided by three simple principles: people, planet, and pristine standards.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="soft-cloud-card rounded-2xl p-8 text-center hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-700 mx-auto mb-5">
-                        <i class="fa-solid fa-leaf text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-sage-950 mb-3">Eco-First Always</h3>
-                    <p class="text-sm text-sage-600 leading-relaxed">We use only non-toxic, biodegradable, and cruelty-free products. No harsh chemicals, no harmful residues — just a naturally fresh clean.</p>
-                </div>
-                <div class="soft-cloud-card rounded-2xl p-8 text-center hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-700 mx-auto mb-5">
-                        <i class="fa-solid fa-people-group text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-sage-950 mb-3">People Over Profit</h3>
-                    <p class="text-sm text-sage-600 leading-relaxed">Our cleaners are paid fairly, trained thoroughly, and treated with respect. Happy cleaners deliver better cleans — it's that simple.</p>
-                </div>
-                <div class="soft-cloud-card rounded-2xl p-8 text-center hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-700 mx-auto mb-5">
-                        <i class="fa-solid fa-circle-check text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-sage-950 mb-3">Uncompromising Standards</h3>
-                    <p class="text-sm text-sage-600 leading-relaxed">BICSc accreditation isn't just a badge — it's a commitment to formal hygiene training and consistent, audit-ready quality.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  
-
-    <!-- WHY CHOOSE US -->
-    <section class="py-20 bg-gradient-to-br from-sage-950 via-sage-900 to-sage-800 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20" aria-hidden="true">
-            <div class="floating-orb absolute -left-10 top-0 w-72 h-72 bg-mint-200/20 rounded-full blur-3xl"></div>
-            <div class="floating-orb delay-1 absolute right-10 bottom-0 w-96 h-96 bg-sage-400/10 rounded-full blur-3xl"></div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg">
-                        <span class="w-2 h-2 rounded-full bg-mint-400 animate-pulse" aria-hidden="true"></span>
-                        <span>Why Green GLO</span>
+        <!-- MISSION & VALUES -->
+        <section class="py-20 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="inline-flex items-center gap-2 bg-sage-100 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true"></span>
+                        Our Mission & Values
                     </span>
-                    <h2 class="mt-6 text-3xl sm:text-4xl font-serif font-black leading-[1.05] tracking-[-0.04em] text-white">
-                        The <span class="text-mint-200">Green GLO difference</span>.
-                    </h2>
-                    <p class="mt-5 text-sage-200 text-sm sm:text-base leading-relaxed max-w-lg">
-                        We're not just another cleaning company. We're a team of trained professionals who believe clean homes and a clean planet go hand in hand.
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">More than just a clean.</h2>
+                    <p class="text-sage-700 mt-4 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                        We're on a mission to raise the standard of cleaning in London — for your health, your home, and the environment.
                     </p>
-                    <ul class="mt-8 space-y-4 text-sm text-sage-100">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-mint-400 mt-1" aria-hidden="true"></i>
-                            <span><strong class="text-white">BICSc accredited training</strong> — formal hygiene and safety certification for every cleaner.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-mint-400 mt-1" aria-hidden="true"></i>
-                            <span><strong class="text-white">100% eco-certified products</strong> — safe for children, pets, and allergy sufferers.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-mint-400 mt-1" aria-hidden="true"></i>
-                            <span><strong class="text-white">£2M public liability insurance</strong> — complete peace of mind with every visit.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-mint-400 mt-1" aria-hidden="true"></i>
-                            <span><strong class="text-white">Living Wage employer</strong> — fair pay for the people who care for your home.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-mint-400 mt-1" aria-hidden="true"></i>
-                            <span><strong class="text-white">72-hour re-clean guarantee</strong> — on all end of tenancy cleans.</span>
-                        </li>
-                    </ul>
-                    <div class="mt-8 flex flex-wrap gap-3">
-                        <a href="prices.html" class="inline-flex items-center gap-2 rounded-full bg-white text-sage-900 px-6 py-3 text-sm font-bold shadow-xl hover:scale-[1.02] transition-transform">
-                            <i class="fa-solid fa-calculator" aria-hidden="true"></i>
-                            Get Instant Quote
-                        </a>
-                        <a href="club.html" class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Value 1 -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-8 text-center border border-sage-200/60 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-sage-700 to-sage-500 flex items-center justify-center text-white text-2xl mx-auto shadow-lg">
                             <i class="fa-solid fa-leaf" aria-hidden="true"></i>
-                            Join GreenGlo Club
-                        </a>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-sage-950 mt-5">Eco-First Always</h3>
+                        <p class="text-sm text-sage-700 mt-3 leading-relaxed">We use 100% non-toxic, biodegradable, and eco-certified products. No harsh chemicals, no fumes — just a naturally deep clean that's safe for your family and pets.</p>
+                    </div>
+                    <!-- Value 2 -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-8 text-center border border-sage-200/60 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-sage-700 to-sage-500 flex items-center justify-center text-white text-2xl mx-auto shadow-lg">
+                            <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-sage-950 mt-5">Care in Every Detail</h3>
+                        <p class="text-sm text-sage-700 mt-3 leading-relaxed">We treat every home and office as if it were our own. From skirting boards to light switches, we clean with precision and respect for your space.</p>
+                    </div>
+                    <!-- Value 3 -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-8 text-center border border-sage-200/60 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-sage-700 to-sage-500 flex items-center justify-center text-white text-2xl mx-auto shadow-lg">
+                            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-sage-950 mt-5">Trust & Consistency</h3>
+                        <p class="text-sm text-sage-700 mt-3 leading-relaxed">BICSc training, £2M insurance, and a dedicated cleaner for regular clients. You get the same friendly face and the same high standard, every time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- WHY CHOOSE US / NUMBERS -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="inline-flex items-center gap-2 bg-sage-100 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true"></span>
+                        Why London Chooses Us
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">The Green GLO difference.</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center p-6 rounded-2xl bg-sage-50 border border-sage-100">
+                        <p class="text-4xl font-black text-sage-800">5.0★</p>
+                        <p class="text-xs font-bold text-sage-600 uppercase tracking-wider mt-2">Google Rating</p>
+                    </div>
+                    <div class="text-center p-6 rounded-2xl bg-sage-50 border border-sage-100">
+                        <p class="text-4xl font-black text-sage-800">25+</p>
+                        <p class="text-xs font-bold text-sage-600 uppercase tracking-wider mt-2">Verified Reviews</p>
+                    </div>
+                    <div class="text-center p-6 rounded-2xl bg-sage-50 border border-sage-100">
+                        <p class="text-4xl font-black text-sage-800">100%</p>
+                        <p class="text-xs font-bold text-sage-600 uppercase tracking-wider mt-2">Eco Products</p>
+                    </div>
+                    <div class="text-center p-6 rounded-2xl bg-sage-50 border border-sage-100">
+                        <p class="text-4xl font-black text-sage-800">£2M</p>
+                        <p class="text-xs font-bold text-sage-600 uppercase tracking-wider mt-2">Insurance Cover</p>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-[2rem] p-6 sm:p-8 shadow-2xl border border-white/20 max-w-md mx-auto w-full">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-sage-700 to-sage-500 flex items-center justify-center text-white shadow-md">
-                            <i class="fa-solid fa-award text-lg" aria-hidden="true"></i>
-                        </div>
+                <div class="mt-12 grid md:grid-cols-3 gap-6">
+                    <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-sage-200/80 shadow-sm">
+                        <i class="fa-solid fa-circle-check text-sage-600 text-xl mt-1" aria-hidden="true"></i>
                         <div>
-                            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-sage-600">Accreditations</p>
-                            <h3 class="text-xl font-serif font-bold text-sage-950">Fully Certified & Insured</h3>
+                            <h3 class="font-bold text-sage-900">BICSc Accredited Team</h3>
+                            <p class="text-xs text-sage-600 mt-1">Formal training in hygiene, health & safety, and cross-contamination prevention.</p>
                         </div>
                     </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/80 border border-sage-100">
-                            <span class="text-sm font-semibold text-sage-800">BICSc Accredited</span>
-                            <i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i>
+                    <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-sage-200/80 shadow-sm">
+                        <i class="fa-solid fa-circle-check text-sage-600 text-xl mt-1" aria-hidden="true"></i>
+                        <div>
+                            <h3 class="font-bold text-sage-900">Satisfaction Guarantee</h3>
+                            <p class="text-xs text-sage-600 mt-1">Not happy? We'll return within 72 hours to re-clean the flagged areas for free.</p>
                         </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/80 border border-sage-100">
-                            <span class="text-sm font-semibold text-sage-800">£2M Public Liability</span>
-                            <i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i>
-                        </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/80 border border-sage-100">
-                            <span class="text-sm font-semibold text-sage-800">DBS Checked Staff</span>
-                            <i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i>
-                        </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/80 border border-sage-100">
-                            <span class="text-sm font-semibold text-sage-800">Eco-Certified Products</span>
-                            <i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-sage-200/80 shadow-sm">
+                        <i class="fa-solid fa-circle-check text-sage-600 text-xl mt-1" aria-hidden="true"></i>
+                        <div>
+                            <h3 class="font-bold text-sage-900">Flexible & Reliable</h3>
+                            <p class="text-xs text-sage-600 mt-1">Same-day emergency cleans, evening slots, and weekend availability across London.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="inline-flex items-center gap-2 bg-sage-900/5 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true"></span>
-                Ready When You Are
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">Let's make your space shine, naturally.</h2>
-            <p class="text-sage-700 mt-4 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">Get an instant quote online, or reach out for a bespoke cleaning plan tailored to your home or business.</p>
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <a href="prices.html" class="inline-flex items-center gap-2 rounded-full bg-sage-800 text-white px-8 py-3.5 text-sm font-bold shadow-xl hover:bg-sage-900 transition-colors">
-                    <i class="fa-solid fa-calculator" aria-hidden="true"></i>
-                    Get Instant Quote
-                </a>
-                <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border border-sage-300 bg-sage-50 text-sage-800 px-8 py-3.5 text-sm font-bold hover:bg-sage-100 transition-colors">
-                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                    Contact Us
-                </a>
+        <!-- CTA SECTION -->
+        <section class="py-16 bg-gradient-to-r from-sage-900 to-sage-700 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-serif font-black tracking-[-0.04em]">Ready to experience a greener clean?</h2>
+                <p class="text-sage-200 mt-4 text-sm sm:text-base max-w-xl mx-auto">Get an instant quote or call us directly. We're ready to make your space shine.</p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="prices.html" class="inline-flex items-center gap-2 rounded-full bg-white text-sage-900 px-8 py-3.5 text-sm font-bold shadow-xl hover:scale-[1.02] transition-transform">
+                        <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                        Get Instant Quote
+                    </a>
+                    <a href="tel:07767972498" class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition-colors">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        Call 07767972498
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
+    </main>
+
+    <!-- FOOTER (same as index) -->
     <footer class="bg-sage-950 text-sage-400 py-12 text-xs border-t border-sage-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -474,7 +505,6 @@
                         <li><a href="services.html" class="hover:text-white transition">Domestic House Cleaning</a></li>
                         <li><a href="services.html" class="hover:text-white transition">Commercial & Office</a></li>
                         <li><a href="services.html" class="hover:text-white transition">Deep Cleaning</a></li>
-                        <li><a href="checklist.html" class="hover:text-white transition">End of Tenancy Cleans</a></li>
                     </ul>
                 </div>
 
@@ -482,7 +512,6 @@
                     <h4 class="text-white font-bold text-sm mb-3">Navigation</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
                         <li><a href="prices.html" class="hover:text-white transition">Price Estimator</a></li>
                         <li><a href="club.html" class="hover:text-white transition">GreenGlo Club (-20%)</a></li>
                         <li><a href="gallery.html" class="hover:text-white transition">Gallery</a></li>
@@ -531,6 +560,7 @@
             mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
         });
 
+        // Keyboard escape to close mobile menu
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
