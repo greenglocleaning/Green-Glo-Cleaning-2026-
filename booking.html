@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Book a Clean | Green GLO Cleaning Co | Eco Cleaning London</title>
-    <meta name="description" content="Book your eco-friendly clean online. BICSc accredited, 5.0 Google rated. Domestic, end of tenancy, deep & commercial cleaning across Greater London. Quotation based.">
+    <title>Prices & Instant Quote | Green GLO Cleaning Co London</title>
+    <meta name="description" content="Transparent pricing for Green GLO's eco-friendly cleaning services. Domestic, commercial, deep clean & end of tenancy rates. Get an instant quote online.">
     <meta name="theme-color" content="#385538">
-    <link rel="canonical" href="https://greenglocleaning.co.uk/booking.html">
+    <link rel="canonical" href="https://greenglocleaning.co.uk/prices.html">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Book a Clean | Green GLO Cleaning Co">
-    <meta property="og:description" content="Book your eco-friendly clean online. BICSc accredited, 5.0 Google rated. Quotation based across Greater London.">
+    <meta property="og:title" content="Prices & Instant Quote | Green GLO Cleaning Co London">
+    <meta property="og:description" content="BICSc accredited eco cleaning. Domestic, commercial & end of tenancy cleans across Greater London. Transparent rates from £18/hr.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
-    <meta property="og:url" content="https://greenglocleaning.co.uk/booking.html">
+    <meta property="og:url" content="https://greenglocleaning.co.uk/prices.html">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Preconnect -->
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://www.pexels.com">
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
-    <!-- Tailwind -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- FontAwesome (async) -->
+    <!-- FontAwesome (loaded async, non-blocking) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
@@ -44,15 +42,41 @@
                             400: '#7ba27b', 500: '#5c855c', 600: '#466b46', 700: '#385538',
                             800: '#2f452f', 900: '#1d2c1d', 950: '#0e170e'
                         },
+                        emeraldCustom: { 500: '#10b981', 600: '#059669', 700: '#047857' },
                         mint: { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 500: '#22c55e' }
                     },
                     fontFamily: {
                         serif: ['"Plus Jakarta Sans"', 'sans-serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'floatOrb 7s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'gradient-shift': 'gradientShift 8s ease infinite'
+                    },
+                    keyframes: {
+                        shimmer: { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } },
+                        gradientShift: { '0%,100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } }
                     }
                 }
             }
         }
+    </script>
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CleaningService",
+      "name": "Green GLO Cleaning Co",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "telephone": "+447767972498",
+      "email": "greenglocleaningco@gmail.com",
+      "areaServed": { "@type": "City", "name": "London" },
+      "priceRange": "££",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "25" },
+      "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" }
+    }
     </script>
 
     <style>
@@ -73,41 +97,39 @@
         h1 { font-weight: 700; }
         h2, h3, h4 { font-weight: 600; }
 
+        /* Glass surfaces */
         .glass-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
-        .hero-video-bg {
-            position: relative;
-            overflow: hidden;
-            background: #0e1d11;
-            isolation: isolate;
+        .glass-card-dark {
+            background: rgba(14, 23, 14, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .hero-video-bg video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.42) saturate(0.9) contrast(1.08);
-            transform: scale(1.05);
+        .glass-card-green {
+            background: rgba(244, 247, 244, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(227, 235, 227, 0.9);
         }
-        .hero-video-overlay {
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(90deg, rgba(8, 15, 11, 0.88) 0%, rgba(13, 26, 18, 0.82) 30%, rgba(11, 18, 14, 0.52) 100%),
-                radial-gradient(circle at top right, rgba(140, 208, 160, 0.24), transparent 24%);
+        .glass-input {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(199, 215, 199, 0.5);
+            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .hero-chip {
-            border: 1px solid rgba(183, 216, 183, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.98);
+            border-color: #5c855c;
+            box-shadow: 0 0 0 4px rgba(92, 133, 92, 0.15);
+            outline: none;
         }
 
+        /* Animated gradient border for calculator */
         .gradient-border { position: relative; border-radius: 1.75rem; padding: 2px; }
         .gradient-border::before {
             content: '';
@@ -128,14 +150,16 @@
             50% { background-position: 100% 50%; }
         }
 
+        /* Soft cloud card */
         .soft-cloud-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(244,249,244,0.85));
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(244,249,244,0.82));
             border: 1px solid rgba(255,255,255,0.75);
             box-shadow: 0 24px 80px rgba(26, 52, 38, 0.12), 0 8px 28px rgba(50, 81, 59, 0.08);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
         }
 
+        /* Soft input */
         .soft-input {
             background: rgba(246, 250, 246, 0.9);
             border: 1px solid rgba(180, 203, 180, 0.8);
@@ -149,40 +173,7 @@
             outline: none;
         }
 
-        .booking-step { animation: stepSlide 0.42s ease; }
-        @keyframes stepSlide {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .service-option {
-            position: relative;
-            cursor: pointer;
-            transition: all 0.24s ease;
-            border: 1px solid rgba(181, 206, 181, 0.7);
-            background: linear-gradient(180deg, rgba(255,255,255,0.66), rgba(244,247,244,0.88));
-        }
-        .service-option:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 30px rgba(50, 77, 58, 0.08);
-        }
-        .service-option.selected {
-            background: linear-gradient(135deg, rgba(56,85,56,0.96), rgba(67,110,70,0.96));
-            color: white;
-            border-color: rgba(39, 67, 39, 0.8);
-            box-shadow: 0 18px 40px rgba(42, 77, 49, 0.2);
-        }
-        .service-option.selected .service-price,
-        .service-option.selected .service-label,
-        .service-option.selected .service-icon { color: white; }
-        .service-option.selected .service-bullet { background: rgba(255,255,255,0.18); }
-
-        .service-bullet {
-            width: 12px; height: 12px;
-            border-radius: 9999px;
-            background: rgba(92,133,92,0.12);
-        }
-
+        /* Floating orbs */
         .floating-orb { animation: floatOrb 7s ease-in-out infinite; }
         .floating-orb.delay-1 { animation-delay: 1.2s; }
         .floating-orb.delay-2 { animation-delay: 2.4s; }
@@ -191,32 +182,23 @@
             50% { transform: translateY(-12px) translateX(6px); }
         }
 
-        .counter-btn:active { transform: scale(0.92); background: #e3ebe3; }
-
-        .booking-step-indicator.active {
-            background: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            color: #385538;
-            font-weight: 700;
-        }
-        .booking-step-indicator:not(.active) {
-            color: #4b6b4b;
-            background: transparent;
-        }
-
+        /* Focus visible */
         *:focus-visible { outline: 2px solid #385538; outline-offset: 2px; border-radius: 4px; }
 
+        /* Skip link */
         .sr-only-focusable:not(:focus):not(:focus-within) {
             position: absolute !important; width: 1px !important; height: 1px !important;
             padding: 0 !important; margin: -1px !important; overflow: hidden !important;
             clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important;
         }
 
+        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f4f7f4; }
         ::-webkit-scrollbar-thumb { background: #7ba27b; border-radius: 9999px; }
         ::-webkit-scrollbar-thumb:hover { background: #5c855c; }
 
+        /* Reduce motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
@@ -224,7 +206,8 @@
 </head>
 <body class="font-sans text-gray-800 antialiased selection:bg-sage-600 selection:text-white">
 
-    <a href="#booking-main" class="sr-only-focusable focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-sage-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-xl">
+    <!-- Skip link for accessibility -->
+    <a href="#pricing-hero" class="sr-only-focusable focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-sage-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-xl">
         Skip to content
     </a>
 
@@ -274,7 +257,7 @@
                     <a href="index.html" class="hover:text-sage-600 transition-colors py-1">Home</a>
                     <a href="about.html" class="hover:text-sage-600 transition-colors py-1">About</a>
                     <a href="services.html" class="hover:text-sage-600 transition-colors py-1">Services</a>
-                    <a href="prices.html" class="hover:text-sage-600 transition-colors py-1">Prices</a>
+                    <a href="prices.html" class="text-sage-700 font-bold border-b-2 border-sage-600 py-1">Prices</a>
                     <a href="club.html" class="hover:text-sage-600 transition-colors py-1 flex items-center gap-1.5">
                         GreenGlo Club
                         <span class="bg-sage-100 text-sage-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Save 20%</span>
@@ -282,15 +265,14 @@
                     <a href="gallery.html" class="hover:text-sage-600 transition-colors py-1">Gallery</a>
                     <a href="faq.html" class="hover:text-sage-600 transition-colors py-1">FAQ</a>
                     <a href="contact.html" class="hover:text-sage-600 transition-colors py-1">Contact</a>
-                    <a href="booking.html" class="text-sage-700 font-bold border-b-2 border-sage-600 py-1">Book</a>
                 </nav>
 
                 <div class="hidden sm:flex items-center gap-3">
                     <a href="tel:07767972498" class="p-2.5 px-4 rounded-xl text-sage-800 bg-sage-100/70 hover:bg-sage-200/70 transition-all font-semibold text-sm flex items-center gap-2">
                         <i class="fa-solid fa-phone text-sage-600" aria-hidden="true"></i> Call
                     </a>
-                    <a href="#booking-form" class="bg-sage-700 hover:bg-sage-800 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-sage-700/20 hover:shadow-lg transition-all duration-200 flex items-center gap-2">
-                        <span>Start Booking</span>
+                    <a href="#quote" class="bg-sage-700 hover:bg-sage-800 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-sage-700/20 hover:shadow-lg transition-all duration-200 flex items-center gap-2">
+                        <span>Get Quote</span>
                         <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -305,537 +287,339 @@
             <a href="index.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">Home</a>
             <a href="about.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">About</a>
             <a href="services.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">Services</a>
-            <a href="prices.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">Prices & Instant Estimate</a>
+            <a href="prices.html" class="block px-3 py-2 rounded-lg font-bold text-sage-800 bg-sage-50">Prices & Instant Estimate</a>
             <a href="club.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50 flex items-center justify-between">
                 GreenGlo Club <span class="bg-sage-100 text-sage-800 text-xs px-2 py-0.5 rounded-full font-bold">Save 20%</span>
             </a>
             <a href="gallery.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">Gallery & Results</a>
             <a href="faq.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">FAQ</a>
             <a href="contact.html" class="block px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-sage-50">Contact Us</a>
-            <a href="booking.html" class="block px-3 py-2 rounded-lg font-bold text-sage-800 bg-sage-50">Book a Clean</a>
             <div class="pt-4 border-t border-sage-100 flex flex-col gap-2">
                 <a href="tel:07767972498" class="w-full text-center py-3 bg-sage-100 text-sage-800 font-semibold rounded-xl">
                     <i class="fa-solid fa-phone text-sage-600 mr-2" aria-hidden="true"></i> Call 07767972498
                 </a>
-                <a href="booking.html" class="w-full text-center py-3 bg-sage-700 text-white font-semibold rounded-xl shadow-md">
-                    Start Booking
+                <a href="#quote" class="w-full text-center py-3 bg-sage-700 text-white font-semibold rounded-xl shadow-md">
+                    Instant Price Estimator
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="relative hero-video-bg pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden">
-        <video autoplay muted loop playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
-            <source src="https://www.pexels.com/download/video/9462943/" type="video/mp4">
-        </video>
-        <div class="hero-video-overlay"></div>
+    <!-- PRICES HERO / INTRO -->
+    <section id="pricing-hero" class="relative pt-16 pb-12 lg:pt-20 lg:pb-16 overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div class="floating-orb absolute -left-16 top-10 w-72 h-72 bg-mint-200/30 rounded-full blur-3xl"></div>
+            <div class="floating-orb delay-1 absolute right-0 bottom-0 w-80 h-80 bg-sage-400/15 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-flex items-center gap-2 bg-sage-900/5 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true"></span>
+                Transparent Pricing
+            </span>
+            <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.95] tracking-[-0.06em] text-sage-950">
+                Premium eco-cleaning, <span class="text-sage-600">clear prices.</span>
+            </h1>
+            <p class="mt-5 text-base sm:text-lg text-sage-700 max-w-2xl mx-auto leading-relaxed">
+                BICSc accredited, fully insured, and using 100% eco-certified products. No hidden fees—just honest rates for London homes and businesses.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+                <span class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-full px-5 py-2.5 shadow-sm font-semibold text-sage-800">
+                    <i class="fa-solid fa-leaf text-emerald-600" aria-hidden="true"></i> Eco products included
+                </span>
+                <span class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-full px-5 py-2.5 shadow-sm font-semibold text-sage-800">
+                    <i class="fa-solid fa-shield-halved text-sage-600" aria-hidden="true"></i> £2M insurance
+                </span>
+                <span class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-full px-5 py-2.5 shadow-sm font-semibold text-sage-800">
+                    <i class="fa-solid fa-star text-yellow-500" aria-hidden="true"></i> 5.0 Google rated
+                </span>
+            </div>
+        </div>
+    </section>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl mx-auto text-center">
-                <div class="inline-flex items-center gap-2 hero-chip px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold text-white shadow-lg">
-                    <span class="w-2 h-2 rounded-full bg-mint-400 animate-pulse" aria-hidden="true"></span>
-                    <span>Book Online • Confirmation within 2 hours</span>
+    <!-- MAIN PRICING TABLES -->
+    <section class="py-12 bg-white/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8 items-start">
+
+                <!-- LEFT COLUMN: Hourly & Service Rates -->
+                <div class="space-y-8">
+                    <!-- Standard Rates Card -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-6 sm:p-8 border border-sage-200/60">
+                        <h2 class="text-2xl font-serif font-bold text-sage-950 mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-sage-600" aria-hidden="true"></i>
+                            Hourly & Service Rates
+                        </h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead>
+                                    <tr class="border-b border-sage-200">
+                                        <th class="pb-3 font-bold text-sage-900">Service</th>
+                                        <th class="pb-3 font-bold text-sage-900 text-right">Green GLO Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-sage-100">
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3.5 text-sage-800">Regular domestic cleaning</td>
+                                        <td class="py-3.5 text-right font-bold text-sage-950">£18 – £25/hour</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3.5 text-sage-800">One-off standard clean</td>
+                                        <td class="py-3.5 text-right font-bold text-sage-950">£27/hour</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3.5 text-sage-800">Deep cleaning</td>
+                                        <td class="py-3.5 text-right font-bold text-sage-950">£30/hour, or fixed quote</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3.5 text-sage-800">Commercial / office cleaning</td>
+                                        <td class="py-3.5 text-right font-bold text-sage-950">From £28/hour</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3.5 text-sage-800">After-builders cleaning</td>
+                                        <td class="py-3.5 text-right font-bold text-sage-950">From £30/hour</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3.5 text-sage-800">End-of-tenancy cleaning</td>
+                                        <td class="py-3.5 text-right font-bold text-sage-950">Fixed price below</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-[11px] text-sage-500 mt-4 flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            Rates apply to standard residential & commercial properties. A firm quote is provided after a brief consultation.
+                        </p>
+                    </div>
+
+                    <!-- Deep Clean Example Card -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-6 border border-sage-200/60 flex flex-col sm:flex-row items-center gap-5">
+                        <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 img-wrap">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&q=80" alt="Studio flat deep cleaning" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600">Fixed-price deep cleaning</p>
+                            <h3 class="text-lg font-serif font-bold text-sage-950 mt-1">Studio flat</h3>
+                            <p class="text-3xl font-extrabold text-emerald-600 mt-1">£180–£200</p>
+                            <p class="text-xs text-sage-600 mt-2">Includes oven, inside windows, and full sanitisation.</p>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.95] tracking-[-0.06em] text-white">
-                    Book your <span class="text-mint-200">GreenGlo</span> clean.
-                </h1>
-                <p class="mt-5 text-base sm:text-lg text-sage-100/90 max-w-2xl mx-auto leading-relaxed">
-                    A simple 3-step booking form. Tell us about your space, your schedule, and any extras — we'll confirm your slot fast with a tailored quotation.
-                </p>
-                <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-                    <a href="#booking-form" class="inline-flex items-center gap-2 rounded-full bg-white text-sage-900 px-6 py-3 text-sm font-bold shadow-xl hover:scale-[1.02] transition-transform">
-                        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-                        Start Booking
-                    </a>
-                    <a href="tel:07767972498" class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
-                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                        Call 07767972498
-                    </a>
+
+                <!-- RIGHT COLUMN: End of Tenancy & Add-ons -->
+                <div class="space-y-8">
+                    <!-- End of Tenancy Table -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-6 sm:p-8 border border-sage-200/60">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-serif font-bold text-sage-950 flex items-center gap-2">
+                                <i class="fa-solid fa-house-chimney text-sage-600" aria-hidden="true"></i>
+                                End-of-Tenancy
+                            </h2>
+                            <span class="bg-yellow-100 text-yellow-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-yellow-200">Deposit Guarantee</span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead>
+                                    <tr class="border-b border-sage-200">
+                                        <th class="pb-3 font-bold text-sage-900">Property</th>
+                                        <th class="pb-3 font-bold text-sage-900 text-right">Recommended Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-sage-100">
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3 text-sage-800">Studio</td>
+                                        <td class="py-3 text-right font-bold text-sage-950">£200</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3 text-sage-800">1 bedroom</td>
+                                        <td class="py-3 text-right font-bold text-sage-950">£240</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3 text-sage-800">2 bedrooms</td>
+                                        <td class="py-3 text-right font-bold text-sage-950">£285</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3 text-sage-800">3 bedrooms</td>
+                                        <td class="py-3 text-right font-bold text-sage-950">£330</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3 text-sage-800">4 bedrooms</td>
+                                        <td class="py-3 text-right font-bold text-sage-950">£405</td>
+                                    </tr>
+                                    <tr class="hover:bg-sage-50/50 transition-colors">
+                                        <td class="py-3 text-sage-800">5+ bedrooms</td>
+                                        <td class="py-3 text-right font-bold text-sage-950">From £450</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-[11px] text-sage-500 mt-4 flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            Heavily soiled properties may cost more. Final price confirmed after a brief condition check.
+                        </p>
+                    </div>
+
+                    <!-- Add-Ons & Extras Card -->
+                    <div class="soft-cloud-card rounded-[1.8rem] p-6 sm:p-8 border border-sage-200/60">
+                        <h2 class="text-2xl font-serif font-bold text-sage-950 mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-plus-circle text-sage-600" aria-hidden="true"></i>
+                            Popular Add-Ons
+                        </h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/70 border border-sage-100">
+                                <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Inside oven clean</span>
+                                <span class="text-sm font-bold text-sage-950">+£40</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/70 border border-sage-100">
+                                <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Interior windows</span>
+                                <span class="text-sm font-bold text-sage-950">+£15</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/70 border border-sage-100">
+                                <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Fridge / freezer deep clean</span>
+                                <span class="text-sm font-bold text-sage-950">+£25</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/70 border border-sage-100">
+                                <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Carpet steam (per room)</span>
+                                <span class="text-sm font-bold text-sage-950">+£35</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/70 border border-sage-100">
+                                <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Upholstery shampoo (sofa)</span>
+                                <span class="text-sm font-bold text-sage-950">+£45</span>
+                            </div>
+                        </div>
+                        <p class="text-[11px] text-sage-500 mt-4">Add-ons can be selected during booking or added later.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TRUST STRIP -->
-    <section class="bg-white border-y border-sage-100 py-6">
+    <!-- INSTANT QUOTE / BOOKING SECTION (Anchor: #quote) -->
+    <section id="quote" class="py-16 bg-sage-50/80 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-award text-2xl text-sage-600" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">BICSc Certified</span>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-star text-2xl text-yellow-500" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">5.0 Google Rated</span>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-shield-halved text-2xl text-sage-600" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">£2M Insured</span>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-leaf text-2xl text-emerald-600" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">100% Eco Products</span>
-                </div>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 bg-sage-100 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true"></span>
+                    Instant Estimator
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">Get your personalised quote in seconds.</h2>
+                <p class="text-sage-700 mt-4 text-sm sm:text-base max-w-2xl mx-auto">Adjust the sliders and choose your service. Your estimate updates live—no waiting for a callback.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- BOOKING MAIN -->
-    <section id="booking-main" class="py-16 lg:py-20 bg-gradient-to-b from-sage-50 via-white to-sage-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-10">
-
-                <!-- LEFT: Sidebar -->
-                <aside class="lg:col-span-4 space-y-6">
-                    <div class="gradient-border">
-                        <div class="soft-cloud-card rounded-[1.6rem] p-6">
-                            <p class="text-[10px] uppercase tracking-[0.22em] font-bold text-sage-600">Your estimate</p>
-                            <h2 class="mt-2 text-lg font-serif font-bold text-sage-950">Quotation Summary</h2>
-
-                            <div class="mt-5 rounded-2xl bg-gradient-to-r from-sage-900 via-sage-800 to-sage-700 text-white p-5 shadow-xl">
-                                <p class="text-[10px] uppercase tracking-[0.2em] text-sage-200">Estimated total</p>
-                                <p class="mt-1 text-4xl font-extrabold text-yellow-300" id="summaryTotal">£285</p>
-                                <div class="mt-3 flex items-center justify-between text-xs">
-                                    <span class="text-sage-200">Minimum hours</span>
-                                    <span class="font-bold" id="summaryHours">3.0 Hours</span>
-                                </div>
-                                <div class="mt-1 flex items-center justify-between text-xs">
-                                    <span class="text-sage-200">Pricing model</span>
-                                    <span class="font-bold" id="summaryRate">Fixed quotation</span>
-                                </div>
+            <!-- Reusing the hero calculator design for consistency -->
+            <div class="max-w-2xl mx-auto">
+                <div class="hero-card-glow p-2 sm:p-3 bg-white/60 border border-sage-200/60 rounded-3xl shadow-xl">
+                    <div class="gradient-border rounded-[1.7rem]">
+                        <div class="glass-card rounded-[1.6rem] p-6 sm:p-8 shadow-2xl border border-white/60">
+                            <div class="flex flex-wrap gap-2 mb-6 border-b border-sage-200/60 pb-5 justify-center" role="tablist" aria-label="Service type">
+                                <button type="button" role="tab" aria-selected="true" onclick="switchQuoteService('domestic', 18)" id="quoteTabDomestic" class="quote-service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2">
+                                    <i class="fa-solid fa-house" aria-hidden="true"></i> Domestic (£18/hr)
+                                </button>
+                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('tenancy', 25)" id="quoteTabTenancy" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
+                                    <i class="fa-solid fa-key text-sage-600" aria-hidden="true"></i> Tenancy (£25/hr)
+                                </button>
+                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('deep', 22)" id="quoteTabDeep" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
+                                    <i class="fa-solid fa-sparkles text-sage-600" aria-hidden="true"></i> Deep (£22/hr)
+                                </button>
+                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('commercial', 20)" id="quoteTabCommercial" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
+                                    <i class="fa-solid fa-building text-sage-600" aria-hidden="true"></i> Commercial (£20/hr)
+                                </button>
                             </div>
 
-                            <ul class="mt-5 space-y-3 text-sm text-sage-800">
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i>
-                                    <span><strong id="summaryService">End of Tenancy</strong></span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i>
-                                    <span id="summaryProperty">2 bed • 1 bath • 1 living • 1 kitchen</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i>
-                                    <span id="summaryFreq">One-Time Clean</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i>
-                                    <span>Eco supplies &amp; BICSc insured care included</span>
-                                </li>
-                            </ul>
-
-                            <div class="mt-6 pt-5 border-t border-sage-200/80 space-y-2 text-xs text-sage-600">
-                                <p class="flex items-center gap-2"><i class="fa-solid fa-lock text-sage-500" aria-hidden="true"></i> No payment taken now</p>
-                                <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-sage-500" aria-hidden="true"></i> Confirmation within 2 working hours</p>
-                                <p class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-sage-500" aria-hidden="true"></i> Free re-clean on tenancy cleans</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="soft-cloud-card rounded-2xl p-5 text-sm text-sage-700 flex items-start gap-3">
-                        <i class="fa-solid fa-headset text-sage-600 text-lg mt-0.5" aria-hidden="true"></i>
-                        <div>
-                            <p class="font-bold text-sage-900">Need help booking?</p>
-                            <p class="text-xs text-sage-600 mt-1">Call or WhatsApp us and we'll guide you through it.</p>
-                            <div class="mt-3 flex flex-wrap gap-2">
-                                <a href="tel:07767972498" class="inline-flex items-center gap-1.5 text-xs font-bold text-sage-800 bg-sage-100 hover:bg-sage-200 px-3 py-1.5 rounded-lg transition-colors">
-                                    <i class="fa-solid fa-phone" aria-hidden="true"></i> Call
-                                </a>
-                                <a href="https://wa.me/447767972498" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 px-3 py-1.5 rounded-lg transition-colors">
-                                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-
-                <!-- RIGHT: Booking form -->
-                <div class="lg:col-span-8">
-                    <div id="booking-form" class="gradient-border scroll-mt-24">
-                        <div class="soft-cloud-card rounded-[1.6rem] p-6 sm:p-8">
-
-                            <div class="flex items-center justify-between mb-5 gap-3 pb-5 border-b border-sage-200/80">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-end">
                                 <div>
-                                    <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-sage-600">3-step booking system</p>
-                                    <h3 class="text-2xl font-serif font-bold text-sage-950">Let's build your clean.</h3>
+                                    <label class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
+                                        <i class="fa-solid fa-bed text-sage-600 mr-1" aria-hidden="true"></i> Bedrooms
+                                    </label>
+                                    <div class="flex items-center justify-between glass-input rounded-xl px-3 py-2">
+                                        <button type="button" onclick="adjustQuoteCounter('quoteBeds', -1)" class="counter-btn w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Decrease bedrooms">−</button>
+                                        <span id="quoteBeds" class="font-extrabold text-gray-900 text-base" aria-live="polite">2</span>
+                                        <button type="button" onclick="adjustQuoteCounter('quoteBeds', 1)" class="counter-btn w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Increase bedrooms">+</button>
+                                    </div>
                                 </div>
-                                <div class="rounded-full bg-sage-100 text-sage-700 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] flex-shrink-0">Secure</div>
+
+                                <div>
+                                    <label class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
+                                        <i class="fa-solid fa-bath text-sage-600 mr-1" aria-hidden="true"></i> Bathrooms
+                                    </label>
+                                    <div class="flex items-center justify-between glass-input rounded-xl px-3 py-2">
+                                        <button type="button" onclick="adjustQuoteCounter('quoteBaths', -1)" class="counter-btn w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Decrease bathrooms">−</button>
+                                        <span id="quoteBaths" class="font-extrabold text-gray-900 text-base" aria-live="polite">1</span>
+                                        <button type="button" onclick="adjustQuoteCounter('quoteBaths', 1)" class="counter-btn w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Increase bathrooms">+</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="quoteFreq" class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
+                                        <i class="fa-solid fa-rotate-right text-sage-600 mr-1" aria-hidden="true"></i> Frequency
+                                    </label>
+                                    <select id="quoteFreq" onchange="calculateQuoteEstimate()" class="w-full glass-input rounded-xl px-3.5 py-2.5 text-xs font-bold text-gray-800 focus:outline-none">
+                                        <option value="0.20">Weekly (20% OFF)</option>
+                                        <option value="0.10">Fortnightly (10% OFF)</option>
+                                        <option value="0">One-Time Clean</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="quoteDate" class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
+                                        <i class="fa-solid fa-calendar-day text-sage-600 mr-1" aria-hidden="true"></i> Date
+                                    </label>
+                                    <input type="date" id="quoteDate" class="w-full glass-input rounded-xl px-3.5 py-2 text-xs font-semibold text-gray-800 focus:outline-none">
+                                </div>
                             </div>
 
-                            <div class="mb-6 grid grid-cols-3 gap-2 bg-sage-100 rounded-2xl p-1.5">
-                                <div class="booking-step-indicator active text-center text-[10px] font-bold rounded-xl py-2 text-sage-700 bg-white shadow-sm" data-step-indicator="1">1. Service</div>
-                                <div class="booking-step-indicator text-center text-[10px] font-bold rounded-xl py-2 text-sage-600" data-step-indicator="2">2. Details</div>
-                                <div class="booking-step-indicator text-center text-[10px] font-bold rounded-xl py-2 text-sage-600" data-step-indicator="3">3. Schedule</div>
-                            </div>
-
-                            <form id="bookingForm" action="https://project--c19784e2-16fd-418c-88b2-7208c206eb3f.lovable.app/api/public/forms/booking" method="POST" class="space-y-5" novalidate>
-                                <input type="hidden" name="source" value="GreenGlo booking page">
-                                <input type="hidden" name="selectedService" id="selectedServiceInput" value="End of Tenancy">
-                                <input type="hidden" name="bookingEstimate" id="bookingEstimateInput" value="£285">
-                                <input type="hidden" name="propertyType" id="propertyTypeInput" value="Residential">
-                                <input type="hidden" name="serviceType" id="serviceTypeInput" value="End of Tenancy">
-                                <input type="hidden" name="accessMethod" id="accessMethodInput" value="Home occupied">
-                                <input type="hidden" name="parkingAvailability" id="parkingAvailabilityInput" value="Free on-site">
-                                <input type="hidden" name="productSource" id="productSourceInput" value="Provider supplies">
-                                <input type="hidden" name="equipmentSource" id="equipmentSourceInput" value="Provider supplies">
-                                <input type="hidden" name="minHours" id="minHoursInput" value="3">
-
-                                <!-- STEP 1 -->
-                                <div class="booking-step" data-step="1">
-                                    <div class="grid sm:grid-cols-2 gap-3">
-                                        <button type="button" class="service-option p-4 rounded-2xl text-left" data-service="Domestic Clean" data-type="fixed" data-base="0">
-                                            <div class="flex items-center justify-between">
-                                                <div class="flex items-center gap-3">
-                                                    <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
-                                                    <div>
-                                                        <div class="service-label text-sm font-bold">Domestic Clean</div>
-                                                        <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">Quotation based</div>
-                                                    </div>
-                                                </div>
-                                                <span class="service-bullet"></span>
-                                            </div>
-                                        </button>
-
-                                        <button type="button" class="service-option selected p-4 rounded-2xl text-left" data-service="End of Tenancy" data-type="fixed" data-base="285">
-                                            <div class="flex items-center justify-between">
-                                                <div class="flex items-center gap-3">
-                                                    <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-key" aria-hidden="true"></i></span>
-                                                    <div>
-                                                        <div class="service-label text-sm font-bold">End of Tenancy</div>
-                                                        <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £200</div>
-                                                    </div>
-                                                </div>
-                                                <span class="service-bullet"></span>
-                                            </div>
-                                        </button>
-
-                                        <button type="button" class="service-option p-4 rounded-2xl text-left" data-service="Deep Clean" data-type="fixed" data-base="180">
-                                            <div class="flex items-center justify-between">
-                                                <div class="flex items-center gap-3">
-                                                    <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-sparkles" aria-hidden="true"></i></span>
-                                                    <div>
-                                                        <div class="service-label text-sm font-bold">Deep Clean</div>
-                                                        <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £180</div>
-                                                    </div>
-                                                </div>
-                                                <span class="service-bullet"></span>
-                                            </div>
-                                        </button>
-
-                                        <button type="button" class="service-option p-4 rounded-2xl text-left" data-service="Commercial Clean" data-type="fixed" data-base="0">
-                                            <div class="flex items-center justify-between">
-                                                <div class="flex items-center gap-3">
-                                                    <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
-                                                    <div>
-                                                        <div class="service-label text-sm font-bold">Commercial Clean</div>
-                                                        <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">Quotation based</div>
-                                                    </div>
-                                                </div>
-                                                <span class="service-bullet"></span>
-                                            </div>
-                                        </button>
+                            <div class="mt-8 pt-6 border-t border-sage-200/80 flex flex-col md:flex-row items-center justify-between gap-5 bg-gradient-to-r from-sage-900 via-sage-800 to-sage-700 text-white p-5 sm:p-6 rounded-2xl shadow-inner">
+                                <div class="flex items-center gap-4 text-center sm:text-left">
+                                    <div class="w-14 h-14 rounded-xl bg-sage-700/80 flex items-center justify-center text-mint-300 text-2xl hidden sm:flex" aria-hidden="true">
+                                        <i class="fa-solid fa-calculator"></i>
                                     </div>
-
-                                    <div class="mt-6">
-                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Property Category</label>
-                                        <div class="flex flex-wrap gap-2">
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="radio" name="propertyCategory" value="Residential" class="hidden" checked onchange="document.getElementById('propertyTypeInput').value=this.value">
-                                                <i class="fa-regular fa-building" aria-hidden="true"></i> Residential
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="radio" name="propertyCategory" value="Commercial Office" class="hidden" onchange="document.getElementById('propertyTypeInput').value=this.value">
-                                                <i class="fa-regular fa-building" aria-hidden="true"></i> Commercial Office
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="radio" name="propertyCategory" value="Event Venue" class="hidden" onchange="document.getElementById('propertyTypeInput').value=this.value">
-                                                <i class="fa-regular fa-store" aria-hidden="true"></i> Event Venue
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4">
-                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Service Type</label>
-                                        <div class="flex flex-wrap gap-2">
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="radio" name="serviceType" value="Regular Cleaning" class="hidden" onchange="document.getElementById('serviceTypeInput').value=this.value">
-                                                Regular Cleaning
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="radio" name="serviceType" value="End of Tenancy" class="hidden" checked onchange="document.getElementById('serviceTypeInput').value=this.value">
-                                                End of Tenancy
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="radio" name="serviceType" value="Deep Clean" class="hidden" onchange="document.getElementById('serviceTypeInput').value=this.value">
-                                                Deep Clean
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="radio" name="serviceType" value="Post-Event" class="hidden" onchange="document.getElementById('serviceTypeInput').value=this.value">
-                                                Post-Event
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-4 py-2.5 text-sm font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="radio" name="serviceType" value="Post-Renovation" class="hidden" onchange="document.getElementById('serviceTypeInput').value=this.value">
-                                                Post-Renovation
-                                            </label>
-                                        </div>
+                                    <div>
+                                        <span class="text-[10px] uppercase tracking-[0.22em] text-sage-200 block">Estimated Duration: <strong id="quoteEstHours" class="text-white">3.0 Hours</strong></span>
+                                        <p class="text-xs text-sage-300 mt-1">Includes eco supplies & BICSc insured care</p>
                                     </div>
                                 </div>
 
-                                <!-- STEP 2 -->
-                                <div class="booking-step hidden" data-step="2">
-                                    <div class="grid sm:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Full Name *</label>
-                                            <input type="text" name="full_name" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="Jane Doe">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Phone *</label>
-                                            <input type="tel" name="phone" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="07123 456789">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Email *</label>
-                                            <input type="email" name="email" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="jane@example.com">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Address *</label>
-                                            <input type="text" name="address" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="Flat 2, 10 High Street">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Postcode *</label>
-                                            <input type="text" name="postcode" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="SW1A 1AA">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Property Size (Bedrooms) *</label>
-                                            <input type="number" min="0" max="10" name="bedrooms" value="2" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Bathrooms *</label>
-                                            <input type="number" min="1" max="8" name="bathrooms" value="1" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Living Areas *</label>
-                                            <input type="number" min="0" max="6" name="living_areas" value="1" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Kitchens *</label>
-                                            <input type="number" min="0" max="4" name="kitchens" value="1" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                        </div>
+                                <div class="flex items-center gap-6">
+                                    <div class="text-right">
+                                        <span class="text-[10px] uppercase tracking-[0.24em] text-sage-300 block">Estimated Total</span>
+                                        <span id="quoteTotalPrice" class="text-3xl font-extrabold text-yellow-400" aria-live="polite">£43</span>
                                     </div>
-
-                                    <div class="mt-4 grid sm:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Do you have pets?</label>
-                                            <select name="pets" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                                <option value="No pets">No pets</option>
-                                                <option value="Cat(s)">Cat(s)</option>
-                                                <option value="Dog(s)">Dog(s)</option>
-                                                <option value="Other pets">Other pets</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Any disabilities or access needs?</label>
-                                            <select name="disability" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                                <option value="No specific needs">No specific needs</option>
-                                                <option value="Mobility support required">Mobility support required</option>
-                                                <option value="Sensory sensitivities">Sensory sensitivities</option>
-                                                <option value="Other">Other (please specify in notes)</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Parking Availability</label>
-                                            <select name="parking" onchange="document.getElementById('parkingAvailabilityInput').value=this.value" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                                <option value="Free on-site">Free on-site parking</option>
-                                                <option value="Pay & display">Pay &amp; display / permit needed</option>
-                                                <option value="Street parking">Street parking (may be restricted)</option>
-                                                <option value="No parking">No parking available</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Cleaner gender preference</label>
-                                            <select name="cleaner_gender" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                                <option value="No preference">No preference</option>
-                                                <option value="Female cleaner">Female cleaner</option>
-                                                <option value="Male cleaner">Male cleaner</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 grid sm:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Access Method</label>
-                                            <select name="accessMethod" onchange="document.getElementById('accessMethodInput').value=this.value" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                                <option value="Home occupied">Home occupied (someone present)</option>
-                                                <option value="Lockbox / key safe">Lockbox / key safe</option>
-                                                <option value="Key pickup from agent">Key pickup from local agent</option>
-                                                <option value="Concierge / building access">Concierge / building access</option>
-                                                <option value="Other">Other (please specify in notes)</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Products Supplied By</label>
-                                            <select name="productSource" onchange="document.getElementById('productSourceInput').value=this.value" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                                <option value="Provider supplies">Provider supplies all eco products</option>
-                                                <option value="Client supplies">Client supplies products</option>
-                                                <option value="Hybrid">Hybrid / special requests</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Equipment Supplied By</label>
-                                            <select name="equipmentSource" onchange="document.getElementById('equipmentSourceInput').value=this.value" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                                <option value="Provider supplies">Provider supplies equipment</option>
-                                                <option value="Client supplies">Client supplies equipment</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4">
-                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Specialized Add-On Services (optional)</label>
-                                        <div class="flex flex-wrap gap-2">
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="checkbox" name="addons" value="Internal windows" class="hidden">
-                                                <i class="fa-regular fa-square-check" aria-hidden="true"></i> Internal windows
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="checkbox" name="addons" value="External windows" class="hidden">
-                                                <i class="fa-regular fa-square-check" aria-hidden="true"></i> External windows
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="checkbox" name="addons" value="Carpet steam" class="hidden">
-                                                <i class="fa-regular fa-square-check" aria-hidden="true"></i> Carpet steam
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="checkbox" name="addons" value="Oven deep clean" class="hidden">
-                                                <i class="fa-regular fa-square-check" aria-hidden="true"></i> Oven deep clean
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="checkbox" name="addons" value="Upholstery" class="hidden">
-                                                <i class="fa-regular fa-square-check" aria-hidden="true"></i> Upholstery
-                                            </label>
-                                            <label class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 rounded-xl px-3 py-2 text-xs font-medium cursor-pointer has-[:checked]:bg-sage-700 has-[:checked]:text-white has-[:checked]:border-sage-700 transition">
-                                                <input type="checkbox" name="addons" value="Biohazard" class="hidden">
-                                                <i class="fa-regular fa-square-check" aria-hidden="true"></i> Biohazard
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-3">
-                                        <label class="flex items-center gap-2 text-sm font-medium text-sage-800">
-                                            <input type="checkbox" name="ulez_zone" value="yes" class="rounded border-sage-300 text-sage-700 focus:ring-sage-500">
-                                            Property is inside ULEZ / Congestion Zone (surcharge may apply)
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <!-- STEP 3 -->
-                                <div class="booking-step hidden" data-step="3">
-                                    <div class="grid sm:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Preferred Date *</label>
-                                            <input type="date" name="preferred_date" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Frequency</label>
-                                            <select name="frequency" id="frequencySelect" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                                <option value="One-Time Clean">One-Time Clean</option>
-                                                <option value="Weekly">Weekly (20% OFF)</option>
-                                                <option value="Fortnightly">Fortnightly (10% OFF)</option>
-                                                <option value="Monthly">Monthly</option>
-                                                <option value="Daily">Daily (Commercial)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4">
-                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Preferred Service Window</label>
-                                        <select name="service_window" class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900">
-                                            <option value="Morning (8am-12pm)">Morning (8:00 AM – 12:00 PM)</option>
-                                            <option value="Afternoon (12pm-4pm)">Afternoon (12:00 PM – 4:00 PM)</option>
-                                            <option value="Evening">Evening</option>
-                                            <option value="Out-of-hours / Overnight">Out-of-hours / Overnight (commercial)</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="mt-4">
-                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Special Requests / Notes</label>
-                                        <textarea name="notes" rows="4" class="soft-input w-full rounded-2xl px-4 py-3 text-sm text-sage-900" placeholder="Tell us about access info, fragile items, specific areas of concern, or anything else we should know..."></textarea>
-                                    </div>
-
-                                    <div class="mt-4 space-y-3">
-                                        <label class="flex items-start gap-3 text-sm text-sage-800 cursor-pointer">
-                                            <input type="checkbox" name="consent" value="yes" required class="mt-1 rounded border-sage-300 text-sage-700 focus:ring-sage-500">
-                                            <span>I confirm the details above are accurate and consent to Green GLO contacting me about this booking. *</span>
-                                        </label>
-                                        <label class="flex items-start gap-3 text-sm text-sage-800 cursor-pointer">
-                                            <input type="checkbox" name="newsletter" value="yes" class="mt-1 rounded border-sage-300 text-sage-700 focus:ring-sage-500">
-                                            <span>Send me eco-cleaning tips and GreenGlo Club offers (optional).</span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center justify-between gap-3 pt-4 border-t border-sage-200/80">
-                                    <button type="button" id="prevStepBtn" class="hidden rounded-xl border border-sage-200 bg-white px-5 py-3 text-sm font-bold text-sage-700 hover:bg-sage-50 transition">
-                                        <i class="fa-solid fa-arrow-left mr-2" aria-hidden="true"></i> Back
+                                    <button type="button" onclick="payNow(43, 'Green GLO Cleaning Service - Domestic Clean (3.0 Hours)', '')" class="px-6 py-3 bg-sage-500 hover:bg-sage-600 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition duration-200 flex items-center gap-2">
+                                        <span>Book & Pay</span>
+                                        <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
                                     </button>
-                                    <div class="ml-auto flex gap-3">
-                                        <button type="button" id="nextStepBtn" class="rounded-xl bg-sage-700 px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-sage-800 transition flex items-center gap-2">
-                                            Next <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                                        </button>
-                                        <button type="submit" id="submitBookingBtn" class="hidden rounded-xl bg-emerald-600 px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-emerald-500 transition flex items-center gap-2">
-                                            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Confirm Booking
-                                        </button>
-                                    </div>
                                 </div>
-                            </form>
-
-                            <div id="bookingSuccessMsg" class="hidden mt-5 rounded-2xl bg-emerald-100 border border-emerald-200 text-emerald-900 px-4 py-3 text-sm font-bold" role="status" aria-live="polite">
-                                <i class="fa-solid fa-circle-check mr-2" aria-hidden="true"></i>
-                                Thank you! Your booking request has been sent. We'll confirm your slot within 2 working hours.
-                            </div>
-                            <div id="bookingErrorMsg" class="hidden mt-5 rounded-2xl bg-red-100 border border-red-200 text-red-900 px-4 py-3 text-sm font-bold" role="alert">
-                                Sorry, something went wrong. Please try again or call us directly on 07767972498.
                             </div>
                         </div>
                     </div>
                 </div>
+                <p class="text-center text-xs text-sage-600 mt-5">Final price may vary based on property condition. We'll confirm everything before your clean.</p>
             </div>
         </div>
     </section>
 
-    <!-- WHY BOOK WITH US -->
-    <section class="py-16 bg-white">
+    <!-- WHY CHOOSE GREENGLO STRIP -->
+    <section class="bg-white border-y border-sage-100 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <span class="bg-sage-100 text-sage-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Why GreenGlo</span>
-                <h2 class="text-3xl font-serif font-bold text-sage-950 mt-3">Booking with confidence</h2>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="soft-cloud-card rounded-2xl p-6 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-sage-700 text-white flex items-center justify-center text-2xl mx-auto mb-4" aria-hidden="true">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <h3 class="font-bold text-sage-950 mb-1">BICSc Trained</h3>
-                    <p class="text-xs text-sage-600">Every cleaner certified to UK industry standard</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-award text-3xl text-sage-600" aria-hidden="true"></i>
+                    <span class="text-sm font-bold text-sage-800">BICSc Certified Team</span>
+                    <span class="text-xs text-sage-600">Trained to UK's highest standard</span>
                 </div>
-                <div class="soft-cloud-card rounded-2xl p-6 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-sage-700 text-white flex items-center justify-center text-2xl mx-auto mb-4" aria-hidden="true">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <h3 class="font-bold text-sage-950 mb-1">100% Eco Products</h3>
-                    <p class="text-xs text-sage-600">Non-toxic, pet & child safe formulas</p>
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-star text-3xl text-yellow-500" aria-hidden="true"></i>
+                    <span class="text-sm font-bold text-sage-800">5.0 Google Rating</span>
+                    <span class="text-xs text-sage-600">From 25+ verified reviews</span>
                 </div>
-                <div class="soft-cloud-card rounded-2xl p-6 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-sage-700 text-white flex items-center justify-center text-2xl mx-auto mb-4" aria-hidden="true">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="font-bold text-sage-950 mb-1">£2M Insured</h3>
-                    <p class="text-xs text-sage-600">Full liability cover on every visit</p>
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-3xl text-sage-600" aria-hidden="true"></i>
+                    <span class="text-sm font-bold text-sage-800">£2M Insurance</span>
+                    <span class="text-xs text-sage-600">Full liability cover included</span>
                 </div>
-                <div class="soft-cloud-card rounded-2xl p-6 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-sage-700 text-white flex items-center justify-center text-2xl mx-auto mb-4" aria-hidden="true">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                    </div>
-                    <h3 class="font-bold text-sage-950 mb-1">Free Re-Clean</h3>
-                    <p class="text-xs text-sage-600">72-hour guarantee on tenancy cleans</p>
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-leaf text-3xl text-emerald-600" aria-hidden="true"></i>
+                    <span class="text-sm font-bold text-sage-800">100% Eco Products</span>
+                    <span class="text-xs text-sage-600">Safe for kids, pets & planet</span>
                 </div>
             </div>
         </div>
@@ -851,7 +635,7 @@
                         <span class="text-white font-serif font-bold text-base">Green GLO</span>
                     </div>
                     <p class="text-sage-300 leading-relaxed">BICSc accredited residential and commercial cleaning services across London.</p>
-                    <p class="text-sage-400 font-semibold mt-2">Quotation based pricing.</p>
+                    <p class="text-sage-400 font-semibold mt-2">Rates from £18/hour.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold text-sm mb-3">Services</h4>
@@ -901,18 +685,9 @@
     </div>
 
     <script>
-        const BOOKING_ENDPOINT = 'https://project--c19784e2-16fd-418c-88b2-7208c206eb3f.lovable.app/api/public/forms/booking';
-
-        const bookingState = {
-            currentStep: 1,
-            selectedService: 'End of Tenancy',
-            basePrice: 285,
-            maxStep: 3
-        };
-
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Mobile menu
+        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenuBtn.addEventListener('click', () => {
@@ -920,6 +695,8 @@
             mobileMenu.classList.toggle('hidden');
             mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
         });
+
+        // Keyboard escape to close mobile menu
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
@@ -928,171 +705,83 @@
             }
         });
 
-        // ----- Live summary -----
-        function getFreqDiscount() {
-            const freq = document.getElementById('frequencySelect')?.value || 'One-Time Clean';
-            if (freq === 'Weekly') return 0.20;
-            if (freq === 'Fortnightly') return 0.10;
-            return 0;
+        // QUOTE CALCULATOR
+        let quoteServiceRate = 18;
+        let quoteBeds = 2;
+        let quoteBaths = 1;
+
+        function switchQuoteService(service, rate) {
+            quoteServiceRate = rate;
+            document.querySelectorAll('.quote-service-tab').forEach(tab => {
+                tab.className = 'quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2';
+                tab.setAttribute('aria-selected', 'false');
+            });
+            const activeTab = document.getElementById('quoteTab' + service.charAt(0).toUpperCase() + service.slice(1));
+            if (activeTab) {
+                activeTab.className = 'quote-service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2';
+                activeTab.setAttribute('aria-selected', 'true');
+            }
+            calculateQuoteEstimate();
         }
 
-        function updateSummary() {
-            const bedrooms = Number(document.querySelector('input[name="bedrooms"]')?.value || 2);
-            const bathrooms = Number(document.querySelector('input[name="bathrooms"]')?.value || 1);
-            const living = Number(document.querySelector('input[name="living_areas"]')?.value || 1);
-            const kitchens = Number(document.querySelector('input[name="kitchens"]')?.value || 1);
-
-            // Base price comes from the selected service option
-            let basePrice = bookingState.basePrice;
-            // If the selected service is End of Tenancy, use the fixed price map based on bedrooms
-            if (bookingState.selectedService === 'End of Tenancy') {
-                const priceMap = {
-                    0: 200,   // Studio
-                    1: 240,
-                    2: 285,
-                    3: 330,
-                    4: 405,
-                    5: 450    // 5+ bedrooms
-                };
-                const beds = Math.min(bedrooms, 5); // cap at 5 for pricing
-                basePrice = priceMap[beds] || 450;
+        function adjustQuoteCounter(type, change) {
+            if (type === 'quoteBeds') {
+                quoteBeds = Math.max(1, quoteBeds + change);
+                document.getElementById('quoteBeds').textContent = quoteBeds;
+            } else if (type === 'quoteBaths') {
+                quoteBaths = Math.max(1, quoteBaths + change);
+                document.getElementById('quoteBaths').textContent = quoteBaths;
             }
-
-            const discount = getFreqDiscount();
-            const total = Math.round(basePrice * (1 - discount));
-
-            document.getElementById('summaryTotal').textContent = `£${total}`;
-            document.getElementById('summaryHours').textContent = `3.0 Hours minimum`;
-            document.getElementById('summaryRate').textContent = `Fixed quotation`;
-            document.getElementById('summaryService').textContent = bookingState.selectedService;
-            document.getElementById('summaryProperty').textContent = `${bedrooms} bed • ${bathrooms} bath • ${living} living • ${kitchens} kitchen`;
-            document.getElementById('summaryFreq').textContent = document.getElementById('frequencySelect')?.value || 'One-Time Clean';
-
-            // Hidden fields
-            document.getElementById('bookingEstimateInput').value = `£${total}`;
-            document.getElementById('minHoursInput').value = '3';
+            calculateQuoteEstimate();
         }
 
-        // Service selection
-        document.querySelectorAll('.service-option').forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
-                button.classList.add('selected');
-                bookingState.selectedService = button.dataset.service;
-                bookingState.basePrice = Number(button.dataset.base || 0);
-                document.getElementById('selectedServiceInput').value = bookingState.selectedService;
-                updateSummary();
-            });
-        });
-
-        // Number inputs & freq
-        ['bedrooms', 'bathrooms', 'living_areas', 'kitchens'].forEach(name => {
-            document.querySelector(`input[name="${name}"]`)?.addEventListener('input', updateSummary);
-        });
-        document.getElementById('frequencySelect')?.addEventListener('change', updateSummary);
-
-        // ----- Step navigation -----
-        function showStep(step) {
-            bookingState.currentStep = step;
-            document.querySelectorAll('.booking-step').forEach(panel => {
-                panel.classList.toggle('hidden', Number(panel.dataset.step) !== step);
-            });
-            document.querySelectorAll('.booking-step-indicator').forEach(ind => {
-                const active = Number(ind.dataset.stepIndicator) === step;
-                ind.classList.toggle('active', active);
-                ind.classList.toggle('bg-white', active);
-                ind.classList.toggle('shadow-sm', active);
-                ind.classList.toggle('text-sage-700', active);
-                ind.classList.toggle('text-sage-600', !active);
-            });
-            document.getElementById('prevStepBtn').classList.toggle('hidden', step === 1);
-            document.getElementById('nextStepBtn').classList.toggle('hidden', step === bookingState.maxStep);
-            document.getElementById('submitBookingBtn').classList.toggle('hidden', step !== bookingState.maxStep);
+        function calculateQuoteEstimate() {
+            const freqDiscount = parseFloat(document.getElementById('quoteFreq').value);
+            let hours = 1.5 + (quoteBeds * 0.75) + (quoteBaths * 0.5);
+            hours = Math.round(hours * 2) / 2;
+            const subtotal = hours * quoteServiceRate;
+            const finalTotal = Math.round(subtotal * (1 - freqDiscount));
+            document.getElementById('quoteEstHours').textContent = `${hours.toFixed(1)} Hours`;
+            document.getElementById('quoteTotalPrice').textContent = `£${finalTotal}`;
         }
 
-        document.getElementById('nextStepBtn').addEventListener('click', () => {
-            const currentPanel = document.querySelector(`.booking-step[data-step="${bookingState.currentStep}"]`);
-            const requiredFields = currentPanel.querySelectorAll('[required]');
-            let hasError = false;
-            requiredFields.forEach(field => {
-                if (field.type === 'checkbox' && !field.checked) {
-                    hasError = true;
-                    field.style.outline = '2px solid #ef4444';
-                    field.style.outlineOffset = '2px';
-                } else if (field.type !== 'checkbox' && !field.value.trim()) {
-                    hasError = true;
-                    field.style.borderColor = '#ef4444';
-                } else {
-                    field.style.borderColor = '';
-                    field.style.outline = '';
-                }
+        // PAYMENT INTEGRATION
+        async function payNow(amount, description, email) {
+            const res = await fetch("https://connect-unified-view.lovable.app/api/public/checkout", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ amount, description, email })
             });
-            if (hasError) return;
-            if (bookingState.currentStep < bookingState.maxStep) {
-                showStep(bookingState.currentStep + 1);
-                updateSummary();
-                document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
+            const data = await res.json();
+            if (data.url) window.location.href = data.url; // sends customer to Stripe's secure payment page
+        }
 
-        document.getElementById('prevStepBtn').addEventListener('click', () => {
-            if (bookingState.currentStep > 1) {
-                showStep(bookingState.currentStep - 1);
-                document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-
-        // ----- Submit -----
-        document.getElementById('bookingForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const form = event.currentTarget;
-            const submitBtn = document.getElementById('submitBookingBtn');
-            const successMsg = document.getElementById('bookingSuccessMsg');
-            const errorMsg = document.getElementById('bookingErrorMsg');
-
-            successMsg.classList.add('hidden');
-            errorMsg.classList.add('hidden');
-
-            const formData = new FormData(form);
-            const endpoint = form.getAttribute('action') || BOOKING_ENDPOINT;
-
-            submitBtn.disabled = true;
-            const originalHtml = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Sending…';
-
-            try {
-                const response = await fetch(endpoint, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+        // Attach to the "Book & Pay" button
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookPayBtn = document.querySelector('button[onclick^="payNow"]');
+            // The onclick already calls payNow with hardcoded values; we can make it dynamic instead
+            if (bookPayBtn) {
+                bookPayBtn.removeAttribute('onclick');
+                bookPayBtn.addEventListener('click', function() {
+                    const totalText = document.getElementById('quoteTotalPrice').textContent;
+                    const numericAmount = parseFloat(totalText.replace('£', '')) * 100; // convert to pence
+                    const hoursText = document.getElementById('quoteEstHours').textContent;
+                    // Get selected service name from active tab
+                    const activeTab = document.querySelector('.quote-service-tab[aria-selected="true"]');
+                    let serviceName = 'Cleaning Service';
+                    if (activeTab) {
+                        serviceName = activeTab.textContent.trim();
+                    }
+                    const description = `Green GLO Cleaning - ${serviceName} (Est. ${hoursText})`;
+                    // Use a placeholder email; ideally you'd capture it from a form
+                    const email = '';
+                    payNow(numericAmount, description, email);
                 });
-                if (response.ok) {
-                    successMsg.classList.remove('hidden');
-                    form.reset();
-                    showStep(1);
-                    document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
-                    // Select the default "End of Tenancy" option
-                    const defaultServiceBtn = document.querySelector('.service-option[data-service="End of Tenancy"]');
-                    if (defaultServiceBtn) defaultServiceBtn.classList.add('selected');
-                    bookingState.selectedService = 'End of Tenancy';
-                    bookingState.basePrice = 285;
-                    document.getElementById('selectedServiceInput').value = 'End of Tenancy';
-                    updateSummary();
-                    setTimeout(() => successMsg.classList.add('hidden'), 8000);
-                } else {
-                    errorMsg.classList.remove('hidden');
-                }
-            } catch (error) {
-                errorMsg.classList.remove('hidden');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalHtml;
             }
         });
 
         // Init
-        updateSummary();
-        showStep(1);
+        calculateQuoteEstimate();
     </script>
 </body>
 </html>
