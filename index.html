@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Green GLO Cleaning Co | Premium Eco-Friendly Cleaning London</title>
-    <meta name="description" content="London's highest-rated eco cleaning specialists. BICSc accredited. Domestic, commercial & end of tenancy cleans. Get an instant quote online.">
+    <title>Eco-Friendly Cleaning in London | Green GLO Cleaning Co</title>
+    <meta name="description" content="Book BICSc-accredited eco-friendly domestic, office, deep and end-of-tenancy cleaning in London. Get a quick estimate and request your cleaning quote online.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#385538">
     <link rel="canonical" href="https://greenglocleaning.co.uk/">
     <!-- Standard Favicon (.ico) -->
@@ -22,11 +23,16 @@
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Green GLO Cleaning Co | Premium Eco Cleaning London">
-    <meta property="og:description" content="BICSc accredited eco cleaning. Domestic, commercial & end of tenancy cleans across Greater London.">
+    <meta property="og:site_name" content="Green GLO Cleaning Co">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Eco-Friendly Cleaning in London | Green GLO Cleaning Co">
+    <meta property="og:description" content="Book BICSc-accredited domestic, office, deep and end-of-tenancy cleaning across London. Get a quick estimate and request a quote online.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:url" content="https://greenglocleaning.co.uk/">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eco-Friendly Cleaning in London | Green GLO Cleaning Co">
+    <meta name="twitter:description" content="Book BICSc-accredited domestic, office, deep and end-of-tenancy cleaning across London. Get a quick estimate online.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,20 +83,47 @@
         }
     </script>
 
-    <!-- JSON-LD Structured Data for SEO -->
+        <!-- Structured data for local search and service discovery -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "CleaningService",
-      "name": "Green GLO Cleaning Co",
-      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "telephone": "+447767972498",
-      "email": "greenglocleaningco@gmail.com",
-      "areaServed": { "@type": "City", "name": "London" },
-      "priceRange": "££",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "25" },
-      "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
-      "paymentAccepted": "Credit Card, Stripe"
+            "@graph": [
+                {
+                    "@type": "CleaningService",
+                    "@id": "https://greenglocleaning.co.uk/#business",
+                    "name": "Green GLO Cleaning Co",
+                    "url": "https://greenglocleaning.co.uk/",
+                    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+                    "telephone": "+447767972498",
+                    "email": "greenglocleaningco@gmail.com",
+                    "priceRange": "££",
+                    "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
+                    "areaServed": [
+                        { "@type": "City", "name": "London" },
+                        { "@type": "AdministrativeArea", "name": "Greater London" },
+                        { "@type": "AdministrativeArea", "name": "Kent" },
+                        { "@type": "AdministrativeArea", "name": "Essex" }
+                    ],
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "name": "Eco-friendly cleaning services",
+                        "itemListElement": [
+                            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Domestic house cleaning" } },
+                            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial and office cleaning" } },
+                            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deep cleaning" } },
+                            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "End-of-tenancy cleaning" } }
+                        ]
+                    }
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://greenglocleaning.co.uk/#website",
+                    "url": "https://greenglocleaning.co.uk/",
+                    "name": "Green GLO Cleaning Co",
+                    "inLanguage": "en-GB",
+                    "publisher": { "@id": "https://greenglocleaning.co.uk/#business" }
+                }
+            ]
     }
     </script>
 
@@ -295,8 +328,11 @@
 
         /* Image shimmer placeholder */
         .img-wrap { background: linear-gradient(90deg, #e3ebe3 0%, #f4f7f4 50%, #e3ebe3 100%); background-size: 1000px 100%; animation: shimmer 2s linear infinite; }
-        @keyframes shimmer { '0%' { background-position: -1000px 0; } '100%' { background-position: 1000px 0; } }
-        '50%' { background-position: 0% 50%; }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            50% { background-position: 0% 50%; }
+            100% { background-position: 1000px 0; }
+        }
 
         /* Focus visible */
         *:focus-visible { outline: 2px solid #385538; outline-offset: 2px; border-radius: 4px; }
@@ -318,30 +354,6 @@
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
-
-        /* Pay button pulse */
-        .pay-button-pulse {
-            animation: payPulse 2s ease-in-out infinite;
-        }
-        @keyframes payPulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
-            50% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
-        }
-
-        .payment-loading {
-            pointer-events: none;
-            opacity: 0.7;
-        }
-        .spinner {
-            display: inline-block;
-            width: 14px;
-            height: 14px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 0.7s linear infinite;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="font-sans text-gray-800 antialiased selection:bg-sage-600 selection:text-white">
@@ -413,8 +425,8 @@
                     <a href="tel:07767972498" class="p-2.5 px-4 rounded-xl text-sage-800 bg-sage-100/70 hover:bg-sage-200/70 transition-all font-semibold text-sm flex items-center gap-2">
                         <i class="fa-solid fa-phone text-sage-600" aria-hidden="true"></i> Call
                     </a>
-                    <a href="#instant-quote" class="bg-sage-700 hover:bg-sage-800 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-sage-700/20 hover:shadow-lg transition-all duration-200 flex items-center gap-2">
-                        <span>Book & Pay</span>
+                    <a href="booking.html" class="bg-sage-700 hover:bg-sage-800 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-sage-700/20 hover:shadow-lg transition-all duration-200 flex items-center gap-2">
+                        <span>Book Online</span>
                         <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -441,8 +453,8 @@
                 <a href="tel:07767972498" class="w-full text-center py-3 bg-sage-100 text-sage-800 font-semibold rounded-xl">
                     <i class="fa-solid fa-phone text-sage-600 mr-2" aria-hidden="true"></i> Call 07767972498
                 </a>
-                <a href="#instant-quote" class="w-full text-center py-3 bg-emerald-600 text-white font-semibold rounded-xl shadow-md">
-                    <i class="fa-solid fa-lock mr-2" aria-hidden="true"></i> Pay Online
+                <a href="booking.html" class="w-full text-center py-3 bg-sage-700 text-white font-semibold rounded-xl shadow-md">
+                    Book Now
                 </a>
             </div>
         </div>
@@ -472,9 +484,9 @@
                     </p>
 
                     <div class="mt-8 flex flex-wrap items-center gap-3">
-                        <a href="#instant-quote" class="inline-flex items-center gap-2 rounded-full bg-white text-sage-900 px-6 py-3 text-sm font-bold shadow-xl hover:scale-[1.02] transition-transform">
-                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                            Book & Pay Online
+                        <a href="#calculator" class="inline-flex items-center gap-2 rounded-full bg-white text-sage-900 px-6 py-3 text-sm font-bold shadow-xl hover:scale-[1.02] transition-transform">
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            Get Instant Quote
                         </a>
                         <a href="tel:07767972498" class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
                             <i class="fa-solid fa-phone" aria-hidden="true"></i>
@@ -505,12 +517,6 @@
                                 <div class="flex flex-wrap gap-2 mb-5 border-b border-sage-200/60 pb-4 justify-center sm:justify-start" role="tablist" aria-label="Service type">
                                     <button type="button" role="tab" aria-selected="true" onclick="switchServiceTab('domestic', 18)" id="tabDomestic" class="service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2">
                                         <i class="fa-solid fa-house" aria-hidden="true"></i> Domestic (£18/hr)
-                                    </button>
-                                    <button type="button" role="tab" aria-selected="false" onclick="switchServiceTab('tenancy', 25)" id="tabTenancy" class="service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
-                                        <i class="fa-solid fa-key text-sage-600" aria-hidden="true"></i> Tenancy (£25/hr)
-                                    </button>
-                                    <button type="button" role="tab" aria-selected="false" onclick="switchServiceTab('deep', 22)" id="tabDeep" class="service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
-                                        <i class="fa-solid fa-sparkles text-sage-600" aria-hidden="true"></i> Deep (£22/hr)
                                     </button>
                                     <button type="button" role="tab" aria-selected="false" onclick="switchServiceTab('commercial', 20)" id="tabCommercial" class="service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
                                         <i class="fa-solid fa-building text-sage-600" aria-hidden="true"></i> Commercial (£20/hr)
@@ -575,10 +581,10 @@
                                             <span class="text-[10px] uppercase tracking-[0.24em] text-sage-300 block">Instant Estimate</span>
                                             <span id="heroTotalPrice" class="text-3xl font-extrabold text-yellow-400" aria-live="polite">£43</span>
                                         </div>
-                                        <a href="#instant-quote" class="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition duration-200 flex items-center gap-2">
-                                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                                            <span>Book & Pay</span>
-                                        </a>
+                                        <button type="button" onclick="bookHeroEstimate()" class="px-6 py-3 bg-sage-500 hover:bg-sage-600 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition duration-200 flex items-center gap-2">
+                                            <span>Book Now</span>
+                                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -602,8 +608,8 @@
                     <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">5.0 Google Rated</span>
                 </div>
                 <div class="flex flex-col items-center gap-1">
-                    <i class="fa-solid fa-lock text-2xl text-emerald-600" aria-hidden="true"></i>
-                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">Stripe Secured</span>
+                    <i class="fa-solid fa-shield-halved text-2xl text-sage-600" aria-hidden="true"></i>
+                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wider">£2M Insured</span>
                 </div>
                 <div class="flex flex-col items-center gap-1">
                     <i class="fa-solid fa-leaf text-2xl text-emerald-600" aria-hidden="true"></i>
@@ -644,7 +650,7 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Dedicated regular cleaner</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Pet & child safe products</li>
                         </ul>
-                        <a href="#instant-quote" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-sage-800 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-white shadow-lg shadow-sage-900/10 transition-all hover:bg-sage-900">Book Domestic Clean</a>
+                        <a href="prices.html" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-sage-800 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-white shadow-lg shadow-sage-900/10 transition-all hover:bg-sage-900">Book Domestic Clean</a>
                     </div>
                 </div>
 
@@ -665,7 +671,7 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Flexible evening & weekend schedules</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> High-touch point disinfection</li>
                         </ul>
-                        <a href="#instant-quote" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-sage-300 bg-sage-50 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-sage-800 transition-all hover:bg-sage-700 hover:text-white">Request Commercial Plan</a>
+                        <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-sage-300 bg-sage-50 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-sage-800 transition-all hover:bg-sage-700 hover:text-white">Request Commercial Plan</a>
                     </div>
                 </div>
 
@@ -687,7 +693,7 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Free 72-hour re-clean guarantee</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Full official VAT/agency receipt</li>
                         </ul>
-                        <a href="#instant-quote" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-sage-300 bg-sage-50 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-sage-800 transition-all hover:bg-sage-700 hover:text-white">Book Tenancy Clean</a>
+                        <a href="#checklist" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-sage-300 bg-sage-50 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-sage-800 transition-all hover:bg-sage-700 hover:text-white">View Landlord Checklist</a>
                     </div>
                 </div>
 
@@ -708,30 +714,11 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Oven & tile degreasing</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Skirting boards & window tracks</li>
                         </ul>
-                        <a href="#instant-quote" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-sage-300 bg-sage-50 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-sage-800 transition-all hover:bg-sage-700 hover:text-white">Book Deep Clean</a>
+                        <a href="prices.html" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-sage-300 bg-sage-50 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-sage-800 transition-all hover:bg-sage-700 hover:text-white">Book Deep Clean</a>
                     </div>
                 </div>
 
-                <!-- One Off -->
-                <div class="group relative flex flex-col justify-between overflow-hidden rounded-[1.8rem] border border-sage-200/80 bg-white/85 backdrop-blur-sm shadow-[0_24px_75px_rgba(19,42,31,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(19,42,31,0.12)]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-sage-900/5 via-transparent to-mint-100/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
-                    <div class="relative p-3">
-                        <div class="relative h-56 overflow-hidden rounded-[1.35rem] img-wrap">
-                            <img src="https://i.pinimg.com/736x/ca/84/36/ca84360a24f2d73b397568517c67dbcf.jpg " alt="One off Clean" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-sage-950/55 via-sage-900/10 to-transparent"></div>
-                            <div class="absolute top-4 right-4 rounded-full bg-sage-950/85 text-white text-[10px] font-extrabold uppercase tracking-[0.18em] px-3 py-1.5 border border-white/10 backdrop-blur-sm">From £20 / hr</div>
-                        </div>
-                    </div>
-                    <div class="relative px-5 pb-5 pt-1">
-                        <h3 class="text-2xl font-serif font-black text-sage-950 mb-2">One-Off / Spring Clean</h3>
-                        <p class="text-sage-700 text-sm leading-relaxed mb-4">Flexible, no-contract single visits perfect before guests arrive, after renovations, or for seasonal refreshes.</p>
-                        <ul class="space-y-2.5 text-sm text-sage-800">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Tailored priority checklist</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sage-600" aria-hidden="true"></i> Short notice availability</li>
-                        </ul>
-                        <a href="#instant-quote" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-sage-300 bg-sage-50 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-sage-800 transition-all hover:bg-sage-700 hover:text-white">Schedule One-Off</a>
-                    </div>
-                </div>
+                
 
                 <!-- Same Day -->
                 <div class="group relative flex flex-col justify-between overflow-hidden rounded-[1.8rem] border border-sage-200/80 bg-white/85 backdrop-blur-sm shadow-[0_24px_75px_rgba(19,42,31,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(19,42,31,0.12)]">
@@ -757,128 +744,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         INSTANT QUOTE & PAY SECTION (NEW)
-         Uses Stripe checkout for online payment
-    ============================================ -->
-    <section id="instant-quote" class="py-20 bg-gradient-to-b from-sage-50 via-white to-sage-100 relative overflow-hidden scroll-mt-20">
-        <div class="absolute inset-0 opacity-10" aria-hidden="true">
-            <div class="floating-orb absolute -left-10 top-0 w-72 h-72 bg-mint-200/30 rounded-full blur-3xl"></div>
-            <div class="floating-orb delay-1 absolute right-10 bottom-0 w-96 h-96 bg-sage-400/20 rounded-full blur-3xl"></div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="inline-flex items-center gap-2 bg-sage-900/5 text-sage-800 text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-[0.22em] border border-sage-200/80 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true"></span>
-                    Instant Estimate & Pay
-                </span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-sage-950 mt-5 tracking-[-0.04em]">Build your clean. Pay securely.</h2>
-                <p class="text-sage-700 mt-4 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">Adjust the sliders, see your live price, and pay instantly via Stripe. Your booking is confirmed the moment payment completes.</p>
-            </div>
-
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-white/60 border border-sage-200/60 rounded-3xl shadow-xl p-2 sm:p-3">
-                    <div class="gradient-border rounded-[1.7rem]">
-                        <div class="glass-card rounded-[1.6rem] p-6 sm:p-8 shadow-2xl border border-white/60">
-                            <div class="flex flex-wrap gap-2 mb-6 border-b border-sage-200/60 pb-5 justify-center" role="tablist" aria-label="Service type">
-                                <button type="button" role="tab" aria-selected="true" onclick="switchQuoteService('domestic', 18)" id="quoteTabDomestic" class="quote-service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2">
-                                    <i class="fa-solid fa-house" aria-hidden="true"></i> Domestic (£18/hr)
-                                </button>
-                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('tenancy', 25)" id="quoteTabTenancy" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
-                                    <i class="fa-solid fa-key text-sage-600" aria-hidden="true"></i> Tenancy (£25/hr)
-                                </button>
-                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('deep', 22)" id="quoteTabDeep" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
-                                    <i class="fa-solid fa-sparkles text-sage-600" aria-hidden="true"></i> Deep (£22/hr)
-                                </button>
-                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('commercial', 20)" id="quoteTabCommercial" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
-                                    <i class="fa-solid fa-building text-sage-600" aria-hidden="true"></i> Commercial (£20/hr)
-                                </button>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-end">
-                                <div>
-                                    <label class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
-                                        <i class="fa-solid fa-bed text-sage-600 mr-1" aria-hidden="true"></i> Bedrooms
-                                    </label>
-                                    <div class="flex items-center justify-between glass-input rounded-xl px-3 py-2">
-                                        <button type="button" onclick="adjustQuoteCounter('quoteBeds', -1)" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Decrease bedrooms">−</button>
-                                        <span id="quoteBeds" class="font-extrabold text-gray-900 text-base" aria-live="polite">2</span>
-                                        <button type="button" onclick="adjustQuoteCounter('quoteBeds', 1)" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Increase bedrooms">+</button>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
-                                        <i class="fa-solid fa-bath text-sage-600 mr-1" aria-hidden="true"></i> Bathrooms
-                                    </label>
-                                    <div class="flex items-center justify-between glass-input rounded-xl px-3 py-2">
-                                        <button type="button" onclick="adjustQuoteCounter('quoteBaths', -1)" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Decrease bathrooms">−</button>
-                                        <span id="quoteBaths" class="font-extrabold text-gray-900 text-base" aria-live="polite">1</span>
-                                        <button type="button" onclick="adjustQuoteCounter('quoteBaths', 1)" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Increase bathrooms">+</button>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label for="quoteFreq" class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
-                                        <i class="fa-solid fa-rotate-right text-sage-600 mr-1" aria-hidden="true"></i> Frequency
-                                    </label>
-                                    <select id="quoteFreq" onchange="calculateQuoteEstimate()" class="w-full glass-input rounded-xl px-3.5 py-2.5 text-xs font-bold text-gray-800 focus:outline-none">
-                                        <option value="0.20">Weekly (20% OFF)</option>
-                                        <option value="0.10">Fortnightly (10% OFF)</option>
-                                        <option value="0">One-Time Clean</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label for="quoteDate" class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
-                                        <i class="fa-solid fa-calendar-day text-sage-600 mr-1" aria-hidden="true"></i> Date
-                                    </label>
-                                    <input type="date" id="quoteDate" class="w-full glass-input rounded-xl px-3.5 py-2 text-xs font-semibold text-gray-800 focus:outline-none">
-                                </div>
-                            </div>
-
-                            <!-- Customer Info for Stripe Receipt -->
-                            <div class="mt-6 pt-5 border-t border-sage-200/60">
-                                <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-3 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-envelope text-sage-600"></i> Your email (for payment receipt)
-                                </p>
-                                <input type="email" id="customerEmail" placeholder="you@example.com" class="w-full soft-input rounded-xl px-4 py-3 text-sm text-sage-900">
-                            </div>
-
-                            <div class="mt-6 pt-6 border-t border-sage-200/80 flex flex-col md:flex-row items-center justify-between gap-5 bg-gradient-to-r from-sage-900 via-sage-800 to-sage-700 text-white p-5 sm:p-6 rounded-2xl shadow-inner">
-                                <div class="flex items-center gap-4 text-center sm:text-left">
-                                    <div class="w-14 h-14 rounded-xl bg-sage-700/80 flex items-center justify-center text-mint-300 text-2xl hidden sm:flex" aria-hidden="true">
-                                        <i class="fa-solid fa-calculator"></i>
-                                    </div>
-                                    <div>
-                                        <span class="text-[10px] uppercase tracking-[0.22em] text-sage-200 block">Estimated Duration: <strong id="quoteEstHours" class="text-white">3.0 Hours</strong></span>
-                                        <p class="text-xs text-sage-300 mt-1">Includes eco supplies & BICSc insured care</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center gap-6">
-                                    <div class="text-right">
-                                        <span class="text-[10px] uppercase tracking-[0.24em] text-sage-300 block">Total to Pay</span>
-                                        <span id="quoteTotalPrice" class="text-3xl font-extrabold text-yellow-400" aria-live="polite">£43</span>
-                                    </div>
-                                    <button id="bookPayBtn" onclick="handleQuotePayment()" class="pay-button-pulse px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition duration-200 flex items-center gap-2">
-                                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                                        <span>Pay Now</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-center text-xs text-sage-600 mt-5 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-emerald-600"></i>
-                    Payments processed securely by Stripe. Your details are never stored on our servers.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRICING SECTION -->
+    <!-- PRICING SECTION (New) -->
     <section id="pricing" class="py-20 bg-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10" aria-hidden="true">
             <div class="floating-orb absolute -left-10 top-0 w-72 h-72 bg-mint-200/30 rounded-full blur-3xl"></div>
@@ -907,59 +773,32 @@
                                 <tr class="border-b border-sage-200">
                                     <th class="pb-3 font-bold text-sage-900">Service</th>
                                     <th class="pb-3 font-bold text-sage-900 text-right">Green GLO Price</th>
-                                    <th class="pb-3 font-bold text-sage-900 text-right">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-sage-100">
                                 <tr class="hover:bg-sage-50/50 transition-colors">
                                     <td class="py-3.5 text-sage-800">Regular domestic cleaning</td>
                                     <td class="py-3.5 text-right font-bold text-sage-950">£25/hour</td>
-                                    <td class="py-3.5 text-right">
-                                        <button onclick="payNow(25, 'Regular Domestic Clean - 1 Hour', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                            <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                        </button>
-                                    </td>
                                 </tr>
                                 <tr class="hover:bg-sage-50/50 transition-colors">
                                     <td class="py-3.5 text-sage-800">One-off standard clean</td>
                                     <td class="py-3.5 text-right font-bold text-sage-950">£27/hour</td>
-                                    <td class="py-3.5 text-right">
-                                        <button onclick="payNow(27, 'One-off Standard Clean - 1 Hour', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                            <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                        </button>
-                                    </td>
                                 </tr>
                                 <tr class="hover:bg-sage-50/50 transition-colors">
                                     <td class="py-3.5 text-sage-800">Deep cleaning</td>
-                                    <td class="py-3.5 text-right font-bold text-sage-950">£30/hour</td>
-                                    <td class="py-3.5 text-right">
-                                        <button onclick="payNow(30, 'Deep Cleaning - 1 Hour', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                            <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                        </button>
-                                    </td>
+                                    <td class="py-3.5 text-right font-bold text-sage-950">£30/hour, or fixed quote</td>
                                 </tr>
                                 <tr class="hover:bg-sage-50/50 transition-colors">
                                     <td class="py-3.5 text-sage-800">Commercial / office cleaning</td>
                                     <td class="py-3.5 text-right font-bold text-sage-950">From £28/hour</td>
-                                    <td class="py-3.5 text-right">
-                                        <button onclick="payNow(28, 'Commercial Office Clean - 1 Hour', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                            <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                        </button>
-                                    </td>
                                 </tr>
                                 <tr class="hover:bg-sage-50/50 transition-colors">
                                     <td class="py-3.5 text-sage-800">After-builders cleaning</td>
                                     <td class="py-3.5 text-right font-bold text-sage-950">From £30/hour</td>
-                                    <td class="py-3.5 text-right">
-                                        <button onclick="payNow(30, 'After-Builders Clean - 1 Hour', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                            <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                        </button>
-                                    </td>
                                 </tr>
                                 <tr class="hover:bg-sage-50/50 transition-colors">
                                     <td class="py-3.5 text-sage-800">End-of-tenancy cleaning</td>
                                     <td class="py-3.5 text-right font-bold text-sage-950">Fixed price below</td>
-                                    <td class="py-3.5 text-right text-sage-400 text-xs">See below</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -972,98 +811,10 @@
 
                 <!-- Right: Fixed Price Table & Deep Clean Example -->
                 <div class="space-y-6">
-                    <!-- End of Tenancy Table -->
-                    <div class="soft-cloud-card rounded-[1.8rem] p-6 sm:p-8 border border-sage-200/60">
-                        <h3 class="text-xl font-serif font-bold text-sage-950 mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-house-chimney text-sage-600" aria-hidden="true"></i>
-                            End-of-Tenancy Cleaning
-                        </h3>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm text-left">
-                                <thead>
-                                    <tr class="border-b border-sage-200">
-                                        <th class="pb-3 font-bold text-sage-900">Property</th>
-                                        <th class="pb-3 font-bold text-sage-900 text-right">Price</th>
-                                        <th class="pb-3 font-bold text-sage-900 text-right">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-sage-100">
-                                    <tr class="hover:bg-sage-50/50 transition-colors">
-                                        <td class="py-3 text-sage-800">Studio</td>
-                                        <td class="py-3 text-right font-bold text-sage-950">£200</td>
-                                        <td class="py-3 text-right">
-                                            <button onclick="payNow(200, 'End of Tenancy Clean - Studio', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                                <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-sage-50/50 transition-colors">
-                                        <td class="py-3 text-sage-800">1 bedroom</td>
-                                        <td class="py-3 text-right font-bold text-sage-950">£240</td>
-                                        <td class="py-3 text-right">
-                                            <button onclick="payNow(240, 'End of Tenancy Clean - 1 Bed', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                                <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-sage-50/50 transition-colors">
-                                        <td class="py-3 text-sage-800">2 bedrooms</td>
-                                        <td class="py-3 text-right font-bold text-sage-950">£285</td>
-                                        <td class="py-3 text-right">
-                                            <button onclick="payNow(285, 'End of Tenancy Clean - 2 Bed', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                                <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-sage-50/50 transition-colors">
-                                        <td class="py-3 text-sage-800">3 bedrooms</td>
-                                        <td class="py-3 text-right font-bold text-sage-950">£330</td>
-                                        <td class="py-3 text-right">
-                                            <button onclick="payNow(330, 'End of Tenancy Clean - 3 Bed', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                                <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-sage-50/50 transition-colors">
-                                        <td class="py-3 text-sage-800">4 bedrooms</td>
-                                        <td class="py-3 text-right font-bold text-sage-950">£405</td>
-                                        <td class="py-3 text-right">
-                                            <button onclick="payNow(405, 'End of Tenancy Clean - 4 Bed', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                                <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-sage-50/50 transition-colors">
-                                        <td class="py-3 text-sage-800">5+ bedrooms</td>
-                                        <td class="py-3 text-right font-bold text-sage-950">From £450</td>
-                                        <td class="py-3 text-right">
-                                            <button onclick="payNow(450, 'End of Tenancy Clean - 5+ Bed (Base)', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                                                <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="text-[10px] text-sage-500 mt-4 flex items-center gap-1.5">
-                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-                            Heavily soiled properties may cost more. Final price confirmed after a brief condition check.
-                        </p>
-                    </div>
+                   
 
                     <!-- Deep Clean Example Card -->
-                    <div class="soft-cloud-card rounded-[1.8rem] p-6 border border-sage-200/60 flex items-center gap-5">
-                        <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 img-wrap">
-                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&q=80" alt="Studio flat deep cleaning" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-[10px] uppercase tracking-[0.18em] font-bold text-sage-600">Fixed-price deep cleaning</p>
-                            <h4 class="text-lg font-serif font-bold text-sage-950 mt-1">Studio flat</h4>
-                            <p class="text-2xl font-extrabold text-emerald-600 mt-1">£180–£200</p>
-                        </div>
-                        <button onclick="payNow(190, 'Fixed Deep Clean - Studio Flat', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-500 transition">
-                            <i class="fa-solid fa-credit-card text-xs"></i> Pay
-                        </button>
+                    
                     </div>
                 </div>
             </div>
@@ -1077,62 +828,59 @@
             <div class="floating-orb delay-1 absolute right-10 bottom-0 w-96 h-96 bg-sage-400/10 rounded-full blur-3xl"></div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg">
-                        <span class="w-2 h-2 rounded-full bg-mint-400 animate-pulse" aria-hidden="true"></span>
-                        <span>GreenGlo Club Membership</span>
-                    </span>
-                    <h2 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-serif font-black leading-[1.05] tracking-[-0.04em] text-white">
-                        Save <span class="text-mint-200">20%</span> on every clean. Forever.
-                    </h2>
-                    <p class="mt-5 text-sage-200 text-sm sm:text-base leading-relaxed max-w-lg">
-                        Join London's most rewarding eco-cleaning membership. Lock in £14.40/hr instead of £18/hr, get priority scheduling, a dedicated cleaner, and 15% off all add-on services.
-                    </p>
-                    <ul class="mt-6 space-y-3 text-sm text-sage-100">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-mint-400" aria-hidden="true"></i> 20% off every domestic clean</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-mint-400" aria-hidden="true"></i> Priority access to peak-time slots</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-mint-400" aria-hidden="true"></i> Same dedicated BICSc cleaner every visit</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-mint-400" aria-hidden="true"></i> No fees, no contracts, cancel anytime</li>
-                    </ul>
-                    <div class="mt-8 flex flex-wrap gap-3">
-                        <a href="club.html" class="inline-flex items-center gap-2 rounded-full bg-white text-sage-900 px-6 py-3 text-sm font-bold shadow-xl hover:scale-[1.02] transition-transform">
-                            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
-                            Join GreenGlo Club
-                        </a>
-                        <a href="club.html#compare" class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
-                            <i class="fa-solid fa-chart-simple" aria-hidden="true"></i>
-                            See Savings
-                        </a>
-                    </div>
-                </div>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-mint-400 animate-pulse" aria-hidden="true"></span>
+                    <span>GreenGlo Club 🌿</span>
+                </span>
+                <h2 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-serif font-black leading-[1.05] tracking-[-0.04em] text-white">Pick the plan that fits you.</h2>
+                <p class="mt-5 text-sage-200 text-sm sm:text-base leading-relaxed">Every tier saves you money on eco cleans. Upgrade or downgrade any time — no lock-in, no cancellation fees.</p>
+            </div>
 
-                <div class="glass-card rounded-[2rem] p-6 sm:p-8 shadow-2xl border border-white/20 max-w-md mx-auto w-full">
-                    <div class="flex items-center justify-between mb-5">
-                        <div>
-                            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-sage-600">Member Snapshot</p>
-                            <h3 class="text-xl font-serif font-bold text-sage-950">Your GreenGlo Plan</h3>
-                        </div>
-                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-sage-700 to-sage-500 flex items-center justify-center text-white shadow-md">
-                            <i class="fa-solid fa-leaf text-lg" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-sage-50/80 border border-sage-100">
-                            <span class="text-sm font-semibold text-sage-800">Standard Rate</span>
-                            <span class="text-sm font-bold text-sage-500 line-through">£18.00/hr</span>
-                        </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-sage-800 to-sage-700 text-white shadow-lg">
-                            <span class="text-sm font-semibold">Member Rate</span>
-                            <span class="text-lg font-extrabold text-yellow-300">£14.40/hr</span>
-                        </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-mint-50 border border-mint-100">
-                            <span class="text-sm font-semibold text-emerald-800">You Save</span>
-                            <span class="text-sm font-bold text-emerald-600">£3.60 per hour</span>
-                        </div>
-                    </div>
-                    <p class="text-center text-xs text-sage-600 mt-5">Based on a typical 3-hour clean, members save £10.80 every visit.</p>
-                </div>
+            <div class="grid md:grid-cols-3 gap-6 items-stretch">
+                <article class="rounded-[2rem] p-6 sm:p-8 bg-white text-sage-950 shadow-xl flex flex-col">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-sage-600">For occasional customers</p>
+                    <h3 class="mt-2 text-2xl font-serif font-black">Bronze</h3>
+                    <p class="mt-5"><span class="text-4xl font-black">£5</span><span class="text-sm text-sage-600"> / month</span></p>
+                    <ul class="mt-6 space-y-3 text-sm text-sage-700 flex-1">
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i><span>Member-only cleaning offers — access exclusive deals</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i><span>5% off eligible cleaning services</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i><span>Birthday-month reward — a little treat from us</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i><span>Access to exclusive seasonal promotions</span></li>
+                    </ul>
+                    <a href="club.html" class="mt-8 block text-center rounded-full bg-sage-800 text-white px-5 py-3 text-sm font-bold hover:bg-sage-700 transition-colors">Join Bronze — £5/mo</a>
+                    <p class="mt-3 text-center text-xs text-sage-500">Cancel anytime. No contracts.</p>
+                </article>
+
+                <article class="rounded-[2rem] p-6 sm:p-8 bg-white text-sage-950 shadow-xl flex flex-col">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-sage-600">For regular customers</p>
+                    <h3 class="mt-2 text-2xl font-serif font-black">Silver</h3>
+                    <p class="mt-5"><span class="text-4xl font-black">£7.50</span><span class="text-sm text-sage-600"> / month</span></p>
+                    <ul class="mt-6 space-y-3 text-sm text-sage-700 flex-1">
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i><span>Everything in Bronze</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i><span>10% off eligible cleaning services</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i><span>Priority booking — first access to peak slots</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-sage-600 mt-0.5" aria-hidden="true"></i><span>One complimentary add-on each year, subject to a limit</span></li>
+                    </ul>
+                    <a href="club.html" class="mt-8 block text-center rounded-full bg-sage-800 text-white px-5 py-3 text-sm font-bold hover:bg-sage-700 transition-colors">Join Silver — £7.50/mo</a>
+                    <p class="mt-3 text-center text-xs text-sage-500">Cancel anytime. No contracts.</p>
+                </article>
+
+                <article class="rounded-[2rem] p-6 sm:p-8 bg-gradient-to-br from-mint-50 to-white text-sage-950 shadow-2xl ring-2 ring-mint-300 relative flex flex-col">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-mint-300 text-sage-950 px-4 py-1 text-xs font-extrabold uppercase tracking-wider">★ Premium · Most popular</span>
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-sage-600">For your most loyal customers</p>
+                    <h3 class="mt-2 text-2xl font-serif font-black">Gold</h3>
+                    <p class="mt-5"><span class="text-4xl font-black">£10</span><span class="text-sm text-sage-600"> / month</span></p>
+                    <ul class="mt-6 space-y-3 text-sm text-sage-700 flex-1">
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-emerald-700 mt-0.5" aria-hidden="true"></i><span>Everything in Silver</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-emerald-700 mt-0.5" aria-hidden="true"></i><span>Best-value discounts on all eligible services</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-emerald-700 mt-0.5" aria-hidden="true"></i><span>Priority booking plus earliest access to new slots</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-emerald-700 mt-0.5" aria-hidden="true"></i><span>One complimentary cleaning add-on per year, subject to a limit</span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-circle-check text-emerald-700 mt-0.5" aria-hidden="true"></i><span>Exclusive Gold-only seasonal perks</span></li>
+                    </ul>
+                    <a href="club.html" class="mt-8 block text-center rounded-full bg-sage-800 text-white px-5 py-3 text-sm font-bold hover:bg-sage-700 transition-colors">Join Gold — £10/mo</a>
+                    <p class="mt-3 text-center text-xs text-sage-500">Cancel anytime. No contracts.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -1153,8 +901,8 @@
                 </div>
                 <div class="relative text-center">
                     <div class="w-16 h-16 rounded-2xl bg-sage-800 text-white flex items-center justify-center text-2xl font-black mx-auto shadow-xl relative z-10">2</div>
-                    <h3 class="mt-5 text-lg font-bold text-sage-950">Pay Securely Online</h3>
-                    <p class="mt-2 text-sm text-sage-600 max-w-xs mx-auto">Enter your email and pay via Stripe's encrypted checkout. Instant confirmation.</p>
+                    <h3 class="mt-5 text-lg font-bold text-sage-950">Book Online</h3>
+                    <p class="mt-2 text-sm text-sage-600 max-w-xs mx-auto">Complete our detailed booking form. We confirm your slot within 2 working hours.</p>
                 </div>
                 <div class="relative text-center">
                     <div class="w-16 h-16 rounded-2xl bg-sage-800 text-white flex items-center justify-center text-2xl font-black mx-auto shadow-xl relative z-10">3</div>
@@ -1248,30 +996,20 @@
 
                 <div class="p-5 rounded-2xl bg-sage-50/60 border border-sage-200/70">
                     <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center text-left font-bold text-sage-900 text-sm sm:text-base" aria-expanded="false" aria-controls="faqAns3">
-                        <span>Is it safe to pay online?</span>
+                        <span>How does the 100% Deposit Guarantee work?</span>
                         <i id="faqIcon3" class="fa-solid fa-plus text-sage-600" aria-hidden="true"></i>
                     </button>
                     <div id="faqAns3" class="hidden text-xs sm:text-sm text-sage-700 mt-3 pt-3 border-t border-sage-200/60">
-                        Absolutely. All payments are processed by Stripe, the same payment provider used by Amazon, Google, and thousands of UK businesses. We never see or store your card details.
-                    </div>
-                </div>
-
-                <div class="p-5 rounded-2xl bg-sage-50/60 border border-sage-200/70">
-                    <button onclick="toggleFaq(4)" class="w-full flex justify-between items-center text-left font-bold text-sage-900 text-sm sm:text-base" aria-expanded="false" aria-controls="faqAns4">
-                        <span>How does the 100% Deposit Guarantee work?</span>
-                        <i id="faqIcon4" class="fa-solid fa-plus text-sage-600" aria-hidden="true"></i>
-                    </button>
-                    <div id="faqAns4" class="hidden text-xs sm:text-sm text-sage-700 mt-3 pt-3 border-t border-sage-200/60">
                         If your letting agent flags any cleaning item on their checkout inventory within 72 hours of our clean, our team will return and re-clean those specific spots free of charge.
                     </div>
                 </div>
 
                 <div class="p-5 rounded-2xl bg-sage-50/60 border border-sage-200/70">
-                    <button onclick="toggleFaq(5)" class="w-full flex justify-between items-center text-left font-bold text-sage-900 text-sm sm:text-base" aria-expanded="false" aria-controls="faqAns5">
+                    <button onclick="toggleFaq(4)" class="w-full flex justify-between items-center text-left font-bold text-sage-900 text-sm sm:text-base" aria-expanded="false" aria-controls="faqAns4">
                         <span>Do you cover my area in London?</span>
-                        <i id="faqIcon5" class="fa-solid fa-plus text-sage-600" aria-hidden="true"></i>
+                        <i id="faqIcon4" class="fa-solid fa-plus text-sage-600" aria-hidden="true"></i>
                     </button>
-                    <div id="faqAns5" class="hidden text-xs sm:text-sm text-sage-700 mt-3 pt-3 border-t border-sage-200/60">
+                    <div id="faqAns4" class="hidden text-xs sm:text-sm text-sage-700 mt-3 pt-3 border-t border-sage-200/60">
                         We cover all Greater London postcodes plus surrounding areas in Kent and Essex. Enter your postcode in the booking form and we'll confirm coverage instantly.
                     </div>
                 </div>
@@ -1368,32 +1106,6 @@
                                                 <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-key" aria-hidden="true"></i></span>
                                                 <div>
                                                     <div class="service-label text-sm font-bold">End of Tenancy</div>
-                                                    <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £25/hr</div>
-                                                </div>
-                                            </div>
-                                            <span class="service-bullet"></span>
-                                        </div>
-                                    </button>
-
-                                    <button type="button" class="service-option p-4 rounded-2xl text-left" data-service="Deep Clean" data-rate="22">
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-3">
-                                                <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-sparkles" aria-hidden="true"></i></span>
-                                                <div>
-                                                    <div class="service-label text-sm font-bold">Deep Clean</div>
-                                                    <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £22/hr</div>
-                                                </div>
-                                            </div>
-                                            <span class="service-bullet"></span>
-                                        </div>
-                                    </button>
-
-                                    <button type="button" class="service-option p-4 rounded-2xl text-left" data-service="Commercial Clean" data-rate="20">
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-3">
-                                                <span class="service-icon text-lg text-sage-600"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
-                                                <div>
-                                                    <div class="service-label text-sm font-bold">Commercial Clean</div>
                                                     <div class="service-price text-[10px] uppercase tracking-[0.2em] text-sage-600 font-semibold">From £20/hr</div>
                                                 </div>
                                             </div>
@@ -1453,14 +1165,6 @@
                                     <div>
                                         <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Full Name</label>
                                         <input type="text" name="full_name" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="Jane Doe">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Phone</label>
-                                        <input type="tel" name="phone" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="07123 456789">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Email</label>
-                                        <input type="email" name="email" required class="soft-input w-full rounded-xl px-4 py-3 text-sm text-sage-900" placeholder="jane@example.com">
                                     </div>
                                     <div>
                                         <label class="block text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-2">Postcode</label>
@@ -1628,7 +1332,8 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-sage-950 text-sage-400 py-12 text-xs border-t border-sage-800 relative overflow-hidden">
+     <!-- FOOTER (same as index) -->
+  <footer class="bg-sage-950 text-sage-400 py-12 text-xs border-t border-sage-800 relative overflow-hidden">
         <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mint-400/60 to-transparent"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
@@ -1696,8 +1401,8 @@
         <a href="tel:07767972498" class="flex-1 py-3 bg-sage-800 text-white font-bold rounded-2xl shadow-xl flex items-center justify-center gap-2 text-sm border border-sage-600">
             <i class="fa-solid fa-phone text-mint-300" aria-hidden="true"></i> 07767972498
         </a>
-        <a href="#instant-quote" class="w-12 h-12 bg-emerald-600 text-white rounded-2xl shadow-xl flex items-center justify-center text-xl border border-emerald-400" aria-label="Pay Online">
-            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+        <a href="https://wa.me/447767972498" target="_blank" rel="noopener" class="w-12 h-12 bg-emerald-600 text-white rounded-2xl shadow-xl flex items-center justify-center text-xl border border-emerald-400" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </a>
     </div>
 
@@ -1735,46 +1440,6 @@
             }
         });
 
-        // ============================================
-        // STRIPE PAYMENT INTEGRATION
-        // ============================================
-        async function payNow(amount, description, email) {
-            const btn = event?.target?.closest('button');
-            const originalHTML = btn?.innerHTML;
-            if (btn) {
-                btn.classList.add('payment-loading');
-                btn.innerHTML = '<span class="spinner"></span> Processing...';
-            }
-
-            try {
-                const res = await fetch("https://connect-unified-view.lovable.app/api/public/checkout", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        amount: amount,
-                        description: description,
-                        email: email || ''
-                    })
-                });
-
-                const data = await res.json();
-
-                if (data.url) {
-                    window.location.href = data.url;
-                } else if (data.error) {
-                    alert('Payment error: ' + data.error);
-                    if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
-                } else {
-                    alert('Unable to start checkout. Please try again or call us.');
-                    if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
-                }
-            } catch (error) {
-                console.error('Payment error:', error);
-                alert('There was a problem connecting to the payment system. Please try again or call 07767972498.');
-                if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
-            }
-        }
-
         // HERO CALCULATOR
         function switchServiceTab(service, rate) {
             heroServiceRate = rate;
@@ -1811,71 +1476,15 @@
             document.getElementById('heroTotalPrice').textContent = `£${finalTotal}`;
         }
 
-        // ============================================
-        // QUOTE CALCULATOR (New Section)
-        // ============================================
-        let quoteServiceRate = 18;
-        let quoteBeds = 2;
-        let quoteBaths = 1;
-        let currentServiceName = 'Domestic Clean';
-
-        function switchQuoteService(service, rate) {
-            quoteServiceRate = rate;
-            const serviceNames = {
-                domestic: 'Domestic Clean',
-                tenancy: 'End of Tenancy Clean',
-                deep: 'Deep Clean',
-                commercial: 'Commercial Clean'
-            };
-            currentServiceName = serviceNames[service] || 'Cleaning Service';
-
-            document.querySelectorAll('.quote-service-tab').forEach(tab => {
-                tab.className = 'quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2';
-                tab.setAttribute('aria-selected', 'false');
-            });
-            const activeTab = document.getElementById('quoteTab' + service.charAt(0).toUpperCase() + service.slice(1));
-            if (activeTab) {
-                activeTab.className = 'quote-service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2';
-                activeTab.setAttribute('aria-selected', 'true');
-            }
-            calculateQuoteEstimate();
+        function bookHeroEstimate() {
+            const total = document.getElementById('heroTotalPrice').textContent;
+            const hours = document.getElementById('heroEstHours').textContent;
+            const date = document.getElementById('heroDate').value || 'Flexible';
+            const message = `Hello Green GLO! I would like to book a clean estimate:\n- Bedrooms: ${heroBeds}\n- Bathrooms: ${heroBaths}\n- Est Hours: ${hours}\n- Preferred Date: ${date}\n- Estimate Price: ${total}`;
+            window.open(`https://wa.me/447767972498?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
         }
 
-        function adjustQuoteCounter(type, change) {
-            if (type === 'quoteBeds') {
-                quoteBeds = Math.max(1, quoteBeds + change);
-                document.getElementById('quoteBeds').textContent = quoteBeds;
-            } else if (type === 'quoteBaths') {
-                quoteBaths = Math.max(1, quoteBaths + change);
-                document.getElementById('quoteBaths').textContent = quoteBaths;
-            }
-            calculateQuoteEstimate();
-        }
-
-        function calculateQuoteEstimate() {
-            const freqDiscount = parseFloat(document.getElementById('quoteFreq').value);
-            let hours = 1.5 + (quoteBeds * 0.75) + (quoteBaths * 0.5);
-            hours = Math.round(hours * 2) / 2;
-            const subtotal = hours * quoteServiceRate;
-            const finalTotal = Math.round(subtotal * (1 - freqDiscount));
-            document.getElementById('quoteEstHours').textContent = `${hours.toFixed(1)} Hours`;
-            document.getElementById('quoteTotalPrice').textContent = `£${finalTotal}`;
-        }
-
-        function handleQuotePayment() {
-            const totalText = document.getElementById('quoteTotalPrice').textContent;
-            const amount = parseFloat(totalText.replace('£', ''));
-            const hours = document.getElementById('quoteEstHours').textContent;
-            const email = document.getElementById('customerEmail').value.trim();
-            const freq = document.getElementById('quoteFreq').selectedOptions[0].text;
-            const date = document.getElementById('quoteDate').value || 'Date not specified';
-
-            const description = `${currentServiceName} — ${hours}, ${quoteBeds} bed, ${quoteBaths} bath, ${freq}, Date: ${date}`;
-
-            payNow(amount, description, email);
-        }
-
-        // FAQ toggle
+        // FAQ toggle with aria-expanded
         function toggleFaq(num) {
             const ans = document.getElementById(`faqAns${num}`);
             const icon = document.getElementById(`faqIcon${num}`);
@@ -2010,9 +1619,8 @@
             }
         });
 
-        // Init
+        // init
         calculateHeroEstimate();
-        calculateQuoteEstimate();
         updateBookingEstimate();
         showStep(1);
     </script>
