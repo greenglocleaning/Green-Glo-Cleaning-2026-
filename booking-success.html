@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed — Green GLO Cleaning Co</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f9f4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 80, 40, 0.12);
+      max-width: 480px;
+      width: 100%;
+      padding: 48px 36px;
+      text-align: center;
+    }
+    .tick {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #2e7d32;
+      color: #fff;
+      font-size: 42px;
+      line-height: 80px;
+      margin: 0 auto 24px;
+    }
+    h1 { color: #1b5e20; font-size: 28px; margin-bottom: 12px; }
+    p { color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 12px; }
+    .ref {
+      background: #e8f5e9;
+      border-radius: 10px;
+      padding: 12px;
+      color: #1b5e20;
+      font-weight: 600;
+      margin: 20px 0;
+      word-break: break-all;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      background: #2e7d32;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .btn:hover { background: #1b5e20; }
+    .contact { margin-top: 24px; font-size: 14px; color: #777; }
+    .contact a { color: #2e7d32; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="tick">✓</div>
+    <h1>Payment received!</h1>
+    <p>Thank you for booking with <strong>Green GLO Cleaning Co</strong>. Your payment has gone through and your booking is confirmed.</p>
+    <p>We'll be in touch shortly to confirm your appointment details.</p>
+    <div class="ref" id="ref">Checking your payment reference…</div>
+    <a class="btn" href="index.html">Back to homepage</a>
+    <p class="contact">Questions? Call us on <a href="tel:07767972498">07767 972498</a></p>
+  </div>
+
+  <script>
+    // Stripe adds ?session_id=... to the return URL — show it as a reference.
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+    const ref = document.getElementById('ref');
+    if (sessionId) {
+      ref.textContent = 'Payment reference: ' + sessionId;
+    } else {
+      ref.textContent = 'A receipt has been emailed to you by Stripe.';
+    }
+  </script>
+</body>
+</html>
