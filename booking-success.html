@@ -31,16 +31,21 @@
     }
   </script>
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: radial-gradient(circle at top left, rgba(184, 220, 191, 0.38), transparent 38%),
                   radial-gradient(circle at bottom right, rgba(149, 190, 163, 0.28), transparent 28%),
                   #f5f8f4;
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: clamp(16px, 4vw, 32px);
     }
     .glass-card {
       background: rgba(255, 255, 255, 0.88);
@@ -49,16 +54,29 @@
       border: 1px solid rgba(227, 235, 227, 0.9);
       box-shadow: 0 24px 80px rgba(26, 52, 38, 0.12), 0 8px 28px rgba(50, 81, 59, 0.08);
     }
+    a:focus-visible {
+      outline: 3px solid #5c855c;
+      outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .success-mark {
+        animation: appear 500ms ease-out both;
+      }
+      @keyframes appear {
+        from { opacity: 0; transform: scale(.82); }
+        to { opacity: 1; transform: scale(1); }
+      }
+    }
   </style>
 </head>
 <body class="text-gray-800 antialiased">
 
-  <div class="glass-card rounded-[2rem] max-w-lg w-full p-8 sm:p-10 text-center relative overflow-hidden">
+  <main class="glass-card rounded-[2rem] max-w-lg w-full p-6 sm:p-10 text-center relative overflow-hidden">
     <!-- Top Green Accent Line -->
     <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-sage-600 via-sage-500 to-mint-500"></div>
 
     <!-- Brand Logo matching Homepage Header -->
-    <a href="https://greenglocleaning.co.uk" class="inline-flex items-center gap-3 group mb-6">
+    <a href="https://greenglocleaning.co.uk" class="inline-flex items-center gap-3 group mb-7 rounded-xl" aria-label="Green GLO Cleaning Co homepage">
       <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sage-800 via-sage-700 to-sage-500 flex items-center justify-center text-white shadow-md shadow-sage-600/20 overflow-hidden flex-shrink-0">
         <img src="lp (1).jpeg" alt="Green GLO logo" class="w-full h-full object-cover rounded-2xl">
       </div>
@@ -71,17 +89,18 @@
     </a>
 
     <!-- Success Tick Animation Container -->
-    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-sage-700 to-sage-600 text-white flex items-center justify-center text-3xl mx-auto mb-6 shadow-xl shadow-sage-700/25">
-      <i class="fa-solid fa-check"></i>
+    <div class="success-mark w-20 h-20 rounded-full bg-gradient-to-br from-sage-700 to-sage-600 text-white flex items-center justify-center text-3xl mx-auto mb-6 shadow-xl shadow-sage-700/25" role="img" aria-label="Payment successful">
+      <i class="fa-solid fa-check" aria-hidden="true"></i>
     </div>
 
     <h1 class="text-2xl sm:text-3xl font-bold text-sage-950 mb-3 tracking-tight">Payment Received!</h1>
     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
-      Thank you for choosing <strong class="text-sage-900 font-semibold">Green GLO Cleaning Co</strong>. Your secure payment has been verified and your eco-friendly clean is confirmed.
+      Thank you for choosing <strong class="text-sage-900 font-semibold">Green GLO Cleaning Co</strong>.<br>
+      Your eco-friendly clean is confirmed.
     </p>
 
     <!-- Payment / Booking Reference Box -->
-    <div class="bg-sage-50 border border-sage-200/80 rounded-2xl p-4 text-sage-900 font-medium text-xs sm:text-sm my-6 shadow-inner" id="ref">
+    <div class="bg-sage-50 border border-sage-200/80 rounded-2xl p-4 text-sage-900 font-medium text-xs sm:text-sm my-6 shadow-inner break-words" id="ref" role="status" aria-live="polite">
       <i class="fa-solid fa-circle-notch fa-spin text-sage-600 mr-2"></i> Checking your payment reference...
     </div>
 
@@ -96,10 +115,10 @@
       </a>
 
       <div class="grid grid-cols-2 gap-3">
-        <a href="https://wa.me/447767972498" target="_blank" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-3 px-4 rounded-xl border border-emerald-200 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm">
+        <a href="https://wa.me/447767972498" target="_blank" rel="noopener noreferrer" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-3 px-3 sm:px-4 rounded-xl border border-emerald-200 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm">
           <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i> WhatsApp Us
         </a>
-        <a href="tel:07767972498" class="bg-sage-50 hover:bg-sage-100 text-sage-800 font-semibold py-3 px-4 rounded-xl border border-sage-200 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm">
+        <a href="tel:+447767972498" class="bg-sage-50 hover:bg-sage-100 text-sage-800 font-semibold py-3 px-3 sm:px-4 rounded-xl border border-sage-200 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm">
           <i class="fa-solid fa-phone text-sage-600 text-sm"></i> Call Support
         </a>
       </div>
@@ -110,7 +129,7 @@
       Questions or need to update your schedule? Email us at 
       <a href="mailto:greenglocleaningco@gmail.com" class="text-sage-700 font-bold hover:underline">greenglocleaningco@gmail.com</a>
     </div>
-  </div>
+  </main>
 
   <script>
     // Stripe session ID dynamic check
@@ -119,9 +138,15 @@
     const ref = document.getElementById('ref');
     
     if (sessionId) {
-      ref.innerHTML = `<span class="text-sage-600 font-bold"><i class="fa-solid fa-receipt mr-1"></i> Ref ID:</span> ${sessionId.substring(0, 26)}...`;
+      const label = document.createElement('span');
+      label.className = 'text-sage-600 font-bold';
+      label.innerHTML = '<i class="fa-solid fa-receipt mr-1" aria-hidden="true"></i> Ref ID: ';
+      const value = document.createElement('span');
+      value.className = 'font-mono break-all';
+      value.textContent = sessionId.length > 30 ? `${sessionId.slice(0, 26)}…` : sessionId;
+      ref.replaceChildren(label, value);
     } else {
-      ref.innerHTML = `<span class="text-sage-700 font-semibold"><i class="fa-solid fa-shield-check mr-1 text-mint-500"></i> Secure transaction confirmed via Stripe. A receipt has been emailed to you.</span>`;
+      ref.innerHTML = '<span class="text-sage-700 font-semibold"><i class="fa-solid fa-circle-check mr-1 text-mint-500" aria-hidden="true"></i> A receipt has been emailed to you.</span>';
     }
   </script>
 </body>
