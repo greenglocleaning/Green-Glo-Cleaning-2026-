@@ -22,6 +22,9 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- EmailJS: required for sendBookingEmail() to work -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
@@ -162,34 +165,23 @@
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
 
-        .pay-button-pulse {
-            animation: payPulse 2s ease-in-out infinite;
-        }
+        .pay-button-pulse { animation: payPulse 2s ease-in-out infinite; }
         @keyframes payPulse {
             0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
             50% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
         }
 
-        .payment-loading {
-            pointer-events: none;
-            opacity: 0.7;
-        }
+        .payment-loading { pointer-events: none; opacity: 0.7; }
         .spinner {
-            display: inline-block;
-            width: 14px;
-            height: 14px;
+            display: inline-block; width: 14px; height: 14px;
             border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: #fff;
+            border-radius: 50%; border-top-color: #fff;
             animation: spin 0.7s linear infinite;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
         .toast-success {
-            position: fixed;
-            top: 90px;
-            right: 20px;
-            z-index: 100;
+            position: fixed; top: 90px; right: 20px; z-index: 100;
             animation: slideIn 0.3s ease;
         }
         @keyframes slideIn {
@@ -354,7 +346,7 @@
                                         <td class="py-3.5 text-sage-800">Regular domestic (2hr)</td>
                                         <td class="py-3.5 text-right font-bold text-sage-950">£36</td>
                                         <td class="py-3.5 text-right">
-                                            <button onclick="payNow(36, 'Regular Domestic Clean - 2 Hours', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="36" data-description="Regular Domestic Clean - 2 Hours" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -363,7 +355,7 @@
                                         <td class="py-3.5 text-sage-800">Regular domestic (3hr)</td>
                                         <td class="py-3.5 text-right font-bold text-sage-950">£54</td>
                                         <td class="py-3.5 text-right">
-                                            <button onclick="payNow(54, 'Regular Domestic Clean - 3 Hours', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="54" data-description="Regular Domestic Clean - 3 Hours" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -372,7 +364,7 @@
                                         <td class="py-3.5 text-sage-800">Regular domestic (4hr)</td>
                                         <td class="py-3.5 text-right font-bold text-sage-950">£72</td>
                                         <td class="py-3.5 text-right">
-                                            <button onclick="payNow(72, 'Regular Domestic Clean - 4 Hours', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="72" data-description="Regular Domestic Clean - 4 Hours" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -381,7 +373,7 @@
                                         <td class="py-3.5 text-sage-800">Deep clean (3hr)</td>
                                         <td class="py-3.5 text-right font-bold text-sage-950">£90</td>
                                         <td class="py-3.5 text-right">
-                                            <button onclick="payNow(90, 'Deep Clean - 3 Hours', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="90" data-description="Deep Clean - 3 Hours" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -390,7 +382,7 @@
                                         <td class="py-3.5 text-sage-800">Commercial (4hr)</td>
                                         <td class="py-3.5 text-right font-bold text-sage-950">£112</td>
                                         <td class="py-3.5 text-right">
-                                            <button onclick="payNow(112, 'Commercial Clean - 4 Hours', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="112" data-description="Commercial Clean - 4 Hours" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -399,7 +391,7 @@
                                         <td class="py-3.5 text-sage-800">After-builders (4hr)</td>
                                         <td class="py-3.5 text-right font-bold text-sage-950">£120</td>
                                         <td class="py-3.5 text-right">
-                                            <button onclick="payNow(120, 'After-Builders Clean - 4 Hours', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="120" data-description="After-Builders Clean - 4 Hours" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -423,7 +415,7 @@
                             <h3 class="text-lg font-serif font-bold text-sage-950 mt-1">Studio flat</h3>
                             <p class="text-3xl font-extrabold text-emerald-600 mt-1">£180–£200</p>
                             <p class="text-xs text-sage-600 mt-2">Includes oven, inside windows, full sanitisation.</p>
-                            <button onclick="payNow(190, 'Fixed Deep Clean - Studio Flat (deposit)', '')" class="pay-btn mt-3 inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                            <button data-amount="190" data-description="Fixed Deep Clean - Studio Flat (deposit)" class="pay-btn mt-3 inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                 <i class="fa-solid fa-credit-card"></i> Pay £50 Deposit
                             </button>
                         </div>
@@ -454,7 +446,7 @@
                                         <td class="py-3 text-sage-800">Studio</td>
                                         <td class="py-3 text-right font-bold text-sage-950">£200</td>
                                         <td class="py-3 text-right">
-                                            <button onclick="payNow(200, 'End of Tenancy Clean - Studio', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="200" data-description="End of Tenancy Clean - Studio" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -463,7 +455,7 @@
                                         <td class="py-3 text-sage-800">1 bedroom</td>
                                         <td class="py-3 text-right font-bold text-sage-950">£240</td>
                                         <td class="py-3 text-right">
-                                            <button onclick="payNow(240, 'End of Tenancy Clean - 1 Bed', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="240" data-description="End of Tenancy Clean - 1 Bed" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -472,7 +464,7 @@
                                         <td class="py-3 text-sage-800">2 bedrooms</td>
                                         <td class="py-3 text-right font-bold text-sage-950">£285</td>
                                         <td class="py-3 text-right">
-                                            <button onclick="payNow(285, 'End of Tenancy Clean - 2 Bed', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="285" data-description="End of Tenancy Clean - 2 Bed" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -481,7 +473,7 @@
                                         <td class="py-3 text-sage-800">3 bedrooms</td>
                                         <td class="py-3 text-right font-bold text-sage-950">£330</td>
                                         <td class="py-3 text-right">
-                                            <button onclick="payNow(330, 'End of Tenancy Clean - 3 Bed', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="330" data-description="End of Tenancy Clean - 3 Bed" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -490,7 +482,7 @@
                                         <td class="py-3 text-sage-800">4 bedrooms</td>
                                         <td class="py-3 text-right font-bold text-sage-950">£405</td>
                                         <td class="py-3 text-right">
-                                            <button onclick="payNow(405, 'End of Tenancy Clean - 4 Bed', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="405" data-description="End of Tenancy Clean - 4 Bed" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -499,7 +491,7 @@
                                         <td class="py-3 text-sage-800">5+ bedrooms</td>
                                         <td class="py-3 text-right font-bold text-sage-950">From £450</td>
                                         <td class="py-3 text-right">
-                                            <button onclick="payNow(450, 'End of Tenancy Clean - 5+ Bed (base)', '')" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                            <button data-amount="450" data-description="End of Tenancy Clean - 5+ Bed (base)" class="pay-btn inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                                 <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                             </button>
                                         </td>
@@ -524,7 +516,7 @@
                                 <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Inside oven clean</span>
                                 <div class="flex items-center gap-2">
                                     <span class="text-sm font-bold text-sage-950">+£40</span>
-                                    <button onclick="payNow(40, 'Add-on: Inside Oven Clean', '')" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                    <button data-amount="40" data-description="Add-on: Inside Oven Clean" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                         <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                     </button>
                                 </div>
@@ -533,7 +525,7 @@
                                 <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Interior windows</span>
                                 <div class="flex items-center gap-2">
                                     <span class="text-sm font-bold text-sage-950">+£15</span>
-                                    <button onclick="payNow(15, 'Add-on: Interior Windows', '')" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                    <button data-amount="15" data-description="Add-on: Interior Windows" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                         <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                     </button>
                                 </div>
@@ -542,7 +534,7 @@
                                 <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Fridge / freezer deep clean</span>
                                 <div class="flex items-center gap-2">
                                     <span class="text-sm font-bold text-sage-950">+£25</span>
-                                    <button onclick="payNow(25, 'Add-on: Fridge/Freezer Deep Clean', '')" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                    <button data-amount="25" data-description="Add-on: Fridge/Freezer Deep Clean" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                         <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                     </button>
                                 </div>
@@ -551,7 +543,7 @@
                                 <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Carpet steam (per room)</span>
                                 <div class="flex items-center gap-2">
                                     <span class="text-sm font-bold text-sage-950">+£35</span>
-                                    <button onclick="payNow(35, 'Add-on: Carpet Steam (1 Room)', '')" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                    <button data-amount="35" data-description="Add-on: Carpet Steam (1 Room)" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                         <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                     </button>
                                 </div>
@@ -560,7 +552,7 @@
                                 <span class="text-sm font-semibold text-sage-800 flex items-center gap-2"><i class="fa-regular fa-square-check text-sage-600"></i> Upholstery shampoo (sofa)</span>
                                 <div class="flex items-center gap-2">
                                     <span class="text-sm font-bold text-sage-950">+£45</span>
-                                    <button onclick="payNow(45, 'Add-on: Upholstery Shampoo (Sofa)', '')" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
+                                    <button data-amount="45" data-description="Add-on: Upholstery Shampoo (Sofa)" class="pay-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 transition">
                                         <i class="fa-solid fa-credit-card text-xs"></i> Pay
                                     </button>
                                 </div>
@@ -589,16 +581,16 @@
                     <div class="gradient-border rounded-[1.7rem]">
                         <div class="glass-card rounded-[1.6rem] p-6 sm:p-8 shadow-2xl border border-white/60">
                             <div class="flex flex-wrap gap-2 mb-6 border-b border-sage-200/60 pb-5 justify-center" role="tablist" aria-label="Service type">
-                                <button type="button" role="tab" aria-selected="true" onclick="switchQuoteService('domestic', 18)" id="quoteTabDomestic" class="quote-service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2">
+                                <button type="button" role="tab" aria-selected="true" data-service="domestic" data-rate="18" id="quoteTabDomestic" class="quote-service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-house" aria-hidden="true"></i> Domestic (£18/hr)
                                 </button>
-                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('tenancy', 25)" id="quoteTabTenancy" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
+                                <button type="button" role="tab" aria-selected="false" data-service="tenancy" data-rate="25" id="quoteTabTenancy" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-key text-sage-600" aria-hidden="true"></i> Tenancy (£25/hr)
                                 </button>
-                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('deep', 22)" id="quoteTabDeep" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
+                                <button type="button" role="tab" aria-selected="false" data-service="deep" data-rate="22" id="quoteTabDeep" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-sparkles text-sage-600" aria-hidden="true"></i> Deep (£22/hr)
                                 </button>
-                                <button type="button" role="tab" aria-selected="false" onclick="switchQuoteService('commercial', 20)" id="quoteTabCommercial" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
+                                <button type="button" role="tab" aria-selected="false" data-service="commercial" data-rate="20" id="quoteTabCommercial" class="quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-building text-sage-600" aria-hidden="true"></i> Commercial (£20/hr)
                                 </button>
                             </div>
@@ -609,9 +601,9 @@
                                         <i class="fa-solid fa-bed text-sage-600 mr-1" aria-hidden="true"></i> Bedrooms
                                     </label>
                                     <div class="flex items-center justify-between glass-input rounded-xl px-3 py-2">
-                                        <button type="button" onclick="adjustQuoteCounter('quoteBeds', -1)" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Decrease bedrooms">−</button>
+                                        <button type="button" data-counter="beds" data-change="-1" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Decrease bedrooms">−</button>
                                         <span id="quoteBeds" class="font-extrabold text-gray-900 text-base" aria-live="polite">2</span>
-                                        <button type="button" onclick="adjustQuoteCounter('quoteBeds', 1)" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Increase bedrooms">+</button>
+                                        <button type="button" data-counter="beds" data-change="1" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Increase bedrooms">+</button>
                                     </div>
                                 </div>
 
@@ -620,9 +612,9 @@
                                         <i class="fa-solid fa-bath text-sage-600 mr-1" aria-hidden="true"></i> Bathrooms
                                     </label>
                                     <div class="flex items-center justify-between glass-input rounded-xl px-3 py-2">
-                                        <button type="button" onclick="adjustQuoteCounter('quoteBaths', -1)" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Decrease bathrooms">−</button>
+                                        <button type="button" data-counter="baths" data-change="-1" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Decrease bathrooms">−</button>
                                         <span id="quoteBaths" class="font-extrabold text-gray-900 text-base" aria-live="polite">1</span>
-                                        <button type="button" onclick="adjustQuoteCounter('quoteBaths', 1)" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Increase bathrooms">+</button>
+                                        <button type="button" data-counter="baths" data-change="1" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-sage-800 hover:bg-sage-100 transition-all" aria-label="Increase bathrooms">+</button>
                                     </div>
                                 </div>
 
@@ -630,7 +622,7 @@
                                     <label for="quoteFreq" class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
                                         <i class="fa-solid fa-rotate-right text-sage-600 mr-1" aria-hidden="true"></i> Frequency
                                     </label>
-                                    <select id="quoteFreq" onchange="calculateQuoteEstimate()" class="w-full glass-input rounded-xl px-3.5 py-2.5 text-xs font-bold text-gray-800 focus:outline-none">
+                                    <select id="quoteFreq" class="w-full glass-input rounded-xl px-3.5 py-2.5 text-xs font-bold text-gray-800 focus:outline-none">
                                         <option value="0.20">Weekly (20% OFF)</option>
                                         <option value="0.10">Fortnightly (10% OFF)</option>
                                         <option value="0">One-Time Clean</option>
@@ -645,12 +637,45 @@
                                 </div>
                             </div>
 
+                            <!-- NEW: Time field so {{time}} in the EmailJS template isn't blank -->
+                            <div class="mt-4">
+                                <label for="quoteTime" class="block text-[10px] font-bold text-sage-800 uppercase tracking-[0.18em] mb-2">
+                                    <i class="fa-regular fa-clock text-sage-600 mr-1" aria-hidden="true"></i> Preferred time
+                                </label>
+                                <input type="time" id="quoteTime" class="w-full soft-input rounded-xl px-4 py-3 text-sm text-sage-900">
+                            </div>
+
                             <!-- Customer Info for Stripe Receipt -->
                             <div class="mt-6 pt-5 border-t border-sage-200/60">
                                 <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-3 flex items-center gap-1.5">
                                     <i class="fa-solid fa-envelope text-sage-600"></i> Your email (for payment receipt)
                                 </p>
                                 <input type="email" id="customerEmail" placeholder="you@example.com" class="w-full soft-input rounded-xl px-4 py-3 text-sm text-sage-900">
+
+                                <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-3 mt-4 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-user text-sage-600"></i> Your name
+                                </p>
+                                <input type="text" id="customerName" placeholder="Full name" class="w-full soft-input rounded-xl px-4 py-3 text-sm text-sage-900">
+
+                                <div class="grid grid-cols-2 gap-3 mt-4">
+                                    <div>
+                                        <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-3 flex items-center gap-1.5">
+                                            <i class="fa-solid fa-location-dot text-sage-600"></i> Postcode
+                                        </p>
+                                        <input type="text" id="customerPostcode" placeholder="e.g. SW1A 1AA" class="w-full soft-input rounded-xl px-4 py-3 text-sm text-sage-900">
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-3 flex items-center gap-1.5">
+                                            <i class="fa-solid fa-phone text-sage-600"></i> Phone
+                                        </p>
+                                        <input type="tel" id="customerPhone" placeholder="07..." class="w-full soft-input rounded-xl px-4 py-3 text-sm text-sage-900">
+                                    </div>
+                                </div>
+
+                                <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-sage-700 mb-3 mt-4 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-pen text-sage-600"></i> Notes (optional)
+                                </p>
+                                <textarea id="customerNotes" rows="2" placeholder="Anything we should know?" class="w-full soft-input rounded-xl px-4 py-3 text-sm text-sage-900"></textarea>
                             </div>
 
                             <div class="mt-6 pt-6 border-t border-sage-200/80 flex flex-col md:flex-row items-center justify-between gap-5 bg-gradient-to-r from-sage-900 via-sage-800 to-sage-700 text-white p-5 sm:p-6 rounded-2xl shadow-inner">
@@ -669,7 +694,7 @@
                                         <span class="text-[10px] uppercase tracking-[0.24em] text-sage-300 block">Total to Pay</span>
                                         <span id="quoteTotalPrice" class="text-3xl font-extrabold text-yellow-400" aria-live="polite">£43</span>
                                     </div>
-                                    <button id="bookPayBtn" onclick="handleQuotePayment()" class="pay-button-pulse px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition duration-200 flex items-center gap-2">
+                                    <button id="bookPayBtn" class="pay-button-pulse px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition duration-200 flex items-center gap-2">
                                         <i class="fa-solid fa-lock" aria-hidden="true"></i>
                                         <span>Pay Now</span>
                                     </button>
@@ -715,7 +740,7 @@
     </section>
 
     <!-- FOOTER -->
-  <footer class="bg-sage-950 text-sage-400 py-12 text-xs border-t border-sage-800 relative overflow-hidden">
+    <footer class="bg-sage-950 text-sage-400 py-12 text-xs border-t border-sage-800 relative overflow-hidden">
         <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mint-400/60 to-transparent"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
@@ -788,162 +813,332 @@
         </a>
     </div>
 
+    <!-- ============================================================
+         JAVASCRIPT
+         Organized into sections:
+           1. Config
+           2. Utilities
+           3. Mobile menu
+           4. EmailJS: sendBookingEmail + collectBookingForm
+           5. Stripe payment (payNow)
+           6. Quote calculator
+           7. Event wiring (replaces all inline onclick/onchange)
+           8. Init
+         ============================================================ -->
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    (function () {
+        'use strict';
 
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenuBtn.addEventListener('click', () => {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
-        });
+        // ============================================================
+        // 1. CONFIG
+        // ============================================================
+        const STRIPE_ENDPOINT = 'https://connect-unified-view.lovable.app/api/public/checkout';
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileMenuBtn.focus();
+        // EmailJS config — set these to your real values.
+        // If left empty, sendBookingEmail() will log a warning and no-op
+        // instead of throwing, so the Stripe redirect is never blocked.
+        const EMAILJS = {
+            publicKey:  '',          // e.g. 'YOUR_PUBLIC_KEY'
+            serviceId:  '',          // e.g. 'service_xxxxxxx'
+            templateId: ''           // e.g. 'template_xxxxxxx'
+        };
+
+        // ============================================================
+        // 2. UTILITIES
+        // ============================================================
+        function getEl(id) { return document.getElementById(id); }
+
+        function setButtonLoading(btn, label) {
+            if (!btn) return null;
+            const original = btn.innerHTML;
+            btn.classList.add('payment-loading');
+            btn.innerHTML = '<span class="spinner"></span> ' + (label || 'Processing...');
+            return original;
+        }
+
+        function resetButton(btn, original) {
+            if (!btn || original == null) return;
+            btn.classList.remove('payment-loading');
+            btn.innerHTML = original;
+        }
+
+        function showError(msg) {
+            // Swap for a toast if you prefer
+            alert(msg);
+        }
+
+        // ============================================================
+        // 3. MOBILE MENU
+        // ============================================================
+        function initMobileMenu() {
+            const btn = getEl('mobileMenuBtn');
+            const menu = getEl('mobileMenu');
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', () => {
+                const isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', String(!isOpen));
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.focus();
+                }
+            });
+        }
+
+        // ============================================================
+        // 4. EMAILJS — sendBookingEmail + collectBookingForm
+        //
+        //    collectBookingForm() gathers everything the EmailJS
+        //    template expects into a plain object with these keys:
+        //      full_name, service, property_type, date, time,
+        //      frequency, price, postcode, phone, notes, email
+        //
+        //    sendBookingEmail(booking) is a no-op if EmailJS isn't
+        //    configured, so it can be called safely from payNow().
+        // ============================================================
+        function collectBookingForm() {
+            const email     = (getEl('customerEmail')    || {}).value || '';
+            const name      = (getEl('customerName')     || {}).value || '';
+            const postcode  = (getEl('customerPostcode') || {}).value || '';
+            const phone     = (getEl('customerPhone')    || {}).value || '';
+            const notes     = (getEl('customerNotes')    || {}).value || '';
+            const date      = (getEl('quoteDate')        || {}).value || '';
+            const time      = (getEl('quoteTime')        || {}).value || '';
+            const freqSel   = getEl('quoteFreq');
+            const frequency = freqSel ? freqSel.selectedOptions[0].text : '';
+            const price     = (getEl('quoteTotalPrice')  || {}).textContent || '';
+
+            // Derive service + property type from current quote state
+            const service      = quoteState.serviceName;
+            const propertyType = `${quoteState.beds} bed, ${quoteState.baths} bath`;
+
+            return {
+                full_name:     name.trim(),
+                email:         email.trim(),
+                service:       service,
+                property_type: propertyType,
+                date:          date,
+                time:          time,
+                frequency:     frequency,
+                price:         price,
+                postcode:      postcode.trim(),
+                phone:         phone.trim(),
+                notes:         notes.trim()
+            };
+        }
+
+        async function sendBookingEmail(booking) {
+            // Guard: if EmailJS not configured, skip silently.
+            if (!EMAILJS.publicKey || !EMAILJS.serviceId || !EMAILJS.templateId) {
+                console.warn('[sendBookingEmail] EmailJS not configured — skipping email.');
+                return;
             }
-        });
-
-        // ============================================
-        // STRIPE PAYMENT INTEGRATION
-        // ============================================
-        // This function calls your Lovable checkout endpoint.
-        // The webhook records the payment in your Sales dashboard.
-        // ============================================
-        async function payNow(amount, description, email) {
-            // Show loading state on the button that triggered this
-            const btn = event?.target?.closest('button');
-            const originalHTML = btn?.innerHTML;
-            if (btn) {
-                btn.classList.add('payment-loading');
-                btn.innerHTML = '<span class="spinner"></span> Processing...';
+            if (typeof emailjs === 'undefined') {
+                console.warn('[sendBookingEmail] emailjs SDK not loaded — skipping email.');
+                return;
             }
+            try {
+                emailjs.init({ publicKey: EMAILJS.publicKey });
+                await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, booking);
+                console.info('[sendBookingEmail] Booking email sent.');
+            } catch (err) {
+                // Never let email failure block the Stripe redirect.
+                console.error('[sendBookingEmail] Failed to send booking email:', err);
+            }
+        }
+
+        // ============================================================
+        // 5. STRIPE PAYMENT
+        //
+        //    payNow(amount, description, email)
+        //    - Creates a Stripe Checkout Session via your endpoint.
+        //    - Fires the booking email once the session is created
+        //      (this is the closest thing to "booking confirmed" on
+        //      this page — true confirmation happens on the Stripe
+        //      success page / webhook).
+        //    - Redirects the customer to Stripe.
+        // ============================================================
+        async function payNow(amount, description, email, btn) {
+            const original = setButtonLoading(btn);
 
             try {
-                const res = await fetch("https://connect-unified-view.lovable.app/api/public/checkout", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        amount: amount,           // in pounds (e.g., 43 or 43.50)
-                        description: description, // shown on Stripe checkout & dashboard
-                        email: email || ''        // optional, Stripe will collect if empty
-                    })
+                const res = await fetch(STRIPE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ amount, description, email: email || '' })
                 });
 
                 const data = await res.json();
 
                 if (data.url) {
-                    // Redirect customer to Stripe's secure checkout
+                    // ---- BOOKING "SAVED" POINT ----
+                    // Stripe session created successfully. Send the
+                    // confirmation email now, then redirect.
+                    const booking = collectBookingForm();
+                    booking.email = booking.email || email || '';
+                    // await so the email is attempted before navigation.
+                    // sendBookingEmail swallows its own errors, so this
+                    // can't block the redirect.
+                    await sendBookingEmail(booking);
+
                     window.location.href = data.url;
-                } else if (data.error) {
-                    alert('Payment error: ' + data.error);
-                    if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
-                } else {
-                    alert('Unable to start checkout. Please try again or call us.');
-                    if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
+                    return;
                 }
-            } catch (error) {
-                console.error('Payment error:', error);
-                alert('There was a problem connecting to the payment system. Please try again or call 07767972498.');
-                if (btn) { btn.classList.remove('payment-loading'); btn.innerHTML = originalHTML; }
+
+                if (data.error) {
+                    showError('Payment error: ' + data.error);
+                } else {
+                    showError('Unable to start checkout. Please try again or call us.');
+                }
+            } catch (err) {
+                console.error('Payment error:', err);
+                showError('There was a problem connecting to the payment system. Please try again or call 07767972498.');
+            } finally {
+                resetButton(btn, original);
             }
         }
 
-        // ============================================
-        // QUOTE CALCULATOR
-        // ============================================
-        let quoteServiceRate = 18;
-        let quoteBeds = 2;
-        let quoteBaths = 1;
-        let currentServiceName = 'Domestic Clean';
+        // ============================================================
+        // 6. QUOTE CALCULATOR
+        // ============================================================
+        const quoteState = {
+            rate: 18,
+            beds: 2,
+            baths: 1,
+            serviceName: 'Domestic Clean'
+        };
 
-        function switchQuoteService(service, rate) {
-            quoteServiceRate = rate;
-            const serviceNames = {
-                domestic: 'Domestic Clean',
-                tenancy: 'End of Tenancy Clean',
-                deep: 'Deep Clean',
-                commercial: 'Commercial Clean'
-            };
-            currentServiceName = serviceNames[service] || 'Cleaning Service';
-
-            document.querySelectorAll('.quote-service-tab').forEach(tab => {
-                tab.className = 'quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2';
-                tab.setAttribute('aria-selected', 'false');
-            });
-            const activeTab = document.getElementById('quoteTab' + service.charAt(0).toUpperCase() + service.slice(1));
-            if (activeTab) {
-                activeTab.className = 'quote-service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2';
-                activeTab.setAttribute('aria-selected', 'true');
-            }
-            calculateQuoteEstimate();
-        }
-
-        function adjustQuoteCounter(type, change) {
-            if (type === 'quoteBeds') {
-                quoteBeds = Math.max(1, quoteBeds + change);
-                document.getElementById('quoteBeds').textContent = quoteBeds;
-            } else if (type === 'quoteBaths') {
-                quoteBaths = Math.max(1, quoteBaths + change);
-                document.getElementById('quoteBaths').textContent = quoteBaths;
-            }
-            calculateQuoteEstimate();
-        }
+        const SERVICE_NAMES = {
+            domestic:   'Domestic Clean',
+            tenancy:    'End of Tenancy Clean',
+            deep:       'Deep Clean',
+            commercial: 'Commercial Clean'
+        };
 
         function calculateQuoteEstimate() {
-            const freqDiscount = parseFloat(document.getElementById('quoteFreq').value);
-            let hours = 1.5 + (quoteBeds * 0.75) + (quoteBaths * 0.5);
+            const freqSel = getEl('quoteFreq');
+            if (!freqSel) return;
+
+            const freqDiscount = parseFloat(freqSel.value) || 0;
+
+            // Duration formula: base 1.5h + 0.75h per bed + 0.5h per bath
+            let hours = 1.5 + (quoteState.beds * 0.75) + (quoteState.baths * 0.5);
             hours = Math.round(hours * 2) / 2;
-            const subtotal = hours * quoteServiceRate;
+
+            const subtotal   = hours * quoteState.rate;
             const finalTotal = Math.round(subtotal * (1 - freqDiscount));
-            document.getElementById('quoteEstHours').textContent = `${hours.toFixed(1)} Hours`;
-            document.getElementById('quoteTotalPrice').textContent = `£${finalTotal}`;
+
+            getEl('quoteEstHours').textContent   = `${hours.toFixed(1)} Hours`;
+            getEl('quoteTotalPrice').textContent = `£${finalTotal}`;
         }
 
-        // ============================================
-        // HANDLE QUOTE PAYMENT BUTTON
-        // ============================================
-        function handleQuotePayment() {
-            const totalText = document.getElementById('quoteTotalPrice').textContent;
-            const amount = parseFloat(totalText.replace('£', ''));
-            const hours = document.getElementById('quoteEstHours').textContent;
-            const email = document.getElementById('customerEmail').value.trim();
-            const freq = document.getElementById('quoteFreq').selectedOptions[0].text;
-            const date = document.getElementById('quoteDate').value || 'Date not specified';
+        function switchQuoteService(serviceKey) {
+            const tab = document.getElementById(
+                'quoteTab' + serviceKey.charAt(0).toUpperCase() + serviceKey.slice(1)
+            );
+            if (!tab) return;
 
-            const description = `${currentServiceName} — ${hours}, ${quoteBeds} bed, ${quoteBaths} bath, ${freq}, Date: ${date}`;
+            quoteState.rate        = parseFloat(tab.dataset.rate) || 18;
+            quoteState.serviceName = SERVICE_NAMES[serviceKey] || 'Cleaning Service';
 
-            payNow(amount, description, email);
+            document.querySelectorAll('.quote-service-tab').forEach(t => {
+                t.className = 'quote-service-tab text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl text-sage-800 hover:bg-sage-100 transition-all flex items-center gap-2';
+                t.setAttribute('aria-selected', 'false');
+            });
+
+            tab.className = 'quote-service-tab text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-sage-700 text-white shadow-md transition-all flex items-center gap-2';
+            tab.setAttribute('aria-selected', 'true');
+
+            calculateQuoteEstimate();
         }
 
-        // Init
-        calculateQuoteEstimate();
+        function adjustCounter(kind, change) {
+            if (kind === 'beds') {
+                quoteState.beds = Math.max(1, quoteState.beds + change);
+                getEl('quoteBeds').textContent = quoteState.beds;
+            } else if (kind === 'baths') {
+                quoteState.baths = Math.max(1, quoteState.baths + change);
+                getEl('quoteBaths').textContent = quoteState.baths;
+            }
+            calculateQuoteEstimate();
+        }
+
+        function handleQuotePayment(btn) {
+            const totalText = getEl('quoteTotalPrice').textContent;
+            const amount    = parseFloat(totalText.replace('£', '')) || 0;
+            const hours     = getEl('quoteEstHours').textContent;
+            const email     = getEl('customerEmail').value.trim();
+            const freqText  = getEl('quoteFreq').selectedOptions[0].text;
+            const date      = getEl('quoteDate').value || 'Date not specified';
+            const time      = getEl('quoteTime').value || 'Time not specified';
+
+            const description =
+                `${quoteState.serviceName} — ${hours}, ` +
+                `${quoteState.beds} bed, ${quoteState.baths} bath, ` +
+                `${freqText}, Date: ${date} ${time}`;
+
+            payNow(amount, description, email, btn);
+        }
+
+        // ============================================================
+        // 7. EVENT WIRING
+        // ============================================================
+        function initEvents() {
+            // Service tabs
+            document.querySelectorAll('.quote-service-tab').forEach(tab => {
+                tab.addEventListener('click', () => switchQuoteService(tab.dataset.service));
+            });
+
+            // Bed/bath counters
+            document.querySelectorAll('[data-counter]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    adjustCounter(btn.dataset.counter, parseInt(btn.dataset.change, 10));
+                });
+            });
+
+            // Frequency dropdown
+            const freq = getEl('quoteFreq');
+            if (freq) freq.addEventListener('change', calculateQuoteEstimate);
+
+            // Table + add-on "Pay" buttons (previously inline onclick)
+            document.querySelectorAll('.pay-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const amount      = parseFloat(btn.dataset.amount) || 0;
+                    const description = btn.dataset.description || 'Cleaning Service';
+                    payNow(amount, description, '', btn);
+                });
+            });
+
+            // Main quote "Pay Now" button (previously inline onclick)
+            const bookPayBtn = getEl('bookPayBtn');
+            if (bookPayBtn) {
+                bookPayBtn.addEventListener('click', () => handleQuotePayment(bookPayBtn));
+            }
+        }
+
+        // ============================================================
+        // 8. INIT
+        // ============================================================
+        function init() {
+            const yearEl = getEl('currentYear');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            initMobileMenu();
+            initEvents();
+            calculateQuoteEstimate();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
     </script>
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  emailjs.init({ publicKey: "CrAASaYbAH-C-cxtk" });
-
-  function sendBookingEmail(form) {
-    const d = new FormData(form);
-    return emailjs.send("service_kmzhnbm", "template_tbh8xlb", {
-      full_name: d.get("full_name"),
-      email: d.get("email"),
-      phone: d.get("phone"),
-      postcode: d.get("postcode"),
-      service: d.get("serviceType"),
-      property_type: d.get("propertyType"),
-      date: d.get("preferred_date"),
-      time: d.get("time"),
-      frequency: d.get("frequency"),
-      price: d.get("bookingEstimate"),
-      notes: d.get("notes")
-    }).catch(err => console.error("Email failed", err));
-  }
-</script>
-
