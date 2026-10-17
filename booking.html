@@ -925,3 +925,25 @@
     </script>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init({ publicKey: "CrAASaYbAH-C-cxtk" });
+
+  function sendBookingEmail(form) {
+    const d = new FormData(form);
+    return emailjs.send("service_kmzhnbm", "template_tbh8xlb", {
+      full_name: d.get("full_name"),
+      email: d.get("email"),
+      phone: d.get("phone"),
+      postcode: d.get("postcode"),
+      service: d.get("serviceType"),
+      property_type: d.get("propertyType"),
+      date: d.get("preferred_date"),
+      time: d.get("time"),
+      frequency: d.get("frequency"),
+      price: d.get("bookingEstimate"),
+      notes: d.get("notes")
+    }).catch(err => console.error("Email failed", err));
+  }
+</script>
+
